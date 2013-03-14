@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>almira.rpm</groupId>
+        <artifactId>rpm-plugins</artifactId>
+        <version>1-SNAPSHOT</version>
+        <relativePath>pom-plugins.xml</relativePath>
+    </parent>
+
+    <artifactId>master-rpm</artifactId>
+    <packaging>pom</packaging>
+    <version>11-SNAPSHOT</version>
+    <name>almira.rpm.master-rpm</name>
+    <description>Parent POM for Almira custom RPMs</description>
+
+    <!-- == [ Properties ] ================================================ -->
+    <properties>
+        <!-- Default values for properties used in client modules -->
+        <destPrefix>/opt</destPrefix>
+        <destBase>${destPrefix}/${appServiceName}</destBase>
+        <destConf>/etc/${appServiceName}</destConf>
+
+        <!-- Default to service name -->
+        <appUserName>${appServiceName}</appUserName>
+        <appGroupName>${appServiceName}</appGroupName>
+        
+        <!-- Location of original binaries downloaded from Internet -->        
+        <appDistLocation>../../dist/${project.artifactId}</appDistLocation>
+        <appSrcLocation>target/unpack/${project.artifactId}-${appVersion}</appSrcLocation>
+    </properties>
+
+    <!-- == [ Build ] ===================================================== -->
+    <build>
+        <plugins>
+            <!-- http://maven.apache.org/plugins/maven-antrun-plugin/ -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+            </plugin>                
+        </plugins>
+        
+        <pluginManagement>
+            <plugins>
+                <!-- http://maven.apache.org/plugins/maven-clean-plugin/ -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${cleanPluginVersion}</version>
+                    <executions>
+                        <execution>
+                            <id>auto-clean</id>
+                            <phase>initialize</phase>
+                            <goals>
+                                <goal>clean</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                
+                <!-- http://maven.apache.org/plugins/maven-antrun-plugin/ -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>${antPluginVersion}</version>
+                    <executions>
+                        <execution>
+                            <phase>generate-resources</phase>
+                            <goals>
+                                <goal>run</goal>
+                            </goals>
+                            <configuration>
+                                <target>
+                                    <untar compression="gzip" dest="target/unpack" overwrite="true">
+                                        <fileset dir="${appDistLocation}">
+                                            <include name="*.tar.gz"/>
+                                        </fileset>
+                                    </untar>
+                                    <unzip dest="target/unpack" overwrite="true">
+                                        <fileset dir="${appDistLocation}">
+                                            <include name="*.zip"/>
+                                        </fileset>
+                                    </unzip>                                
+                                </target>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>           
+                
+                <!-- http://maven.apache.org/plugins/maven-resources-plugin/ -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${resourcesPluginVersion}</version>
+                    <configuration>
+                        <!-- http://jira.codehaus.org/browse/MRESOURCES-104 -->
+                        <useDefaultDelimiters>false</useDefaultDelimiters>
+                        <delimiters>
+                            <delimiter>@{*}</delimiter>
+                        </delimiters>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>copy-resources</id>
+                            <phase>process-resources</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>src/main/etc</directory>
+                                        <filtering>true</filtering>
+                                    </resource>
+                                    <resource>
+                                        <directory>src/main/scripts</directory>
+                                        <filtering>true</filtering>
+                                    </resource>
+                                    <resource>
+                                        <directory>src/main/usr</directory>
+                                    </resource>                                    
+                                </resources>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+                <!-- BUG: http://jira.codehaus.org/browse/MRPM-83 -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>rpm-maven-plugin</artifactId>
+                    <version>${rpmPluginVersion}</version>
+                    <extensions>true</extensions>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>rpm</goal>
+                            </goals>
+                            <phase>none</phase>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <version>${appVersion}</version>
+                        <release>${rpmRelease}.el6</release>
+                        <url>${project.url}</url>
+                        <group>Development/Tools</group>
+                        <defaultUsername>root</defaultUsername>
+                        <defaultGroupname>root</defaultGroupname>
+                        <defaultFilemode>644</defaultFilemode>
+                        <defaultDirmode>755</defaultDirmode>
+                        <description>${project.description}</description>
+
+                        <!-- %prep -->
+                        <prepareScriptlet>
+                            <scriptFile>target/classes/01.prepare.sh</scriptFile>
+                            <fileEncoding>utf-8</fileEncoding>
+                        </prepareScriptlet>
+
+                        <!-- %pre -->
+                        <preinstallScriptlet>
+                            <scriptFile>target/classes/02.preinstall.sh</scriptFile>
+                            <fileEncoding>utf-8</fileEncoding>
+                        </preinstallScriptlet>
+
+                        <!-- %install -->
+                        <installScriptlet>
+                            <scriptFile>target/classes/03.install.sh</scriptFile>
+                            <fileEncoding>utf-8</fileEncoding>
+                        </installScriptlet>
+
+                        <!-- %post -->
+                        <postinstallScriptlet>
+                            <scriptFile>target/classes/04.postinstall.sh</scriptFile>
+                            <fileEncoding>utf-8</fileEncoding>
+                        </postinstallScriptlet>
+
+                        <!-- %preun -->
+                        <preremoveScriptlet>
+                            <scriptFile>target/classes/05.preremove.sh</scriptFile>
+                            <fileEncoding>utf-8</fileEncoding>
+                        </preremoveScriptlet>
+
+                        <!-- %postun -->
+                        <postremoveScriptlet>
+                            <scriptFile>target/classes/06.postremove.sh</scriptFile>
+                            <fileEncoding>utf-8</fileEncoding>
+                        </postremoveScriptlet>
+
+                        <!-- %verifyScript -->
+                        <verifyScriptlet>
+                            <scriptFile>target/classes/07.verify.sh</scriptFile>
+                            <fileEncoding>utf-8</fileEncoding>
+                        </verifyScriptlet>
+
+                        <!-- %clean -->
+                        <cleanScriptlet>
+                            <scriptFile>target/classes/08.clean.sh</scriptFile>
+                            <fileEncoding>utf-8</fileEncoding>
+                        </cleanScriptlet>
+
+                        <!-- %pretrans -->
+                        <pretransScriptlet>
+                            <scriptFile>target/classes/09.pretrans.sh</scriptFile>
+                            <fileEncoding>utf-8</fileEncoding>
+                        </pretransScriptlet>
+
+                        <!-- %posttrans -->
+                        <posttransScriptlet>
+                            <scriptFile>target/classes/10.posttrans.sh</scriptFile>
+                            <fileEncoding>utf-8</fileEncoding>
+                        </posttransScriptlet>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

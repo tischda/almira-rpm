@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>almira.rpm</groupId>
+        <artifactId>distribution</artifactId>
+        <version>1</version>
+        <relativePath>pom-distribution.xml</relativePath>
+    </parent>
+    
+    <artifactId>versions</artifactId>
+    <packaging>pom</packaging>
+    <version>1-SNAPSHOT</version>
+    <name>almira.rpm.versions</name>
+    <description>Almira Versions</description>
+
+    <prerequisites>
+        <maven>3.0.4</maven>
+    </prerequisites>
+
+    <!-- == [ Properties ] ================================================ -->
+    <properties>
+        <jdkVersion>                1.7          </jdkVersion>
+        <antPluginVersion>          1.7          </antPluginVersion>
+        <cleanPluginVersion>        2.5          </cleanPluginVersion>
+        <compilerPluginVersion>     3.0          </compilerPluginVersion>
+        <dependencyPluginVersion>   2.6          </dependencyPluginVersion>
+        <deployPluginVersion>       2.7          </deployPluginVersion>
+        <installPluginVersion>      2.4          </installPluginVersion>
+        <projectinfoPluginVersion>  2.6          </projectinfoPluginVersion>
+        <resourcesPluginVersion>    2.6          </resourcesPluginVersion>
+        <rpmPluginVersion>          2.1-alpha-2  </rpmPluginVersion>
+        <sitePluginVersion>         3.2          </sitePluginVersion>
+        <versionsPluginVersion>     2.0          </versionsPluginVersion>
+        
+        <!-- TODO: can we set this as default in a global location? -->            
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+    
+    <!-- == [ Build ] ===================================================== -->
+    <build>
+        <plugins>            
+            <!-- http://mojo.codehaus.org/versions-maven-plugin/index.html -->
+            <!-- mvn versions:display-plugin-updates -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versionsPluginVersion}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

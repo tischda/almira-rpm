@@ -1,0 +1,66 @@
+# -----------------------------------------------------------------------------
+# Configuration file for the tomcat service
+#
+# Environment Variable Prerequisites
+#
+#   CATALINA_HOME   May point at your Catalina "build" directory.
+#
+#   CATALINA_BASE   (Optional) Base directory for resolving dynamic portions
+#                   of a Catalina installation.  If not present, resolves to
+#                   the same directory that CATALINA_HOME points to.
+#
+#   CATALINA_OUT    (Optional) Full path to a file where stdout and stderr
+#                   will be redirected.
+#                   Default is $CATALINA_BASE/logs/catalina.out
+#
+#   CATALINA_OPTS   (Optional) Java runtime options used when the "start",
+#                   "run" or "debug" command is executed.
+#                   Include here and not in JAVA_OPTS all options, that should
+#                   only be used by Tomcat itself, not by the stop process,
+#                   the version command etc.
+#                   Examples are heap size, GC logging, JMX ports etc.
+#
+#   CATALINA_TMPDIR (Optional) Directory path location of temporary directory
+#                   the JVM should use (java.io.tmpdir).  Defaults to
+#                   $CATALINA_BASE/temp.
+#
+#   JAVA_HOME       Must point at your Java Development Kit installation.
+#                   Required to run the with the "debug" argument.
+#
+#   JAVA_OPTS       (Optional) Java runtime options used when any command
+#                   is executed.
+#                   Include here and not in CATALINA_OPTS all options, that
+#                   should be used by Tomcat and also by the stop process,
+#                   the version command etc.
+#                   Most options should go into CATALINA_OPTS.
+#
+#   JAVA_ENDORSED_DIRS (Optional) Lists of of colon separated directories
+#                   containing some jars in order to allow replacement of APIs
+#                   created outside of the JCP (i.e. DOM and SAX from W3C).
+#                   It can also be used to update the XML parser implementation.
+#                   Defaults to $CATALINA_HOME/endorsed.
+#
+# -----------------------------------------------------------------------------
+
+# Sourced in /etc/init.d/tomcat and required for startup in /usr/sbin/tomcat
+# I prefer to export variables here than having to use tomcat6 parseOptions()
+export JAVA_HOME="/usr/java/default"
+export JAVA_OPTS="-Xmx1024m -XX:MaxPermSize=256m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -server ${JAVA_OTPS}"
+
+#export CATALINA_OPTS=""
+
+export CATALINA_BASE="@{destBase}"
+export CATALINA_TMPDIR="$CATALINA_BASE"/temp
+export CATALINA_OUT="$CATALINA_BASE"/logs/catalina.out
+
+# Run tomcat under the Java Security Manager
+#JAVA_OPTS="${JAVA_OPTS} \
+#    -Djava.security.manager \
+#    -Djava.security.policy=="${CATALINA_BASE}/conf/catalina.policy"
+
+
+# Used for init script only
+TOMCAT_USER="@{appUserName}"
+
+# Time to wait in seconds, before killing process
+SHUTDOWN_WAIT="30"

@@ -1,0 +1,12 @@
+    ----
+    Release Notes
+    ----
+
+Release Notes
+
+~~ BUG: http://jira.codehaus.org/browse/DOXIA-380
+~~ but it works with 'parse'
+
++---+
+#parse("../../../CHANGES.txt")
++---+

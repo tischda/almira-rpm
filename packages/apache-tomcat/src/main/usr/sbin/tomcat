@@ -1,0 +1,66 @@
+#!/bin/sh
+#
+# This script should be called only by /etc/init.d/tomcat. It is a smaller
+# version of catalina.sh inspired by the tomcat6 script in CentOS 6.3
+#
+JAVACMD="$JAVA_HOME/bin/java"
+SERVER_PORT="${SERVER_PORT:-8005}"
+SHUTDOWN_MSG="${SHUTDOWN_MSG:-SHUTDOWN}"
+
+if [ -r "$CATALINA_BASE/bin/setenv.sh" ]; then
+  . "$CATALINA_BASE/bin/setenv.sh"
+elif [ -r "$CATALINA_HOME/bin/setenv.sh" ]; then
+  . "$CATALINA_HOME/bin/setenv.sh"
+fi
+
+CLASSPATH="${CATALINA_HOME}/bin/bootstrap.jar"
+
+if [ -r "$CATALINA_BASE/bin/tomcat-juli.jar" ] ; then
+  CLASSPATH=$CLASSPATH:$CATALINA_BASE/bin/tomcat-juli.jar
+else
+  CLASSPATH=$CLASSPATH:$CATALINA_HOME/bin/tomcat-juli.jar
+fi
+
+if [ "$1" = "start" ]; then
+ ${JAVACMD} $JAVA_OPTS $CATALINA_OPTS \
+    -classpath "$CLASSPATH" \
+    -Dcatalina.base="$CATALINA_BASE" \
+    -Dcatalina.home="$CATALINA_HOME" \
+    -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" \
+    -Djava.io.tmpdir="$CATALINA_TMPDIR" \
+    -Djava.util.logging.config.file="${CATALINA_BASE}/conf/logging.properties" \
+    -Djava.util.logging.manager="org.apache.juli.ClassLoaderLogManager" \
+    org.apache.catalina.startup.Bootstrap start \
+    >> $CATALINA_OUT 2>&1 &
+
+  # Write PID
+  pid=$!
+  if [ ! -z "$CATALINA_PID" ]; then
+    echo $pid > $CATALINA_PID
+  fi
+
+  # Make sure you return status correctly to detect startup failure. Process
+  # fails fast for configuration errors, if > 1 sec then failure not detected.
+  # http://stackoverflow.com/questions/1570262/shell-get-exit-code-of-background-process
+  sleep 1
+  kill -0 $pid 2> /dev/null
+
+
+# Use this for clean shutdown. This is quicker than starting a Tomcat instance
+# with the 'stop' parameter, but then you cannot force it to stop. I prefer to
+# use killproc (SIGTERM) with a reasonable timeout, so this action is not used
+# by the init script.
+# http://tomcat.10.n6.nabble.com/tomcat-shutdown-catalina-sh-STOP-vs-SIGTERM-td2166575.html
+elif [ "$1" = "stop" ]; then
+  echo $SHUTDOWN_MSG | nc localhost $SERVER_PORT
+
+
+elif [ "$1" = "version" ]; then
+  ${JAVACMD} -classpath ${CATALINA_HOME}/lib/catalina.jar \
+    org.apache.catalina.util.ServerInfo
+
+
+else
+  echo "Usage: $0 {start|stop|version}"
+  exit 1
+fi

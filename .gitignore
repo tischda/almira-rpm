@@ -1,0 +1,11 @@
+*~
+.DS_Store
+.svn
+target
+**.project
+**.classpath
+**.settings
+**.versionsBackup
+**/target
+.idea/workspace.xml
+dist

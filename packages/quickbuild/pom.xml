@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>almira.rpm</groupId>
+    	<artifactId>master-rpm</artifactId>
+    	<version>11-SNAPSHOT</version>
+    	<relativePath>../../master-rpm/pom.xml</relativePath>
+    </parent>
+
+	<artifactId>quickbuild</artifactId>
+	<version>5.0.11.1</version>
+	<packaging>rpm</packaging>
+	<name>almira.rpm.quickbuild</name>
+
+	<description>QuickBuild is a fabulous and easy to maintain build tool.</description>
+
+	<url>http://www.sonatype.org/quickbuild/</url>
+
+	<properties>
+		<appVersion>5.0.11</appVersion>
+		<rpmRelease>1</rpmRelease>
+		<appServiceName>quickbuild</appServiceName>
+
+		<jdbcDriverName>mysql-connector-java</jdbcDriverName>
+		<jdbcDriverVersion>5.1.23</jdbcDriverVersion>
+		
+		<!-- overrides -->
+		<destPrefix>/home/${appUserName}</destPrefix>
+		<appWorkFolder>${destPrefix}/sonatype-work/quickbuild</appWorkFolder>
+	</properties>
+
+	<build>
+		<defaultGoal>package</defaultGoal>
+		<plugins>
+
+			<!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<configuration>
+					<needarch>x86_64</needarch>
+					<vendor>PMEase</vendor>
+					<copyright>Commercial</copyright>
+					<summary>QuickBuild is a fabulous and easy to maintain build tool</summary>
+					<mappings>
+
+						<!-- bin files -->
+						<mapping>
+							<directory>${destBase}</directory>
+							<username>${appUserName}</username>
+							<groupname>${appGroupName}</groupname>
+							<sources>
+								<source>
+									<location>${appSrcLocation}</location>
+									<excludes>
+										<exclude>bin/*.bat</exclude>
+										<exclude>bin/wrapper-windows*</exclude>
+									</excludes>
+								</source>
+								<source>
+									<location>target/unpack/${jdbcDriverName}-${jdbcDriverVersion}</location>
+									<includes>
+										<include>*.jar</include>
+									</includes>
+								</source>								
+							</sources>
+						</mapping>
+
+						<!-- conf files -->
+						<mapping>
+							<directory>${destConf}</directory>
+							<configuration>true</configuration>
+							<sources>
+								<source>
+									<location>${appSrcLocation}/conf</location>
+									<excludes>
+										<exclude>hibernate.properties</exclude>
+										<exclude>jetty.xml</exclude>
+										<exclude>wrapper.conf</exclude>
+									</excludes>
+								</source>
+								<source>
+									<location>target/classes/quickbuild</location>
+								</source>
+							</sources>
+						</mapping>
+
+						<!-- service -->
+						<mapping>
+							<directory>/etc/rc.d/init.d</directory>
+							<configuration>true</configuration>
+							<filemode>755</filemode>
+							<sources>
+								<source>
+									<location>target/classes/init.d/${appServiceName}</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/var/run/${appServiceName}</directory>
+							<username>${appUserName}</username>
+							<groupname>${appGroupName}</groupname>
+						</mapping>
+					</mappings>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

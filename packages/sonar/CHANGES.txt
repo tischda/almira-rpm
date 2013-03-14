@@ -1,0 +1,10 @@
+===============================================================================
+almira.rpm.sonar - change history
+===============================================================================
+
+* added sonar.properties to avoid setting mysql url under h2 section
+
+
+Version 3.4.1-1 (07 March 2013)
+-------------------------------
+* First version

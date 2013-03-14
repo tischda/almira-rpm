@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>almira.rpm</groupId>
+    	<artifactId>master-rpm</artifactId>
+    	<version>11-SNAPSHOT</version>
+    	<relativePath>../../master-rpm/pom.xml</relativePath>
+    </parent>
+
+	<artifactId>nexus</artifactId>
+	<version>2.3.1-01.2</version>
+	<packaging>rpm</packaging>
+	<name>almira.rpm.nexus</name>
+	
+	<description>Sonatype Nexus sets the standard for repository management
+providing development teams with the ability to proxy remote repositories and
+share software artifacts.</description>
+	
+	<url>http://www.sonatype.org/nexus/</url>
+
+	<properties>
+		<appVersion>2.3.1-01</appVersion>
+		<rpmRelease>2</rpmRelease>
+		<appServiceName>nexus</appServiceName>
+		
+		<!-- overrides -->
+		<destPrefix>/home/${appUserName}</destPrefix>
+		<appWorkFolder>${destPrefix}/sonatype-work/nexus</appWorkFolder>		
+	</properties>
+
+	<build>
+		<defaultGoal>package</defaultGoal>
+		<plugins>
+
+			<!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<configuration>
+					<needarch>x86_64</needarch>
+					<vendor>Sonatype</vendor>
+					<copyright>Commercial</copyright>
+					<summary>Sonatype Nexus artifact repository</summary>
+					<mappings>
+
+						<!-- bin files -->
+						<mapping>
+							<directory>${destBase}</directory>
+							<username>${appUserName}</username>
+							<groupname>${appGroupName}</groupname>
+							<directoryIncluded>false</directoryIncluded>
+							<recurseDirectories>true</recurseDirectories>
+							<sources>
+								<source>
+									<location>${appSrcLocation}</location>
+									<includes>
+										<include>bin/nexus</include>
+										<include>conf</include>
+										<include>logs</include>
+										<include>tmp</include>
+										<include>*.txt</include>
+									</includes>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>${destBase}/lib</directory>
+							<username>${appUserName}</username>
+							<groupname>${appGroupName}</groupname>
+							<sources>
+								<source>
+									<location>${appSrcLocation}/lib</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>${destBase}/nexus</directory>
+							<username>${appUserName}</username>
+							<groupname>${appGroupName}</groupname>
+							<sources>
+								<source>
+									<location>${appSrcLocation}/nexus</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>${destBase}/bin/jsw</directory>
+							<username>${appUserName}</username>
+							<groupname>${appGroupName}</groupname>
+							<sources>
+								<source>
+									<location>${appSrcLocation}/bin/jsw</location>
+									<includes>
+										<include>conf/wrapper.conf</include>
+										<include>license/**</include>
+										<include>linux-x86-64/**</include>
+										<include>lib/libwrapper-linux-x86-64.so</include>
+										<include>lib/wrapper-*.jar</include>
+									</includes>
+								</source>
+							</sources>
+						</mapping>                      
+
+						<!-- conf files -->
+						<mapping>
+							<directory>${destConf}</directory>
+							<configuration>true</configuration>
+							<sources>
+								<source>
+									<location>${appSrcLocation}/conf</location>
+									<includes>
+										<include>*.xml</include>
+										<include>*.properties</include>
+									</includes>
+								</source>
+								<source>
+									<location>${appSrcLocation}/bin/jsw/conf/wrapper.conf</location>
+								</source>
+							</sources>
+						</mapping>
+						
+						<!-- service -->
+						<mapping>
+							<directory>/etc/rc.d/init.d</directory>
+							<configuration>true</configuration>
+							<filemode>755</filemode>
+							<sources>
+								<source>
+									<location>target/classes/init.d/${appServiceName}</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/var/run/${appServiceName}</directory>
+							<username>${appUserName}</username>
+							<groupname>${appGroupName}</groupname>
+						</mapping>
+					</mappings>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

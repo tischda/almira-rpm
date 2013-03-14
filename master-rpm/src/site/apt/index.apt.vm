@@ -1,0 +1,13 @@
+    ----
+    ${project.artifactId}
+    ----
+
+Welcome to ${project.artifactId}
+
+~~ BUG: http://jira.codehaus.org/browse/DOXIA-380
+~~ but it works with 'parse'
+
++----------------------------------------------------------------------------+
+#parse("../../../README.txt")
++----------------------------------------------------------------------------+
+

@@ -1,0 +1,127 @@
+#!/bin/sh
+#
+# tomcat    This shell script takes care of starting and stopping Tomcat
+#
+# chkconfig: - 80 20
+#
+### BEGIN INIT INFO
+# Provides: tomcat
+# Required-Start: $network $syslog
+# Required-Stop: $network $syslog
+# Default-Start:
+# Default-Stop:
+# Description: Release implementation for Servlet 3.0 and JSP 2.2
+# Short-Description: start and stop tomcat
+### END INIT INFO
+
+# this is instance specific
+NAME="$(basename $0)"
+if [ "${NAME:0:1}" = "S" -o "${NAME:0:1}" = "K" ]; then
+    NAME="${NAME:3}"
+fi
+
+prog=${NAME}
+config=/etc/sysconfig/$prog
+lockfile=/var/lock/subsys/$prog
+
+# export PID so tomcat script can create it
+export CATALINA_PID=/var/run/$prog.pid
+
+[ -f $config ] || exit 6
+. $config
+
+# this is the global tomcat script
+exec=/usr/sbin/tomcat
+
+# obviously applies to all instances
+export CATALINA_HOME="@{destBase}"
+export JASPER_HOME="@{destBase}"
+
+
+. /etc/rc.d/init.d/functions
+
+start() {
+ [ -x $exec ] || exit 5
+    echo -n "Starting $prog: "
+    touch $CATALINA_PID
+    chown ${TOMCAT_USER}:${TOMCAT_USER} $CATALINA_PID
+    daemon --user $TOMCAT_USER $exec start
+    retval=$?
+    echo
+    [ $retval -eq 0 ] && touch $lockfile
+    return $retval
+}
+
+stop() {
+    echo -n "Stopping $prog: "
+    killproc -p $CATALINA_PID -d $SHUTDOWN_WAIT $prog
+    retval=$?
+    echo
+    [ $retval -eq 0 ] && rm -f $lockfile
+}
+
+restart() {
+    stop
+    start
+}
+
+reload() {
+    restart
+}
+
+force_reload() {
+    restart
+}
+
+rh_status() {
+    if [ -f "$CATALINA_PID" ]; then
+        status -p $CATALINA_PID $prog
+        retval=$?
+        return $retval
+    else
+        return 3
+    fi
+}
+
+rh_status_q() {
+    rh_status >/dev/null 2>&1
+}
+
+version() {
+     su - $TOMCAT_USER -c "export CATALINA_HOME=$CATALINA_HOME; $exec version"
+}
+
+case "$1" in
+    start)
+        rh_status_q && exit 0
+        $1
+        ;;
+    stop)
+        rh_status_q || exit 0
+        $1
+        ;;
+    restart)
+        $1
+        ;;
+    reload)
+        rh_status_q || exit 7
+        $1
+        ;;
+    force-reload)
+        force_reload
+        ;;
+    status)
+        rh_status
+        ;;
+    condrestart|try-restart)
+        rh_status_q || exit 0
+        restart
+        ;;
+    version)
+        version
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|status|restart|condrestart|try-restart|reload|force-reload|version}"
+        exit 2
+esac
+exit $?
