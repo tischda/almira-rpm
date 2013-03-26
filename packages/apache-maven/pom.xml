@@ -13,12 +13,12 @@
 	<version>3.0.5.1</version>
 	<packaging>rpm</packaging>
 	<name>almira.rpm.apache-maven</name>
-	
+
 	<description>Apache Maven is a software project management and
 comprehension tool. Based on the concept of a project object model (POM), Maven
 can manage a project's build, reporting and documentation from a central piece
 of information.</description>
-	
+
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -30,7 +30,7 @@ of information.</description>
 	<build>
 		<defaultGoal>package</defaultGoal>
 		<plugins>
-			
+
 			<!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -58,7 +58,7 @@ of information.</description>
 									<includes>
 										<include>settings.xml</include>
 									</includes>
-								</source>                               
+								</source>
 							</sources>
 						</mapping>
 
@@ -70,16 +70,16 @@ of information.</description>
 									<location>${appSrcLocation}</location>
 									<excludes>
 										<exclude>bin/*.bat</exclude>
-									</excludes>                                 
+									</excludes>
 								</source>
 							</sources>
 						</mapping>
-						
-						<!-- symlinks -->						
+
+						<!-- symlinks -->
 						<mapping>
 							<directory>/usr/bin</directory>
 							<sources>
-								<softlinkSource>                                    
+								<softlinkSource>
 									<location>${destBase}/bin</location>
 									<includes>
 										<include>mvn*</include>

@@ -8,7 +8,7 @@
         <version>1</version>
         <relativePath>pom-distribution.xml</relativePath>
     </parent>
-    
+
     <artifactId>versions</artifactId>
     <packaging>pom</packaging>
     <version>1-SNAPSHOT</version>
@@ -33,15 +33,15 @@
         <rpmPluginVersion>          2.1-alpha-2  </rpmPluginVersion>
         <sitePluginVersion>         3.2          </sitePluginVersion>
         <versionsPluginVersion>     2.0          </versionsPluginVersion>
-        
-        <!-- TODO: can we set this as default in a global location? -->            
+
+        <!-- TODO: can we set this as default in a global location? -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-    
+
     <!-- == [ Build ] ===================================================== -->
     <build>
-        <plugins>            
+        <plugins>
             <!-- http://mojo.codehaus.org/versions-maven-plugin/index.html -->
             <!-- mvn versions:display-plugin-updates -->
             <plugin>

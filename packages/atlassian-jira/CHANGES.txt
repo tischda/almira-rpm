@@ -2,6 +2,12 @@
 almira.rpm.atlassian-jira - change history
 ===============================================================================
 
+Version 5.2.9-1 (26 March 2013)
+-------------------------------
+* Updated JIRA to 5.2.9
+* Updated MySQL JDBC driver to 5.1.24
+
+
 Version 5.2.7-1 (06 March 2013)
 -------------------------------
 * First version
