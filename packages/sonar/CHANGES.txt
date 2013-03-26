@@ -2,7 +2,10 @@
 almira.rpm.sonar - change history
 ===============================================================================
 
+Version 3.5-1 (26 March 2013)
+-----------------------------
 * added sonar.properties to avoid setting mysql url under h2 section
+* updated sonar to version 3.5
 
 
 Version 3.4.1-1 (07 March 2013)

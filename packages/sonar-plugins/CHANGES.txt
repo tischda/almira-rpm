@@ -2,7 +2,12 @@
 almira.rpm.sonar-plugins - change history
 ===============================================================================
 
+Version 3.2-1 (26 March 2013)
+-----------------------------
 * set user rights to sonar
+* sonar-scm-stats-plugin-0.2.jar
+* sonar-total-quality-plugin-1.1.jar
+
 
 Version 3.1.1-1 (06 March 2013)
 -------------------------------

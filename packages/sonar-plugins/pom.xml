@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
-	<modelVersion>4.0.0</modelVersion>
-	
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>almira.rpm</groupId>
-    	<artifactId>master-rpm</artifactId>
-    	<version>11-SNAPSHOT</version>
-    	<relativePath>../../master-rpm/pom.xml</relativePath>
+        <artifactId>master-rpm</artifactId>
+        <version>11-SNAPSHOT</version>
+        <relativePath>../../master-rpm/pom.xml</relativePath>
     </parent>
 
-	<artifactId>sonar-plugins</artifactId>
-	<version>3.1.1.2</version>
-	<packaging>rpm</packaging>
-	<name>almira.rpm.sonar-plugins</name>
+    <artifactId>sonar-plugins</artifactId>
+    <version>3.2.1</version>
+    <packaging>rpm</packaging>
+    <name>almira.rpm.sonar-plugins</name>
 
-	<description>Pack of plugins to be installed on sonar.</description>
+    <description>Pack of plugins to be installed on sonar.</description>
 
-	<url>http://www.sonarsource.com/plugins</url>
+    <url>http://www.sonarsource.com/plugins</url>
 
-	<properties>
-		<appVersion>3.1.1</appVersion>
-		<rpmRelease>2</rpmRelease>
+    <properties>
+        <appVersion>3.2</appVersion>
+        <rpmRelease>1</rpmRelease>
 
-		<appServiceName>sonar</appServiceName>      
-		
-		<!-- Overrides -->		
-		<destPrefix>/home/${appUserName}</destPrefix>
-		<appWorkFolder>${destPrefix}/sonar-work</appWorkFolder>		
-	</properties>
+        <appServiceName>sonar</appServiceName>
 
-	<build>
-		<defaultGoal>package</defaultGoal>
-		<plugins>
-			
-			<!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>rpm-maven-plugin</artifactId>
-				<configuration>
-					<prereqs>
-						<prereq>sonar &gt;= 3.4.1</prereq>
-					</prereqs>
-					<vendor>Sonarsource</vendor>
-					<copyright>GNU Lesser GPL License, Version 3</copyright>
-					<summary>Pack of plugins to be installed on sonar.</summary>
-					<mappings>
-						<mapping>
-							<directory>${appWorkFolder}/extensions/plugins</directory>
-							<username>${appUserName}</username>
-							<groupname>${appGroupName}</groupname>							
-							<sources>
-								<source>
-									<location>target/unpack/${project.artifactId}/</location>
-								</source>
-							</sources>
-						</mapping>
-					</mappings>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+        <!-- Overrides -->
+        <destPrefix>/home/${appUserName}</destPrefix>
+        <appWorkFolder>${destPrefix}/sonar-work</appWorkFolder>
+    </properties>
+
+    <build>
+        <defaultGoal>package</defaultGoal>
+        <plugins>
+
+            <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>rpm-maven-plugin</artifactId>
+                <configuration>
+                    <prereqs>
+                        <prereq>sonar &gt;= 3.5</prereq>
+                    </prereqs>
+                    <vendor>Sonarsource</vendor>
+                    <copyright>GNU Lesser GPL License, Version 3</copyright>
+                    <summary>Pack of plugins to be installed on sonar.</summary>
+                    <mappings>
+                        <mapping>
+                            <directory>${appWorkFolder}/extensions/plugins</directory>
+                            <username>${appUserName}</username>
+                            <groupname>${appGroupName}</groupname>
+                            <sources>
+                                <source>
+                                    <location>target/unpack/${project.artifactId}/</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                    </mappings>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 
