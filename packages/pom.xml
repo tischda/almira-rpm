@@ -14,7 +14,8 @@
         <module>apache-tomcat</module>
         <module>atlassian-jira</module>
         <module>nexus</module>
+        <module>quickbuild</module>
         <module>sonar</module>
-        <module>sonar-plugins</module>        
+        <module>sonar-plugins</module>
     </modules>
 </project>
