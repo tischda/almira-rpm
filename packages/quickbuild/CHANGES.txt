@@ -2,7 +2,7 @@
 almira.rpm.quickbuild - change history
 ===============================================================================
 
-Version 5.0.14-1 (27 March 2013)
+Version 5.0.14-2 (27 March 2013)
 --------------------------------
 * updated QuickBuild to 5.0.14
 * updated MySQL JDBC driver to 5.1.24

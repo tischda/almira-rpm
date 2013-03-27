@@ -9,10 +9,7 @@ PMEase Quickbuild RPM.
 
 Customization
 -------------
-
 Run 'bin/server.sh install' this creates link:
-
-creates a link:
 
     /etc/init.d/quickbuild -> /home/quickbuild/quickbuild/bin/./server.sh
 
@@ -21,21 +18,19 @@ customize server.sh:
  sed -i 's|PIDDIR="."|PIDDIR="/var/run/quickbuild"|g' server.sh
  sed -i 's|#RUN_AS_USER=|RUN_AS_USER=quickbuild|g' server.sh
 
-
-run migrate.sh --> does not work with symlinks in quickbuild/conf
+run migrate.sh --> does not work with symlinks in quickbuild/conf !
 
     doc: http://wiki.pmease.com/display/QB50/Upgrade+Data
 
 
 TODO with Puppet:
 
-* Add the following line ine wrapper.conf
+* Add the following line ine wrapper.conf (probably requires dos2unix)
 
       wrapper.java.additional.4=-XX:MaxPermSize=256m
 
-
 * prepare a template for hibernate.properties so that the settings below
-  MySQL comments are modified and not the ones for H2.
+  MySQL comments are modified and not the ones below H2.
 
     hibernate.dialect=org.hibernate.dialect.MySQLDialect
     hibernate.connection.driver_class=com.mysql.jdbc.Driver
