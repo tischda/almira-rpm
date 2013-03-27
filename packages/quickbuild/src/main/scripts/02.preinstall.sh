@@ -9,7 +9,7 @@ fi
 
 # Update => Save old folder for migration, and get rid of symlinks
 if [ "$1" = "2" ]; then
-  echo backing up old version
+  echo Backing up old version for migration
   rm -f @{destBase}/conf
   cp -r @{destConf} @{destBase}/conf
   mv @{destBase} @{destBase}.old

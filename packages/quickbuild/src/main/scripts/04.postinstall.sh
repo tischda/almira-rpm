@@ -22,5 +22,6 @@ sed -i 's|#RUN_AS_USER=|RUN_AS_USER=@{appUserName}|g' @{destBase}/bin/server.sh
 
 # Migrate data and remove old
 if [ "$1" = "2" ]; then
-  @{destBase}/bin/migrate.sh @{destBase}.old && rm -rf @{destBase}.old
+  echo Starting migration...
+  su - @{appUserName} -c "@{destBase}/bin/migrate.sh @{destBase}.old && rm -rf @{destBase}.old"
 fi
