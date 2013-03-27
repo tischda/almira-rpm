@@ -3,5 +3,6 @@ if [ "$1" = "0" ] ; then
   service @{appServiceName} stop
   @{destBase}/bin/server.sh remove
   rm -rf /var/run/@{appServiceName}
+  rm -f /etc/@{appServiceName}
   rm -rf @{destBase}
 fi
