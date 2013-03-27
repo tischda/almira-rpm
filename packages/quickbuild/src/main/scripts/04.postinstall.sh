@@ -1,7 +1,3 @@
-echo --------------- postinstall ------------------
-ls -al /home/quickbuild
-
-
 # Install MySQL connector
 mv @{destBase}/mysql-connector-java-*.jar @{destBase}/plugins/com.pmease.quickbuild.libs
 
@@ -22,6 +18,3 @@ sed -i 's|#RUN_AS_USER=|RUN_AS_USER=@{appUserName}|g' @{destBase}/bin/server.sh
 if [ "$1" = "2" ]; then
   @{destBase}/bin/migrate.sh @{destBase}.old && rm -rf @{destBase}.old
 fi
-
-echo --------------- after postinstall ------------------
-ls -al /home/quickbuild

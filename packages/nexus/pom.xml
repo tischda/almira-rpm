@@ -97,9 +97,6 @@ share software artifacts.</description>
                         <!-- conf files -->
                         <mapping>
                             <directory>${destConf}</directory>
-                            <username>root</username>
-                            <groupname>root</groupname>
-                            <filemode>755</filemode>
                             <configuration>true</configuration>
                             <sources>
                                 <source>

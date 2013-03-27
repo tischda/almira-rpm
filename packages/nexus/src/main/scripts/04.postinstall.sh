@@ -7,6 +7,9 @@ fi
 # Make wrapper executable
 chmod -R 755 @{destBase}/bin/jsw/linux-x86-64
 
+# Workaround for BUG: http://jira.codehaus.org/browse/MRPM-89
+chown -R root:root @{destConf}
+
 # Link back from /etc
 ln -sf @{destConf}/jetty.xml @{destBase}/conf/jetty.xml
 ln -sf @{destConf}/logback.xml @{destBase}/conf/logback.xml

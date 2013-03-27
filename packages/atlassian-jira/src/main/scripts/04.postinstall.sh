@@ -11,5 +11,8 @@ if [ "$1" = "1" ]; then
   chkconfig --add @{appServiceName}
 fi
 
+# Workaround for BUG: http://jira.codehaus.org/browse/MRPM-89
+chown -R root:root @{destConf}
+
 # Link back from /etc
 ln -sf @{destConf} @{destBase}/conf

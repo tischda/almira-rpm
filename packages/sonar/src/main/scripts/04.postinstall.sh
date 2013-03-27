@@ -10,6 +10,9 @@ if [ "$1" = "1" ]; then
   chkconfig --add @{appServiceName}
 fi
 
+# Workaround for BUG: http://jira.codehaus.org/browse/MRPM-89
+chown -R root:root @{destConf}
+
 # Link back from /etc
 ln -sf @{destConf}/server.xml @{destBase}/conf/server.xml
 ln -sf @{destConf}/context.xml @{destBase}/conf/context.xml
