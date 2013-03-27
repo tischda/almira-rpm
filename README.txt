@@ -100,6 +100,8 @@ are not created with default username:
         <directory>${destBase}/bin/jsw</directory>
                                     ^----- should belong to default username
 
+Finally, because of the previous issue, when you do excludes, all files are
+listed but not the containing directory, which now also gets owned by root.
 
 See also:
     http://jira.codehaus.org/browse/MRPM-89

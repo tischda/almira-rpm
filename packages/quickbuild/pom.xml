@@ -27,7 +27,6 @@
 
         <!-- overrides -->
         <destPrefix>/home/${appUserName}</destPrefix>
-        <appWorkFolder>${destPrefix}/sonatype-work/quickbuild</appWorkFolder>
     </properties>
 
     <build>
@@ -62,11 +61,6 @@
                             <sources>
                                 <source>
                                     <location>${appSrcLocation}</location>
-                                    <excludes>
-                                        <exclude>conf</exclude>
-                                        <exclude>bin/*.bat</exclude>
-                                        <exclude>bin/wrapper-windows*</exclude>
-                                    </excludes>
                                 </source>
                                 <source>
                                     <location>target/unpack/${jdbcDriverName}-${jdbcDriverVersion}</location>

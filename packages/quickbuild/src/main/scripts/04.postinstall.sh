@@ -13,6 +13,7 @@ fi
 chown -R root:root @{destConf}
 
 # Link back from /etc
+rm -rf @{destBase}/conf
 ln -sf @{destConf} @{destBase}/conf
 
 # Configure startup script
