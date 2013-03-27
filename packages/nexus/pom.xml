@@ -99,7 +99,7 @@ share software artifacts.</description>
                             <directory>${destConf}</directory>
                             <username>root</username>
                             <groupname>root</groupname>
-                            <filemode>644</filemode>
+                            <filemode>755</filemode>
                             <configuration>true</configuration>
                             <sources>
                                 <source>
