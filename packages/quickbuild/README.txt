@@ -27,15 +27,18 @@ link: /etc/quickbuild -> quickbuild/conf. This means the configuration is not
 saved when uninstalling RPM.
 
 
+TODO with Puppet:
+
 
 TODO with Puppet:
 
-Added the following line ine wrapper.conf
+* Add the following line ine wrapper.conf
 
-    wrapper.java.additional.4=-XX:MaxPermSize=256m
+      wrapper.java.additional.4=-XX:MaxPermSize=256m
 
 
-Edited hibernate.properties to use MySQL instead of embedded database.
+* prepare a template for hibernate.properties so that the settings below
+  MySQL comments are modified and not the ones for H2.
 
     hibernate.dialect=org.hibernate.dialect.MySQLDialect
     hibernate.connection.driver_class=com.mysql.jdbc.Driver
