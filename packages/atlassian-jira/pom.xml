@@ -47,6 +47,7 @@ great products.</description>
                     <copyright>Commercial</copyright>
                     <summary>Project tracker.</summary>
                     <mappings>
+
                         <!-- conf files -->
                         <mapping>
                             <directory>${destConf}</directory>
@@ -89,6 +90,9 @@ great products.</description>
                         </mapping>
 
                         <!-- webapp -->
+                        <mapping>
+                            <directory>${destBase}/webapps</directory>
+                        </mapping>
                         <mapping>
                             <directory>${destBase}/webapps/${appContextPath}</directory>
                             <sources>
