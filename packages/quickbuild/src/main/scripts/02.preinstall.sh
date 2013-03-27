@@ -11,6 +11,7 @@ fi
 if [ "$1" = "2" ]; then
   echo Backing up old version for migration
   rm -f @{destBase}/conf
-  cp -r @{destConf} @{destBase}/conf
+  su - ${appUserName} -c "cp -r @{destConf} @{destBase}/conf"
+  rm -rf @{destBase}.old
   mv @{destBase} @{destBase}.old
 fi
