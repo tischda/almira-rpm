@@ -2,7 +2,7 @@
 almira.rpm.nexus - change history
 ===============================================================================
 
-Version 2.3.1-01-5 (27 March 2013)
+Version 2.3.1-01-6 (27 March 2013)
 ----------------------------------
 * Master pom 11 fixes user rights
 
