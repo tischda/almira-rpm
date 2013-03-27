@@ -90,6 +90,17 @@ RPM plugin misses the defaults:
     %dir %attr(755,quickbuild,quickbuild) "/var/run/quickbuild"
                 ^--- if not specified, it will be 644 and overrides the default
 
+Another perhaps related problem is that intermediate directories in the path
+are not created with default username:
+
+    <mapping>
+        <directory>${destBase}/bin</directory>
+    </mapping>                  ^----- if you don't specify, 'bin' belongs to root
+    <mapping>
+        <directory>${destBase}/bin/jsw</directory>
+                                    ^----- should belong to default username
+
+
 See also:
     http://jira.codehaus.org/browse/MRPM-89
     http://jira.codehaus.org/browse/MRPM-8
