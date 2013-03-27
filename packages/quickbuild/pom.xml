@@ -66,6 +66,13 @@
                                 </source>
                             </sources>
                         </mapping>
+
+                        <!-- service -->
+                        <mapping>
+                            <directory>/var/run/${appServiceName}</directory>
+                            <username>${appUserName}</username>
+                            <groupname>${appGroupName}</groupname>
+                        </mapping>
                     </mappings>
                 </configuration>
             </plugin>
