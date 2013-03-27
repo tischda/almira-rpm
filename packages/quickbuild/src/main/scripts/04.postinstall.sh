@@ -9,9 +9,6 @@ if [ "$1" = "1" ]; then
   @{destBase}/bin/server.sh install
 fi
 
-# Workaround for BUG: http://jira.codehaus.org/browse/MRPM-89
-chown -R root:root @{destConf}
-
 # Link back from /etc
 rm -rf @{destBase}/conf
 ln -sf @{destConf} @{destBase}/conf
