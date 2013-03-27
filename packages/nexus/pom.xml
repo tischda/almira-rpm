@@ -4,12 +4,12 @@
     <parent>
         <groupId>almira.rpm</groupId>
         <artifactId>master-rpm</artifactId>
-        <version>11-SNAPSHOT</version>
+        <version>11</version>
         <relativePath>../../master-rpm/pom.xml</relativePath>
     </parent>
 
     <artifactId>nexus</artifactId>
-    <version>2.3.1-01.2</version>
+    <version>2.3.1-01.3</version>
     <packaging>rpm</packaging>
     <name>almira.rpm.nexus</name>
 
@@ -21,7 +21,7 @@ share software artifacts.</description>
 
     <properties>
         <appVersion>2.3.1-01</appVersion>
-        <rpmRelease>2</rpmRelease>
+        <rpmRelease>3</rpmRelease>
         <appServiceName>nexus</appServiceName>
 
         <!-- overrides -->
@@ -47,8 +47,6 @@ share software artifacts.</description>
                         <!-- bin files -->
                         <mapping>
                             <directory>${destBase}</directory>
-                            <username>${appUserName}</username>
-                            <groupname>${appGroupName}</groupname>
                             <directoryIncluded>false</directoryIncluded>
                             <recurseDirectories>true</recurseDirectories>
                             <sources>
@@ -66,8 +64,6 @@ share software artifacts.</description>
                         </mapping>
                         <mapping>
                             <directory>${destBase}/lib</directory>
-                            <username>${appUserName}</username>
-                            <groupname>${appGroupName}</groupname>
                             <sources>
                                 <source>
                                     <location>${appSrcLocation}/lib</location>
@@ -76,8 +72,6 @@ share software artifacts.</description>
                         </mapping>
                         <mapping>
                             <directory>${destBase}/nexus</directory>
-                            <username>${appUserName}</username>
-                            <groupname>${appGroupName}</groupname>
                             <sources>
                                 <source>
                                     <location>${appSrcLocation}/nexus</location>
@@ -86,8 +80,6 @@ share software artifacts.</description>
                         </mapping>
                         <mapping>
                             <directory>${destBase}/bin/jsw</directory>
-                            <username>${appUserName}</username>
-                            <groupname>${appGroupName}</groupname>
                             <sources>
                                 <source>
                                     <location>${appSrcLocation}/bin/jsw</location>
@@ -123,8 +115,10 @@ share software artifacts.</description>
                         <!-- service -->
                         <mapping>
                             <directory>/etc/rc.d/init.d</directory>
-                            <configuration>true</configuration>
+                            <username>root</username>
+                            <groupname>root</groupname>
                             <filemode>755</filemode>
+                            <configuration>true</configuration>
                             <sources>
                                 <source>
                                     <location>target/classes/init.d/${appServiceName}</location>
@@ -133,9 +127,6 @@ share software artifacts.</description>
                         </mapping>
                         <mapping>
                             <directory>/var/run/${appServiceName}</directory>
-                            <username>${appUserName}</username>
-                            <groupname>${appGroupName}</groupname>
-                            <filemode>755</filemode>
                         </mapping>
                     </mappings>
                 </configuration>

@@ -5,13 +5,13 @@
     <parent>
         <groupId>almira.rpm</groupId>
         <artifactId>rpm-plugins</artifactId>
-        <version>1-SNAPSHOT</version>
+        <version>1</version>
         <relativePath>pom-plugins.xml</relativePath>
     </parent>
 
     <artifactId>master-rpm</artifactId>
     <packaging>pom</packaging>
-    <version>11-SNAPSHOT</version>
+    <version>11</version>
     <name>almira.rpm.master-rpm</name>
     <description>Parent POM for Almira custom RPMs</description>
 
@@ -130,6 +130,9 @@
 
                 <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
                 <!-- BUG: http://jira.codehaus.org/browse/MRPM-83 -->
+                <!-- BUG: http://jira.codehaus.org/browse/MRPM-89 -->
+                <!-- BUG: http://jira.codehaus.org/browse/MRPM-8 -->
+                <!-- BUG: http://jira.codehaus.org/browse/MRPM-68 -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>rpm-maven-plugin</artifactId>
@@ -148,10 +151,13 @@
                         <release>${rpmRelease}.el6</release>
                         <url>${project.url}</url>
                         <group>Development/Tools</group>
-                        <defaultUsername>root</defaultUsername>
-                        <defaultGroupname>root</defaultGroupname>
+
+                        <!-- Do not change this until MRPM-89 is fixed! -->
+                        <defaultUsername>${appUserName}</defaultUsername>
+                        <defaultGroupname>${appGroupName}</defaultGroupname>
                         <defaultFilemode>644</defaultFilemode>
                         <defaultDirmode>755</defaultDirmode>
+
                         <description>${project.description}</description>
 
                         <!-- %prep -->

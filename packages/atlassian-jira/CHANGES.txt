@@ -2,6 +2,11 @@
 almira.rpm.atlassian-jira - change history
 ===============================================================================
 
+Version 5.2.9-2 (27 March 2013)
+-------------------------------
+* Master pom 11 fixes user rights
+
+
 Version 5.2.9-1 (26 March 2013)
 -------------------------------
 * Updated JIRA to 5.2.9

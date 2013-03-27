@@ -5,12 +5,12 @@
     <parent>
         <groupId>almira.rpm</groupId>
         <artifactId>master-rpm</artifactId>
-        <version>11-SNAPSHOT</version>
+        <version>11</version>
         <relativePath>../../master-rpm/pom.xml</relativePath>
     </parent>
 
     <artifactId>atlassian-jira</artifactId>
-    <version>5.2.9.1</version>
+    <version>5.2.9.2</version>
     <packaging>rpm</packaging>
     <name>almira.rpm.atlassian-jira</name>
 
@@ -21,7 +21,7 @@ great products.</description>
 
     <properties>
         <appVersion>5.2.9</appVersion>
-        <rpmRelease>1</rpmRelease>
+        <rpmRelease>2</rpmRelease>
         <appServiceName>jira</appServiceName>
         <appContextPath>jira</appContextPath>
 
@@ -65,6 +65,9 @@ great products.</description>
                         </mapping>
                         <mapping>
                             <directory>/etc/sysconfig</directory>
+                            <username>root</username>
+                            <groupname>root</groupname>
+                            <filemode>644</filemode>
                             <configuration>true</configuration>
                             <sources>
                                 <source>
@@ -74,6 +77,9 @@ great products.</description>
                         </mapping>
                         <mapping>
                             <directory>/etc/logrotate.d</directory>
+                            <username>root</username>
+                            <groupname>root</groupname>
+                            <filemode>644</filemode>
                             <configuration>true</configuration>
                             <sources>
                                 <source>

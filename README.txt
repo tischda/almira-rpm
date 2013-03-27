@@ -90,3 +90,8 @@ RPM plugin misses the defaults:
     %dir %attr(755,quickbuild,quickbuild) "/var/run/quickbuild"
                 ^--- if not specified, it will be 644 and overrides the default
 
+See also:
+    http://jira.codehaus.org/browse/MRPM-89
+    http://jira.codehaus.org/browse/MRPM-8
+    http://jira.codehaus.org/browse/MRPM-68
+

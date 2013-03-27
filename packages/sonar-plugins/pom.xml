@@ -5,12 +5,12 @@
     <parent>
         <groupId>almira.rpm</groupId>
         <artifactId>master-rpm</artifactId>
-        <version>11-SNAPSHOT</version>
+        <version>11</version>
         <relativePath>../../master-rpm/pom.xml</relativePath>
     </parent>
 
     <artifactId>sonar-plugins</artifactId>
-    <version>3.2.1</version>
+    <version>3.2.2</version>
     <packaging>rpm</packaging>
     <name>almira.rpm.sonar-plugins</name>
 
@@ -20,7 +20,7 @@
 
     <properties>
         <appVersion>3.2</appVersion>
-        <rpmRelease>1</rpmRelease>
+        <rpmRelease>2</rpmRelease>
 
         <appServiceName>sonar</appServiceName>
 
@@ -47,8 +47,6 @@
                     <mappings>
                         <mapping>
                             <directory>${appWorkFolder}/extensions/plugins</directory>
-                            <username>${appUserName}</username>
-                            <groupname>${appGroupName}</groupname>
                             <sources>
                                 <source>
                                     <location>target/unpack/${project.artifactId}/</location>

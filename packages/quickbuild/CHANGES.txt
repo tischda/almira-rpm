@@ -6,6 +6,7 @@ Version 5.0.14-1 (27 March 2013)
 --------------------------------
 * updated QuickBuild to 5.0.14
 * updated MySQL JDBC driver to 5.1.24
+* Master pom 11 fixes user rights
 
 
 Version 5.0.11-1 (10 March 2013)

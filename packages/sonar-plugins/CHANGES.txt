@@ -2,6 +2,11 @@
 almira.rpm.sonar-plugins - change history
 ===============================================================================
 
+Version 3.2-2 (27 March 2013)
+-----------------------------
+* Master pom 11 fixes user rights
+
+
 Version 3.2-1 (26 March 2013)
 -----------------------------
 * set user rights to sonar

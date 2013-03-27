@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
+    <parent>
         <groupId>almira.rpm</groupId>
-    	<artifactId>master-rpm</artifactId>
-    	<version>11-SNAPSHOT</version>
-    	<relativePath>../../master-rpm/pom.xml</relativePath>
+        <artifactId>master-rpm</artifactId>
+        <version>11</version>
+        <relativePath>../../master-rpm/pom.xml</relativePath>
     </parent>
 
-	<artifactId>apache-tc-native</artifactId>
-	<version>1.1.24.7</version>
-	<packaging>rpm</packaging>
-	<name>almira.rpm.apache-tc-native</name>
-	
-	<description>Apache Tomcat native libraries linked to APR 1.3.9 and Oracle
-JDK 6.</description>
-	
-	<url>http://tomcat.apache.org</url>
-	
-	<properties>
-		<appVersion>1.1.24</appVersion>
-		<rpmRelease>7</rpmRelease>	
-		<appServiceName>tomcat</appServiceName>
-	</properties>
+    <artifactId>apache-tc-native</artifactId>
+    <version>1.1.24.8</version>
+    <packaging>rpm</packaging>
+    <name>almira.rpm.apache-tc-native</name>
 
-	<build>
-		<defaultGoal>package</defaultGoal>
-		<plugins>
-			<!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>rpm-maven-plugin</artifactId>
-				<configuration>
-					<prereqs>
-						<prereq>jdk &gt;= 1.6</prereq>
-						<prereq>apr = 1.3.9</prereq>
-						<prereq>apache-tomcat &gt;= 7.0</prereq>
-					</prereqs>
-					<needarch>x86_64</needarch>
-					<vendor>Apache</vendor>
-					<copyright>ASL 2.0</copyright>
-					<summary>Apache Tomcat application server</summary>
-					<mappings>
-						<mapping>
-							<directory>${destBase}</directory>
-							<sources>
-								<source>
-									<location>target/unpack</location>
-								</source>
-							</sources>
-						</mapping>                      
-					</mappings>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <description>Apache Tomcat native libraries linked to APR 1.3.9 and Oracle
+JDK 6.</description>
+
+    <url>http://tomcat.apache.org</url>
+
+    <properties>
+        <appVersion>1.1.24</appVersion>
+        <rpmRelease>8</rpmRelease>
+        <appServiceName>tomcat</appServiceName>
+    </properties>
+
+    <build>
+        <defaultGoal>package</defaultGoal>
+        <plugins>
+            <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>rpm-maven-plugin</artifactId>
+                <configuration>
+                    <prereqs>
+                        <prereq>jdk &gt;= 1.6</prereq>
+                        <prereq>apr = 1.3.9</prereq>
+                        <prereq>apache-tomcat &gt;= 7.0</prereq>
+                    </prereqs>
+                    <needarch>x86_64</needarch>
+                    <vendor>Apache</vendor>
+                    <copyright>ASL 2.0</copyright>
+                    <summary>Apache Tomcat application server</summary>
+                    <mappings>
+                        <mapping>
+                            <directory>${destBase}</directory>
+                            <sources>
+                                <source>
+                                    <location>target/unpack</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                    </mappings>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

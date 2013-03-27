@@ -5,12 +5,12 @@
     <parent>
         <groupId>almira.rpm</groupId>
         <artifactId>master-rpm</artifactId>
-        <version>11-SNAPSHOT</version>
+        <version>11</version>
         <relativePath>../../master-rpm/pom.xml</relativePath>
     </parent>
 
     <artifactId>sonar</artifactId>
-    <version>3.5.1</version>
+    <version>3.5.2</version>
     <packaging>rpm</packaging>
     <name>almira.rpm.sonar</name>
 
@@ -19,7 +19,7 @@
 
     <properties>
         <appVersion>3.5</appVersion>
-        <rpmRelease>1</rpmRelease>
+        <rpmRelease>2</rpmRelease>
 
         <appServiceName>sonar</appServiceName>
         <appContextPath>sonar</appContextPath>
@@ -57,6 +57,9 @@
                         </mapping>
                         <mapping>
                             <directory>/etc/sysconfig</directory>
+                            <username>root</username>
+                            <groupname>root</groupname>
+                            <filemode>644</filemode>
                             <configuration>true</configuration>
                             <sources>
                                 <source>
@@ -66,6 +69,9 @@
                         </mapping>
                         <mapping>
                             <directory>/etc/logrotate.d</directory>
+                            <username>root</username>
+                            <groupname>root</groupname>
+                            <filemode>644</filemode>
                             <configuration>true</configuration>
                             <sources>
                                 <source>
@@ -77,8 +83,6 @@
                         <!-- sources files-->
                         <mapping>
                             <directory>${appWorkFolder}</directory>
-                            <username>${appUserName}</username>
-                            <groupname>${appGroupName}</groupname>
                             <sources>
                                 <source>
                                     <location>${appSrcLocation}</location>

@@ -2,6 +2,11 @@
 almira.rpm.apache-tc-native - change history
 ===============================================================================
 
+Version 1.1.24-8 (27 March 2013)
+-------------------------------
+* Master pom 11 fixes user rights
+
+
 Version 1.1.21-1 (06 March 2013)
 --------------------------------
 * First Version

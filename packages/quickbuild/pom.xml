@@ -4,12 +4,12 @@
     <parent>
         <groupId>almira.rpm</groupId>
         <artifactId>master-rpm</artifactId>
-        <version>11-SNAPSHOT</version>
+        <version>11</version>
         <relativePath>../../master-rpm/pom.xml</relativePath>
     </parent>
 
     <artifactId>quickbuild</artifactId>
-    <version>5.0.14.1</version>
+    <version>5.0.13.1</version>
     <packaging>rpm</packaging>
     <name>almira.rpm.quickbuild</name>
 
@@ -18,7 +18,7 @@
     <url>http://www.sonatype.org/quickbuild/</url>
 
     <properties>
-        <appVersion>5.0.14</appVersion>
+        <appVersion>5.0.13</appVersion>
         <rpmRelease>1</rpmRelease>
         <appServiceName>quickbuild</appServiceName>
 
@@ -48,9 +48,6 @@
                         <!-- bin files -->
                         <mapping>
                             <directory>${destBase}</directory>
-                            <username>${appUserName}</username>
-                            <groupname>${appGroupName}</groupname>
-                            <filemode>755</filemode>
                             <sources>
                                 <source>
                                     <location>${appSrcLocation}</location>
@@ -71,9 +68,6 @@
                         <!-- service -->
                         <mapping>
                             <directory>/var/run/${appServiceName}/</directory>
-                            <username>${appUserName}</username>
-                            <groupname>${appGroupName}</groupname>
-                            <filemode>755</filemode>
                         </mapping>
                     </mappings>
                 </configuration>

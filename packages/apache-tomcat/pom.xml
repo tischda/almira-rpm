@@ -1,119 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>almira.rpm</groupId>
-		<artifactId>master-rpm</artifactId>
-		<version>11-SNAPSHOT</version>
-		<relativePath>../../master-rpm/pom.xml</relativePath>
-	</parent>
+    <parent>
+        <groupId>almira.rpm</groupId>
+        <artifactId>master-rpm</artifactId>
+        <version>11</version>
+        <relativePath>../../master-rpm/pom.xml</relativePath>
+    </parent>
 
-	<artifactId>apache-tomcat</artifactId>
-	<version>7.0.37.1</version>
-	<packaging>rpm</packaging>
-	<name>almira.rpm.apache-tomcat</name>
-	
-	<description>Apache Tomcat is an open source software implementation of the
+    <artifactId>apache-tomcat</artifactId>
+    <version>7.0.37.2</version>
+    <packaging>rpm</packaging>
+    <name>almira.rpm.apache-tomcat</name>
+
+    <description>Apache Tomcat is an open source software implementation of the
 Java Servlet and JavaServer Pages technologies. The Java Servlet and JavaServer
 Pages specifications are developed under the Java Community Process.</description>
 
-	<url>http://tomcat.apache.org</url>
+    <url>http://tomcat.apache.org</url>
 
-	<properties>
-		<appVersion>7.0.37</appVersion>
-		<rpmRelease>1</rpmRelease>
-		<appServiceName>tomcat</appServiceName>
-	</properties>
+    <properties>
+        <appVersion>7.0.37</appVersion>
+        <rpmRelease>2</rpmRelease>
+        <appServiceName>tomcat</appServiceName>
+        <appUserName>root</appUserName>
+        <appGroupName>root</appGroupName>
+    </properties>
 
-	<build>
-		<defaultGoal>package</defaultGoal>
-		<plugins>
+    <build>
+        <defaultGoal>package</defaultGoal>
+        <plugins>
 
-			<!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>rpm-maven-plugin</artifactId>
-				<configuration>
-					<vendor>Apache</vendor>
-					<copyright>ASL 2.0</copyright>
-					<summary>Apache Tomcat application server</summary>
-					<prereqs>
-						<prereq>apache-tomcat</prereq>
-					</prereqs>
-					<mappings>
-						<!-- conf files -->
-						<mapping>
-							<directory>${destConf}</directory>
-							<configuration>true</configuration>
-							<sources>
-								<source>
-									<location>${appSrcLocation}/conf</location>
-									<includes>
-										<include>*.xml</include>
-										<include>*.properties</include>
-										<include>*.policy</include>
-									</includes>
-								</source>
-							</sources>
-						</mapping>
-						<mapping>
-							<directory>/etc/sysconfig</directory>
-							<configuration>true</configuration>
-							<sources>
-								<source>
-									<location>target/classes/sysconfig/${appServiceName}</location>
-								</source>
-							</sources>
-						</mapping>
-						<mapping>
-							<directory>/etc/logrotate.d</directory>
-							<configuration>true</configuration>
-							<sources>
-								<source>
-									<location>target/classes/logrotate.d/${appServiceName}</location>
-								</source>
-							</sources>
-						</mapping>
-						
-						<!-- bin files -->
-						<mapping>
-							<directory>${destBase}</directory>
-							<sources>
-								<source>
-									<location>${appSrcLocation}</location>
-									<excludes>
-										<exclude>bin/*.bat</exclude>
-										<exclude>conf/</exclude>
-										<exclude>webapps/docs/</exclude>
-										<exclude>webapps/examples/</exclude>
-									</excludes>
-								</source>
-							</sources>
-						</mapping>
+            <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>rpm-maven-plugin</artifactId>
+                <configuration>
+                    <vendor>Apache</vendor>
+                    <copyright>ASL 2.0</copyright>
+                    <summary>Apache Tomcat application server</summary>
+                    <prereqs>
+                        <prereq>apache-tomcat</prereq>
+                    </prereqs>
+                    <mappings>
+                        <!-- conf files -->
+                        <mapping>
+                            <directory>${destConf}</directory>
+                            <configuration>true</configuration>
+                            <sources>
+                                <source>
+                                    <location>${appSrcLocation}/conf</location>
+                                    <includes>
+                                        <include>*.xml</include>
+                                        <include>*.properties</include>
+                                        <include>*.policy</include>
+                                    </includes>
+                                </source>
+                            </sources>
+                        </mapping>
+                        <mapping>
+                            <directory>/etc/sysconfig</directory>
+                            <configuration>true</configuration>
+                            <sources>
+                                <source>
+                                    <location>target/classes/sysconfig/${appServiceName}</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                        <mapping>
+                            <directory>/etc/logrotate.d</directory>
+                            <configuration>true</configuration>
+                            <sources>
+                                <source>
+                                    <location>target/classes/logrotate.d/${appServiceName}</location>
+                                </source>
+                            </sources>
+                        </mapping>
 
-						<!-- service -->
-						<mapping>
-							<directory>/etc/rc.d/init.d</directory>
-							<filemode>755</filemode>
-							<sources>
-								<source>
-									<location>target/classes/init.d/${appServiceName}</location>
-								</source>
-							</sources>
-						</mapping>
-						<mapping>
-							<directory>/usr/sbin</directory>
-							<filemode>755</filemode>
-							<sources>
-								<source>
-									<location>target/classes/sbin/${appServiceName}</location>
-								</source>
-							</sources>
-						</mapping>
-					</mappings>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+                        <!-- bin files -->
+                        <mapping>
+                            <directory>${destBase}</directory>
+                            <sources>
+                                <source>
+                                    <location>${appSrcLocation}</location>
+                                    <excludes>
+                                        <exclude>bin/*.bat</exclude>
+                                        <exclude>conf/</exclude>
+                                        <exclude>webapps/docs/</exclude>
+                                        <exclude>webapps/examples/</exclude>
+                                    </excludes>
+                                </source>
+                            </sources>
+                        </mapping>
+
+                        <!-- service -->
+                        <mapping>
+                            <directory>/etc/rc.d/init.d</directory>
+                            <filemode>755</filemode>
+                            <sources>
+                                <source>
+                                    <location>target/classes/init.d/${appServiceName}</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                        <mapping>
+                            <directory>/usr/sbin</directory>
+                            <filemode>755</filemode>
+                            <sources>
+                                <source>
+                                    <location>target/classes/sbin/${appServiceName}</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                    </mappings>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
