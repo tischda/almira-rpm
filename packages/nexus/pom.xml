@@ -26,7 +26,7 @@ share software artifacts.</description>
 
         <!-- overrides -->
         <destPrefix>/home/${appUserName}</destPrefix>
-        <appWorkFolder>${destPrefix}/sonatype-work/nexus</appWorkFolder>
+        <appWorkFolder>${destPrefix}/sonatype-work</appWorkFolder>
     </properties>
 
     <build>
@@ -51,8 +51,9 @@ share software artifacts.</description>
                                 <source>
                                     <location>${appSrcLocation}</location>
                                     <excludes>
-                                        <exclude>windows-x86**</exclude>
-                                        <exclude>*.bat</exclude>
+                                        <exclude>bin/nexus.bat</exclude>
+                                        <exclude>bin/jsw/windows-x86-32</exclude>
+                                        <exclude>bin/jsw/windows-x86-64</exclude>
                                     </excludes>
                                 </source>
                             </sources>

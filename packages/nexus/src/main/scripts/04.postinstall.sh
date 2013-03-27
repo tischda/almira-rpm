@@ -1,8 +1,8 @@
 # Initial installation
 if [ "$1" = "1" ]; then
   chown -R @{appUserName}:@{appGroupName} @{destBase}
-  mkdir -p -m775 @{appWorkFolder}
-  chown @{appUserName}:@{appGroupName} @{appWorkFolder}
+  mkdir -p -m775 @{appWorkFolder}/nexus
+  chown -R @{appUserName}:@{appGroupName} @{appWorkFolder}
   chkconfig --add @{appServiceName}
 fi
 
