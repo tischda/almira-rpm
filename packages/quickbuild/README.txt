@@ -22,9 +22,7 @@ customize server.sh:
  sed -i 's|#RUN_AS_USER=|RUN_AS_USER=quickbuild|g' server.sh
 
 
-run migrate.sh --> cannot have symlinks in quickbuild/conf, so we invert the
-link: /etc/quickbuild -> quickbuild/conf. This means the configuration is not
-saved when uninstalling RPM.
+run migrate.sh --> does not work with symlinks in quickbuild/conf
 
     doc: http://wiki.pmease.com/display/QB50/Upgrade+Data
 
