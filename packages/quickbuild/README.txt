@@ -9,8 +9,32 @@ PMEase Quickbuild RPM.
 
 Customization
 -------------
-Ran bin/server.sh install to generate /etc/init.d/quickbuild and added to RPM.
-Then I added/changed the following:
+
+Run 'bin/server.sh install' this creates link:
+
+creates a link:
+
+    /etc/init.d/quickbuild -> /home/quickbuild/quickbuild/bin/./server.sh
+
+customize server.sh:
+
+ sed -i 's|PIDDIR="."|PIDDIR="/var/run/quickbuild"|g' server.sh
+ sed -i 's|#RUN_AS_USER=|RUN_AS_USER=quickbuild|g' server.sh
+
+
+run migrate.sh --> cannot have symlinks in quickbuild/conf
+
+
+
+
+
+
+Ran bin/server.sh install to generate /etc/init.d/quickbuild. This actually
+creates a link:
+
+    /etc/init.d/quickbuild -> /home/quickbuild/quickbuild/bin/./server.sh
+
+Added this script to RPM and added/changed the following:
 
     QUICKBUILD_HOME="@{destBase}"
 
