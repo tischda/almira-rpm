@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>quickbuild</artifactId>
-    <version>5.0.14.1</version>
+    <version>5.0.14.2</version>
     <packaging>rpm</packaging>
     <name>almira.rpm.quickbuild</name>
 
@@ -19,7 +19,7 @@
 
     <properties>
         <appVersion>5.0.14</appVersion>
-        <rpmRelease>1</rpmRelease>
+        <rpmRelease>2</rpmRelease>
         <appServiceName>quickbuild</appServiceName>
 
         <jdbcDriverName>mysql-connector-java</jdbcDriverName>
