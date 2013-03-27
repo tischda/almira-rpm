@@ -1,8 +1,9 @@
 # Initial installation
 if [ "$1" = "1" ]; then
   mkdir -p -m775 @{destBase}/{conf,logs,temp,work,webapps}
-  chown :@{appGroupName} @{destBase}/{logs,temp,work,webapps}
   mkdir -p -m775 @{appWorkFolder}/conf
+  chown -R @{appUserName}:@{appGroupName} @{destBase}
+  chown -R @{appUserName}:@{appGroupName} @{appWorkFolder}
 
   cd /etc/rc.d/init.d
   ln -sf tomcat @{appServiceName}
