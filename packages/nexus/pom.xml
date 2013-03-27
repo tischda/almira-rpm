@@ -52,8 +52,7 @@ share software artifacts.</description>
                                     <location>${appSrcLocation}</location>
                                     <excludes>
                                         <exclude>bin/nexus.bat</exclude>
-                                        <exclude>bin/jsw/windows-x86-32</exclude>
-                                        <exclude>bin/jsw/windows-x86-64</exclude>
+                                        <exclude>bin/jsw/windows-x86**/**</exclude>
                                     </excludes>
                                 </source>
                             </sources>
