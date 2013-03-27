@@ -51,7 +51,8 @@ share software artifacts.</description>
                                 <source>
                                     <location>${appSrcLocation}</location>
                                     <excludes>
-                                        <exclude>bin/jsw/windows*</exclude>
+                                        <exclude>windows-x86**</exclude>
+                                        <exclude>*.bat</exclude>
                                     </excludes>
                                 </source>
                             </sources>

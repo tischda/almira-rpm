@@ -1,6 +1,6 @@
 # Initial installation
 if [ "$1" = "1" ]; then
-  chown @{appUserName}:@{appGroupName} @{destBase}
+  chown -R @{appUserName}:@{appGroupName} @{destBase}
   mkdir -p -m775 @{appWorkFolder}
   chown @{appUserName}:@{appGroupName} @{appWorkFolder}
   chkconfig --add @{appServiceName}
