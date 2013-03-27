@@ -26,8 +26,7 @@ run migrate.sh --> cannot have symlinks in quickbuild/conf, so we invert the
 link: /etc/quickbuild -> quickbuild/conf. This means the configuration is not
 saved when uninstalling RPM.
 
-
-TODO with Puppet:
+    doc: http://wiki.pmease.com/display/QB50/Upgrade+Data
 
 
 TODO with Puppet:

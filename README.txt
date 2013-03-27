@@ -68,3 +68,25 @@ References
 ----------
 http://blog.quilitz.de/2010/03/checkout-sub-directories-in-git-sparse-checkouts/comment-page-1/#comment-3146
 http://stackoverflow.com/questions/4114887/is-it-possible-to-do-a-sparse-checkout-without-checking-out-the-whole-repository
+
+
+Knows Issues
+------------
+You need to specify <filemode> when specifyint username and groupname, the
+RPM plugin misses the defaults:
+
+    <mapping>
+        <directory>/var/run/${appServiceName}</directory>
+        <username>${appUserName}</username>
+        <groupname>${appGroupName}</groupname>
+        <filemode>755</filemode>
+    </mapping>
+
+   will become:
+
+    %files
+    %defattr(644,root,root,755)
+    %attr(755,quickbuild,quickbuild) "/home/quickbuild/quickbuild"
+    %dir %attr(755,quickbuild,quickbuild) "/var/run/quickbuild"
+                ^--- if not specified, it will be 644 and overrides the default
+
