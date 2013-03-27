@@ -50,6 +50,7 @@
                             <directory>${destBase}</directory>
                             <username>${appUserName}</username>
                             <groupname>${appGroupName}</groupname>
+                            <filemode>755</filemode>
                             <sources>
                                 <source>
                                     <location>${appSrcLocation}</location>
