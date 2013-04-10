@@ -30,5 +30,6 @@ cd @{appWorkFolder}/war
 chmod +x build-war.sh
 chmod +x apache-ant-*/bin/ant
 ./build-war.sh > /dev/null 2>&1
+rm -rf @{destBase}/webapps/@{appServiceName}
 mv build/sonar-server @{destBase}/webapps/@{appServiceName}
 rm -f sonar.war

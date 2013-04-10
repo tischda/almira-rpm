@@ -2,6 +2,11 @@
 almira.rpm.sonar - change history
 ===============================================================================
 
+Version 3.5-4 (10 April 2013)
+-----------------------------
+* Removing webapps/sonar before copying new build
+
+
 Version 3.5-4 (27 March 2013)
 -----------------------------
 * Master pom 11 fixes user rights
