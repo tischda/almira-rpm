@@ -24,23 +24,27 @@ Installation
 Copy binary files to 'dist' directory:
 
 +---apache-ant
-|       apache-ant-1.8.4-bin.tar.gz
-|       apache-ivy-2.2.0-bin-with-deps.tar.gz
+|       apache-ant-1.9.0-bin.tar.gz
+|       apache-ivy-2.3.0-bin-with-deps.tar.gz
 |
 +---apache-maven
-|       apache-maven-3.0.4-bin.tar.gz
+|       apache-maven-3.0.5-bin.tar.gz
 |
 +---apache-tc-native
 |   |   apache-tc-native-1.1.24.tar.gz
+|   |   README.txt
 |   |
 |   \---src
-|           apr-1.4.6.tar.gz
-|           apr-iconv-1.2.1.tar.gz
-|           apr-util-1.5.1.tar.gz
-|           tomcat-native-1.1.24-src.tar.gz
+|       |   1.compile.url
+|       |   tomcat-native-1.1.27-src.tar.gz
+|       |
+|       \---apr
+|               apr-1.4.6.tar.gz
+|               apr-iconv-1.2.1.tar.gz
+|               apr-util-1.5.1.tar.gz
 |
 +---apache-tomcat
-|   |   apache-tomcat-7.0.35.tar.gz
+|   |   apache-tomcat-7.0.39.tar.gz
 |   |
 |   \---extra
 |           catalina-jmx-remote.jar
@@ -49,19 +53,26 @@ Copy binary files to 'dist' directory:
 |           tomcat-juli.jar
 |
 +---atlassian-jira
-|       atlassian-jira-5.2.4.1.tar.gz
+|       atlassian-jira-5.2.11.tar.gz
+|       mysql-connector-java-5.1.24.tar.gz
 |
 +---atlassian-jira-plugins
-|       jira-dvcs-connector-plugin-1.2.6.jar
+|       jira-dvcs-connector-plugin-1.3.jar
 |
 +---nexus
-|       nexus-2.3.0-04-bundle.tar.gz
+|       nexus-2.4.0-09-bundle.tar.gz
+|       nexus-2.4.0-09.war
+|
++---quickbuild
+|       mysql-connector-java-5.1.24.tar.gz
+|       quickbuild-5.0.18.tar.gz
 |
 +---sonar
-|       sonar-3.4.1.zip
+|       mysql-connector-java-5.1.24.tar.gz
+|       sonar-3.5.1.zip
 |
 \---sonar-plugins
-        sonar-plugins-3.1-bundle.zip
+        sonar-plugins-3.3-bundle.zip
 
 
 References
