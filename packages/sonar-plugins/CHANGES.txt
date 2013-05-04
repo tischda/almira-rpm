@@ -2,6 +2,12 @@
 almira.rpm.sonar-plugins - change history
 ===============================================================================
 
+Version 3.3-1 (05 May 2013)
+---------------------------
+* sonar-build-stability-plugin-1.2.jar
+* sonar-javascript-plugin-1.3.jar
+
+
 Version 3.2-2 (27 March 2013)
 -----------------------------
 * Master pom 11 fixes user rights

@@ -2,6 +2,11 @@
 almira.rpm.sonar - change history
 ===============================================================================
 
+Version 3.5.1-1 (05 May 2013)
+-----------------------------
+* Updated Sonar to 3.5.1
+
+
 Version 3.5-4 (10 April 2013)
 -----------------------------
 * Removing webapps/sonar before copying new build

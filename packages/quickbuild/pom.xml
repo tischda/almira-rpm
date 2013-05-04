@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>quickbuild</artifactId>
-    <version>5.0.14.2</version>
+    <version>5.0.18.1</version>
     <packaging>rpm</packaging>
     <name>almira.rpm.quickbuild</name>
 
@@ -18,8 +18,8 @@
     <url>http://www.sonatype.org/quickbuild/</url>
 
     <properties>
-        <appVersion>5.0.14</appVersion>
-        <rpmRelease>2</rpmRelease>
+        <appVersion>5.0.18</appVersion>
+        <rpmRelease>1</rpmRelease>
         <appServiceName>quickbuild</appServiceName>
 
         <jdbcDriverName>mysql-connector-java</jdbcDriverName>

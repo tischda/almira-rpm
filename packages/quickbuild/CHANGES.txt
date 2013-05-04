@@ -2,6 +2,12 @@
 almira.rpm.quickbuild - change history
 ===============================================================================
 
+Version 5.0.18-1 (05 May 2013)
+------------------------------
+* Updated QuickBuild to 5.0.18
+* Fixed chkconfig startup priority to start after MySQL
+
+
 Version 5.0.14-2 (27 March 2013)
 --------------------------------
 * updated QuickBuild to 5.0.14
