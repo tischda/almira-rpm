@@ -57,7 +57,17 @@ http://server:8810/setup
 Click on root, Settings, Advanced Setting, Edit
     Workspace Directory Setting
         -> Select 'Use Specified workspace directory'
-            Path: /home/quickbuild/workspace/${configuration.pathName}
+            Path:
+
+${groovy:
+  String mypath = system.getInstallDir();
+  if (node.hasAttribute( "ALMIRA_HOME" )) {
+      mypath += "/workspace/" + configuration.getPathName();
+  \} else {
+      mypath += "/../workspace/" + configuration.getPathName();
+  \};
+}
+
     Save
 
 
