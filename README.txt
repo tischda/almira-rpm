@@ -15,7 +15,6 @@ git clone git://github.com/tischda/rpm.git
 Dependencies
 ------------
 Binaries are not checked into VCS.
-
 To package the 'dist' directory, execute 'mvn assembly:single'
 
 
@@ -83,7 +82,7 @@ http://stackoverflow.com/questions/4114887/is-it-possible-to-do-a-sparse-checkou
 
 Knows Issues
 ------------
-You need to specify <filemode> when specifyint username and groupname, the
+You need to specify <filemode> when specifying username and groupname, the
 RPM plugin misses the defaults:
 
     <mapping>
@@ -99,17 +98,17 @@ RPM plugin misses the defaults:
     %defattr(644,root,root,755)
     %attr(755,quickbuild,quickbuild) "/home/quickbuild/quickbuild"
     %dir %attr(755,quickbuild,quickbuild) "/var/run/quickbuild"
-                ^--- if not specified, it will be 644 and overrides the default
+               ^--- if not specified, it will be 644 and override the default
 
-Another perhaps related problem is that intermediate directories in the path
-are not created with default username:
+Another perhaps related problem is that intermediate directories in the path are
+not created with default username:
 
     <mapping>
         <directory>${destBase}/bin</directory>
-    </mapping>                  ^----- if you don't specify, 'bin' belongs to root
+    </mapping>                 ^----- if you don't specify, 'bin' belongs to root
     <mapping>
         <directory>${destBase}/bin/jsw</directory>
-                                    ^----- should belong to default username
+                                   ^----- should belong to default username
 
 Finally, because of the previous issue, when you do excludes, all files are
 listed but not the containing directory, which now also gets owned by root.
