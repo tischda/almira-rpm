@@ -54,10 +54,11 @@ http://server:8810/setup
 3. Email Setting
     STMP Host: localhost
 
-Click on root, Settings, Advanced Setting, Edit
-    Workspace Directory Setting
-        -> Select 'Use Specified workspace directory'
-            Path:
+4. Workspace directory (not moved during upgrade):
+
+    Click on root, Settings, Advanced Setting, Edit
+        Workspace Directory Setting
+            -> Select 'Use Specified workspace directory', Path:
 
 ${groovy:
   String mypath = system.getInstallDir();
