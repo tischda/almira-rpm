@@ -88,9 +88,6 @@
                             <directory>${destBase}</directory>
                             <sources>
                                 <source>
-                                    <location>${appSrcLocation}</location>
-                                </source>
-                                <source>
                                     <location>target/unpack/${jdbcDriverName}-${jdbcDriverVersion}</location>
                                     <includes>
                                         <include>*.jar</include>
