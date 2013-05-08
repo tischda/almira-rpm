@@ -15,4 +15,3 @@ Version 0.105 (04 May 2013)
 Version 0.1 (14 March 2013)
 ---------------------------
 First release.
-
