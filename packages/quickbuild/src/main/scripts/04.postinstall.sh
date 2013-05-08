@@ -1,4 +1,5 @@
 # Install MySQL connector
+rm -f @{destBase}/plugins/com.pmease.quickbuild.libs/mysql-connector-java-*.jar
 mv @{destBase}/mysql-connector-java-*.jar @{destBase}/plugins/com.pmease.quickbuild.libs
 
 # Make scripts executable
