@@ -1,7 +1,3 @@
-# Install MySQL connector
-rm -f @{destBase}/plugins/com.pmease.quickbuild.libs/mysql-connector-java-*.jar
-mv @{destBase}/mysql-connector-java-*.jar @{destBase}/plugins/com.pmease.quickbuild.libs
-
 # Make scripts executable
 chmod -R 755 @{destBase}/bin/*.sh
 
@@ -24,3 +20,7 @@ if [ "$1" = "2" ]; then
   echo Starting migration...
   su - @{appUserName} -c "@{destBase}/bin/migrate.sh @{destBase}.old && rm -rf @{destBase}.old"
 fi
+
+# Install MySQL connector (do this after the migration which copies old libs)
+rm -f @{destBase}/plugins/com.pmease.quickbuild.libs/mysql-connector-java-*.jar
+mv @{destBase}/mysql-connector-java-*.jar @{destBase}/plugins/com.pmease.quickbuild.libs
