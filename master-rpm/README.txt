@@ -20,7 +20,7 @@ individual module release via maven-release-plugin. We consider releasing RPMs
 as a consistent group as part of the environment profile.
 
 Tagging a release of almira-configuration will fix the version of each
-individual RPM module. 
+individual RPM module.
 
 
 
@@ -30,12 +30,12 @@ Quickstart
 For each module, the RPM is created by running:
 
     mvn package
-    
+
 The generated RPM will be stored in:
 
     target\rpm\<module>\RPMS\<arch>\
-    
-    
+
+
 Notes
 -----
 To build on Windows (generated RPMs won't run on Unix), see :
@@ -43,7 +43,7 @@ To build on Windows (generated RPMs won't run on Unix), see :
     http://crlog.info/2012/09/11/building-rpms-on-windows/
 
 
-Plugins configured, update with:  mvn versions:display-plugin-updates
+Plugins configured, check updates with:  mvn versions:display-plugin-updates
 
     http://maven.apache.org/plugins/maven-clean-plugin/plugin-info.html
     http://maven.apache.org/plugins/maven-compiler-plugin/plugin-info.html
@@ -60,7 +60,7 @@ Plugins configured, update with:  mvn versions:display-plugin-updates
 
 Package Upgrades
 ----------------
-1. Upgrade artifact <version> and reset last digit to 1 
+1. Upgrade artifact <version> and reset last digit to 1
 2. Change <app.version> in pom.xml
 3. Reset <app.release> to 1 in pom.xml
 4. Test with 'mvn package'
@@ -79,11 +79,11 @@ Package Upgrades
 
 TODO
 ----
-- use <changelogFile> to integrate the change log in the RPM. Note: The current 
+- use <changelogFile> to integrate the change log in the RPM. Note: The current
   formatting of CHANGES.txt does not work, it must be:
-  
+
     * [dow mon dd yyyy] [packager [email address]] [RPM version]
-     -list of changes  
+     -list of changes
 
 - do not filter shell script on ${}, this will fail if variables are defined locally
 
@@ -108,4 +108,3 @@ https://blogs.oracle.com/sreekanth/entry/java_lang_noclassdeffounderror_org_code
 http://stackoverflow.com/questions/7398834/rpm-upgrade-uninstalls-the-rpm
 http://www.linuxquestions.org/questions/linux-newbie-8/useradd-r-option-and-system-account-question-892978/
 
-    

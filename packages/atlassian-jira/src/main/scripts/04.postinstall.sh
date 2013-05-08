@@ -11,6 +11,12 @@ if [ "$1" = "1" ]; then
   chkconfig --add @{appServiceName}
 fi
 
+# When we update, make sure we're clean
+if [ "$1" = "2" ]; then
+  rm -rf @{destBase}/temp/*
+  rm -rf @{destBase}/work/*
+fi
+
 # Workaround for BUG: http://jira.codehaus.org/browse/MRPM-89
 chown -R root:root @{destConf}
 

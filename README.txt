@@ -40,7 +40,7 @@ Copy binary files to 'dist' directory:
 |       \---apr
 |               apr-1.4.6.tar.gz
 |               apr-iconv-1.2.1.tar.gz
-|               apr-util-1.5.1.tar.gz
+|               apr-util-1.5.2.tar.gz
 |
 +---apache-tomcat
 |   |   apache-tomcat-7.0.39.tar.gz
@@ -53,7 +53,7 @@ Copy binary files to 'dist' directory:
 |
 +---atlassian-jira
 |       atlassian-jira-5.2.11.tar.gz
-|       mysql-connector-java-5.1.24.tar.gz
+|       mysql-connector-java-5.1.25.tar.gz
 |
 +---atlassian-jira-plugins
 |       jira-dvcs-connector-plugin-1.3.jar
@@ -63,15 +63,16 @@ Copy binary files to 'dist' directory:
 |       nexus-2.4.0-09.war
 |
 +---quickbuild
-|       mysql-connector-java-5.1.24.tar.gz
+|       mysql-connector-java-5.1.25.tar.gz
 |       quickbuild-5.0.18.tar.gz
 |
 +---sonar
-|       mysql-connector-java-5.1.24.tar.gz
+|       mysql-connector-java-5.1.25.tar.gz
 |       sonar-3.5.1.zip
 |
 \---sonar-plugins
         sonar-plugins-3.3-bundle.zip
+
 
 
 References

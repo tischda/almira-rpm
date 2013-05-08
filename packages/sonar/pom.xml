@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>sonar</artifactId>
-    <version>3.5.1.1</version>
+    <version>3.5.1.2</version>
     <packaging>rpm</packaging>
     <name>almira.rpm.sonar</name>
 
@@ -19,10 +19,13 @@
 
     <properties>
         <appVersion>3.5.1</appVersion>
-        <rpmRelease>1</rpmRelease>
+        <rpmRelease>2</rpmRelease>
 
         <appServiceName>sonar</appServiceName>
         <appContextPath>sonar</appContextPath>
+
+        <jdbcDriverName>mysql-connector-java</jdbcDriverName>
+        <jdbcDriverVersion>5.1.25</jdbcDriverVersion>
 
         <!-- Overrides -->
         <destPrefix>/home/${appUserName}</destPrefix>
@@ -76,6 +79,22 @@
                             <sources>
                                 <source>
                                     <location>target/classes/logrotate.d/${appServiceName}</location>
+                                </source>
+                            </sources>
+                        </mapping>
+
+                        <!-- bin files -->
+                        <mapping>
+                            <directory>${destBase}</directory>
+                            <sources>
+                                <source>
+                                    <location>${appSrcLocation}</location>
+                                </source>
+                                <source>
+                                    <location>target/unpack/${jdbcDriverName}-${jdbcDriverVersion}</location>
+                                    <includes>
+                                        <include>*.jar</include>
+                                    </includes>
                                 </source>
                             </sources>
                         </mapping>
