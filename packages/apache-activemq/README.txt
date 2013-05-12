@@ -9,6 +9,7 @@ Apache ActiveMQ RPM.
 
 Build
 -----
+yum install rpm-build
 
 rpmbuild/
 ├── SOURCES

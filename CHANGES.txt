@@ -2,6 +2,12 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.108 (12 May 2013)
+---------------------------
+* removed oracle-java
+* added apache-activemq-5.8.0-bin.tar.gz
+
+
 Version 0.106 (08 May 2013)
 ---------------------------
 * mysql-connector-java-5.1.25.tar.gz
