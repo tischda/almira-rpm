@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>atlassian-jira</artifactId>
-    <version>5.2.11.3</version>
+    <version>5.2.11.4</version>
     <packaging>rpm</packaging>
     <name>almira.rpm.atlassian-jira</name>
 
@@ -21,7 +21,7 @@ great products.</description>
 
     <properties>
         <appVersion>5.2.11</appVersion>
-        <rpmRelease>3</rpmRelease>
+        <rpmRelease>4</rpmRelease>
         <appServiceName>jira</appServiceName>
         <appContextPath>jira</appContextPath>
 

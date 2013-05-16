@@ -44,7 +44,9 @@
 
 # Sourced in /etc/init.d/tomcat and required for startup in /usr/sbin/tomcat
 # I prefer to export variables here than having to use tomcat6 parseOptions()
-#export JAVA_HOME="/usr/java/default"
+
+# Run as a service, so profile.d is not read => JAVA_HOME must be defined!
+export JAVA_HOME="/usr/java/default"
 export JAVA_OPTS="-Xmx512m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -server ${JAVA_OTPS}"
 
 #export CATALINA_OPTS=""
