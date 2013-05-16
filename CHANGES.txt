@@ -2,6 +2,12 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.109 (16 May 2013)
+---------------------------
+* apache-tomcat-7.0.40.tar.gz
+* quickbuild-5.0.19.tar.gz
+
+
 Version 0.108 (12 May 2013)
 ---------------------------
 * removed oracle-java

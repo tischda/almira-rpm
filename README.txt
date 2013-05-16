@@ -22,6 +22,9 @@ Installation
 ------------
 Copy binary files to 'dist' directory:
 
++---apache-activemq
+|       apache-activemq-5.8.0-bin.tar.gz
+|
 +---apache-ant
 |       apache-ant-1.9.0-bin.tar.gz
 |       apache-ivy-2.3.0-bin-with-deps.tar.gz
@@ -43,7 +46,7 @@ Copy binary files to 'dist' directory:
 |               apr-util-1.5.2.tar.gz
 |
 +---apache-tomcat
-|   |   apache-tomcat-7.0.39.tar.gz
+|   |   apache-tomcat-7.0.40.tar.gz
 |   |
 |   \---extra
 |           catalina-jmx-remote.jar
@@ -60,11 +63,15 @@ Copy binary files to 'dist' directory:
 |
 +---nexus
 |       nexus-2.4.0-09-bundle.tar.gz
-|       nexus-2.4.0-09.war
+|
++---oracle-mysql
+|       MySQL-client-5.6.11-2.el6.x86_64.rpm
+|       MySQL-server-5.6.11-2.el6.x86_64.rpm
+|       MySQL-shared-5.6.11-2.el6.x86_64.rpm
 |
 +---quickbuild
 |       mysql-connector-java-5.1.25.tar.gz
-|       quickbuild-5.0.18.tar.gz
+|       quickbuild-5.0.19.tar.gz
 |
 +---sonar
 |       mysql-connector-java-5.1.25.tar.gz
@@ -72,7 +79,6 @@ Copy binary files to 'dist' directory:
 |
 \---sonar-plugins
         sonar-plugins-3.3-bundle.zip
-
 
 
 References
