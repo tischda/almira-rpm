@@ -44,7 +44,7 @@
 
 # Sourced in /etc/init.d/tomcat and required for startup in /usr/sbin/tomcat
 # I prefer to export variables here than having to use tomcat6 parseOptions()
-export JAVA_HOME="/usr/lib/jvm/jre-openjdk"
+#export JAVA_HOME="/usr/lib/jvm/jre-openjdk"
 export JAVA_OPTS="-Xmx512m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -server ${JAVA_OTPS}"
 
 export CATALINA_BASE="@{destBase}"
