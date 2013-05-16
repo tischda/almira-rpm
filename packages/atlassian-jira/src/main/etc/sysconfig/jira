@@ -44,7 +44,7 @@
 
 # Sourced in /etc/init.d/tomcat and required for startup in /usr/sbin/tomcat
 # I prefer to export variables here than having to use tomcat6 parseOptions()
-export JAVA_HOME="/usr/java/default"
+#export JAVA_HOME="/usr/java/default"
 export JAVA_OPTS="-Xmx1024m -XX:MaxPermSize=256m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -server ${JAVA_OTPS}"
 
 export CATALINA_OPTS="-Djira.home=@{appWorkFolder} -Djira.jms.broker.uri=tcp://`hostname`:54663"

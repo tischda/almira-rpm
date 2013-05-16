@@ -29,6 +29,15 @@ Copy binary files to 'dist' directory:
 |       apache-ant-1.9.0-bin.tar.gz
 |       apache-ivy-2.3.0-bin-with-deps.tar.gz
 |
++---apache-httpd
+|       apr-1.4.6.tar.bz2
+|       apr-util-1.5.2.tar.bz2
+|       apr.url
+|       distcache-1.4.5-23.src.rpm
+|       distcache.url
+|       httpd-2.4.4.tar.bz2
+|       httpd.url
+|
 +---apache-maven
 |       apache-maven-3.0.5-bin.tar.gz
 |
@@ -66,8 +75,10 @@ Copy binary files to 'dist' directory:
 |
 +---oracle-mysql
 |       MySQL-client-5.6.11-2.el6.x86_64.rpm
+|       MySQL-devel-5.6.11-2.el6.x86_64.rpm
 |       MySQL-server-5.6.11-2.el6.x86_64.rpm
 |       MySQL-shared-5.6.11-2.el6.x86_64.rpm
+|       MySQL-shared-compat-5.6.11-2.el6.x86_64.rpm
 |
 +---quickbuild
 |       mysql-connector-java-5.1.25.tar.gz

@@ -2,6 +2,16 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.110 (16 May 2013)
+---------------------------
+* added apr-1.4.6.tar.bz2
+* added apr-util-1.5.2.tar.bz2
+* added distcache-1.4.5-23.src.rpm
+* added httpd-2.4.4.tar.bz2
+* added MySQL-devel-5.6.11-2.el6.x86_64.rpm
+* added MySQL-shared-compat-5.6.11-2.el6.x86_64.rpm
+
+
 Version 0.109 (16 May 2013)
 ---------------------------
 * apache-tomcat-7.0.40.tar.gz
