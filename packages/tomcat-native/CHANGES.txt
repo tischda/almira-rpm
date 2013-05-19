@@ -1,6 +1,12 @@
 ===============================================================================
-almira.rpm.apache-tc-native - change history
+almira.rpm.tomcat-native - change history
 ===============================================================================
+
+Version 1.1.27-1 (19 May 2013)
+------------------------------
+* Injecting spec file directly into source package
+* Updated to 1.1.27
+
 
 Version 1.1.24-9 (27 March 2013)
 -------------------------------
