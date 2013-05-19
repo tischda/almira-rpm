@@ -6,9 +6,8 @@ License: ASL 2.0
 Vendor: Apache
 URL: http://tomcat.apache.org/native-doc/
 Group: System Environment/Libraries
-PreReq: java >= 1.7
-PreReq: apr >= 1.4.6
-PreReq: apache-tomcat >= 7.0
+Requires: java >= 1.7
+Requires: apr >= 1.4.6
 autoprov: yes
 autoreq: yes
 Source0: %{name}-%{version}.tar.gz
