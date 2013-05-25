@@ -2,6 +2,13 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.115 (25 May 2013)
+---------------------------
+* added cmake-2.8.11.tar.gz
+* apache-ant-1.9.1-bin.tar.gz
+* quickbuild-5.0.20.tar.gz
+
+
 Version 0.114 (21 May 2013)
 ---------------------------
 * atlassian-jira-6.0.tar.gz

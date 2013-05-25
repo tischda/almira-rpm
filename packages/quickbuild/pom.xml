@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>quickbuild</artifactId>
-    <version>5.0.19.1</version>
+    <version>5.0.20.1</version>
     <packaging>rpm</packaging>
     <name>almira.rpm.quickbuild</name>
 
@@ -18,7 +18,7 @@
     <url>http://www.sonatype.org/quickbuild/</url>
 
     <properties>
-        <appVersion>5.0.19</appVersion>
+        <appVersion>5.0.20</appVersion>
         <rpmRelease>1</rpmRelease>
         <appServiceName>quickbuild</appServiceName>
 
