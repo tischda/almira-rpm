@@ -14,20 +14,11 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: gcc-c++
 BuildRequires: ncurses-devel
 
-#BuildRequires: gcc-gfortran
-#BuildRequires: bzip2-devel
-#BuildRequires: curl-devel
-#BuildRequires: expat-devel
-#BuildRequires: libarchive-devel
-#BuildRequires: zlib-devel
-#BuildRequires: xmlrpc-c-devel
-#BuildRequires: qt4-devel, desktop-file-utils
-
 %description
-CMake is used to control the software compilation process using simple 
-platform and compiler independent configuration files. CMake generates 
-native makefiles and workspaces that can be used in the compiler 
-environment of your choice. CMake is quite sophisticated: it is possible 
+CMake is used to control the software compilation process using simple
+platform and compiler independent configuration files. CMake generates
+native makefiles and workspaces that can be used in the compiler
+environment of your choice. CMake is quite sophisticated: it is possible
 to support complex environments requiring system configuration, preprocessor
 generation, code generation, and template instantiation.
 
@@ -82,4 +73,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/
 %{_mandir}/man1/*
 %{_datadir}/emacs/site-lisp/cmake
-

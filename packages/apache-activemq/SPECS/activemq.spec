@@ -1,12 +1,8 @@
-%define debug_package %{nil}
-
-%global version 5.8.0
-
 %define amqhome /usr/share/activemq
 
 Name: apache-activemq
-Version: %{version}
-Release: 1%{?dist}
+Version: 5.8.0
+Release: 2%{?dist}
 Summary: ActiveMQ Messaging Broker
 Group: System Environment/Daemons
 License: ASL 2.0
