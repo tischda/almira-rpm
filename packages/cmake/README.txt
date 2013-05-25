@@ -4,12 +4,15 @@ almira.rpm.cmake
 
 Overview
 --------
-CMake.
+CMake is a family of tools designed to build, test and package software. CMake
+is used to control the software compilation process using simple platform and
+compiler independent configuration files. CMake generates native makefiles and
+workspaces that can be used in the compiler environment of your choice.
 
 
 Build
 -----
-yum install rpm-build
+yum install rpm-build gcc gcc-c++ make ncurses-devel
 
 rpmbuild/
 ├── SOURCES
