@@ -2,6 +2,14 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.117 (30 May 2013)
+---------------------------
+* added git-1.8.3.tar.gz
+* added perl-YAML-0.81-20.2.noarch.rpm
+* jira-dvcs-connector-plugin-1.3.1.1.jar
+* quickbuild-5.0.22.tar.gz
+
+
 Version 0.116 (28 May 2013)
 ---------------------------
 * atlassian-jira-6.0.1.tar.gz
