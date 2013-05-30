@@ -4,8 +4,7 @@ version=`grep Version tomcat-native.spec | sed -e 's/Version: \(.*\)/\1/'`
 
 # clean
 rm -rf rpmbuild
-rm -rf tomcat-native-$version
-rm -f tomcat-native-$version.tar.gz
+rm -rf tomcat-native-*
 
 # unpack (provided by CI)
 #tar xzvf tomcat-native-$version-src.tar.gz
