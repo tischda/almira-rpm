@@ -10,7 +10,6 @@
 
     <modules>
         <module>apache-maven</module>
-        <module>apache-tc-native</module>
         <module>apache-tomcat</module>
         <module>atlassian-jira</module>
         <module>nexus</module>
