@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nexusConfiguration>
   <version>2.2.0</version>
-  <nexusVersion>2.3.0-04</nexusVersion>
+  <nexusVersion>2.4.0-09</nexusVersion>
   <globalConnectionSettings>
     <connectionTimeout>20000</connectionTimeout>
     <retrievalRetryCount>3</retrievalRetryCount>
@@ -314,7 +314,7 @@
     <hostname>smtp-host</hostname>
     <port>25</port>
     <username>smtp-username</username>
-    <password>{E+rOKKcQ090HTYsfkJLLJbokztB2SLyxLx8zkZHQFDY=}</password>
+    <password>{TeEPV+ZCZo4HP3pRh48MQaDUXkp9RH18eXZvzJND+ow=}</password>
     <systemEmailAddress>system@nexus.org</systemEmailAddress>
   </smtpConfiguration>
   <errorReporting>
