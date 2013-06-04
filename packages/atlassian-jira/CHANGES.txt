@@ -2,9 +2,10 @@
 almira.rpm.atlassian-jira - change history
 ===============================================================================
 
-Version 6.0.1-1 (28 May 2013)
------------------------------
+Version 6.0.1-2 (04 June 2013)
+------------------------------
 * Updated JIRA to 6.0.1
+* Fixed SEVERE: Unable to create directory for deployment: /etc/jira/Catalina/localhost
 
 
 Version 6.0-1 (21 May 2013)
