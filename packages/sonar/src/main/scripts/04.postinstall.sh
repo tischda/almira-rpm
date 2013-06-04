@@ -22,11 +22,11 @@ fi
 chown -R root:root @{destConf}
 
 # Link back from /etc
-ln -sf @{destConf}/server.xml @{destBase}/conf/server.xml
-ln -sf @{destConf}/context.xml @{destBase}/conf/context.xml
-ln -sf @{destConf}/web.xml @{destBase}/conf/web.xml
 ln -sf @{destConf}/catalina.policy @{destBase}/conf/catalina.policy
 ln -sf @{destConf}/catalina.properties @{destBase}/conf/catalina.properties
+ln -sf @{destConf}/context.xml @{destBase}/conf/context.xml
+ln -sf @{destConf}/server.xml @{destBase}/conf/server.xml
+ln -sf @{destConf}/web.xml @{destBase}/conf/web.xml
 
 ln -sf @{destConf}/logback.xml @{appWorkFolder}/conf/logback.xml
 ln -sf @{destConf}/sonar.properties @{appWorkFolder}/conf/sonar.properties
