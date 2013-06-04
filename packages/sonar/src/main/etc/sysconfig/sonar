@@ -47,7 +47,7 @@
 
 # Run as a service, so profile.d is not read => JAVA_HOME must be defined!
 export JAVA_HOME="/usr/java/default"
-export JAVA_OPTS="-Xmx1024m -XX:MaxPermSize=256m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -server ${JAVA_OTPS}"
+export JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxPermSize=256m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -XX:+UseParNewGC -server ${JAVA_OTPS}"
 
 #export CATALINA_OPTS=""
 
@@ -64,5 +64,5 @@ export CATALINA_OUT="$CATALINA_BASE"/logs/catalina.out
 # Used for init script only
 TOMCAT_USER="@{appUserName}"
 
-# Time to wait in seconds, before killing process
-SHUTDOWN_WAIT="30"
+# Time to wait in seconds, before killing process (this is a blocking wait!)
+SHUTDOWN_WAIT="10"

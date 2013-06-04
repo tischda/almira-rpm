@@ -2,11 +2,12 @@
 almira.rpm.atlassian-jira - change history
 ===============================================================================
 
-Version 6.0.1-3 (04 June 2013)
+Version 6.0.1-4 (04 June 2013)
 ------------------------------
 * Updated JIRA to 6.0.1
 * Fixed SEVERE: Unable to create directory for deployment: /etc/jira/Catalina/localhost
-* Added 2 JVM configuration options and URIEncoding="UTF-8 in server.xml
+* Tuned JVM configuration options and added URIEncoding="UTF-8 in server.xml
+* Decreased timeout from 30 secs to 10 secs because sleep is blocking
 
 
 Version 6.0-1 (21 May 2013)
