@@ -24,7 +24,7 @@ chown -R root:root @{destConf}
 ln -sf @{destConf}/catalina.policy @{destBase}/conf/catalina.policy
 ln -sf @{destConf}/catalina.properties @{destBase}/conf/catalina.properties
 ln -sf @{destConf}/context.xml @{destBase}/conf/context.xml
-ln -sf @{destConf}/logging.properties.xml @{destBase}/conf/logging.properties
+ln -sf @{destConf}/logging.properties @{destBase}/conf/logging.properties
 ln -sf @{destConf}/server.xml @{destBase}/conf/server.xml
 ln -sf @{destConf}/tomcat-users.xml @{destBase}/conf/tomcat-users.xml
 ln -sf @{destConf}/web.xml @{destBase}/conf/web.xml
