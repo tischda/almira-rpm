@@ -4,12 +4,12 @@
     <parent>
         <groupId>almira.rpm</groupId>
         <artifactId>master-rpm</artifactId>
-        <version>11</version>
+        <version>12</version>
         <relativePath>../../master-rpm/pom.xml</relativePath>
     </parent>
 
     <artifactId>nexus</artifactId>
-    <version>2.4.0-09.1</version>
+    <version>2.5.0-04.1</version>
     <packaging>rpm</packaging>
     <name>almira.rpm.nexus</name>
 
@@ -20,13 +20,14 @@ share software artifacts.</description>
     <url>http://www.sonatype.org/nexus/</url>
 
     <properties>
-        <appVersion>2.4.0-09</appVersion>
+        <appVersion>2.5.0-04</appVersion>
         <rpmRelease>1</rpmRelease>
         <appServiceName>nexus</appServiceName>
 
         <!-- overrides -->
         <destPrefix>/home/${appUserName}</destPrefix>
         <appWorkFolder>${destPrefix}/sonatype-work</appWorkFolder>
+        <appSrcLocation>target/unpack</appSrcLocation>
     </properties>
 
     <build>
@@ -38,60 +39,58 @@ share software artifacts.</description>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>rpm-maven-plugin</artifactId>
                 <configuration>
-                    <needarch>x86_64</needarch>
                     <vendor>Sonatype</vendor>
                     <copyright>Commercial</copyright>
                     <summary>Sonatype Nexus artifact repository</summary>
                     <mappings>
 
-                        <!-- bin files -->
-                        <mapping>
-                            <directory>${destBase}</directory>
-                            <sources>
-                                <source>
-                                    <location>${appSrcLocation}</location>
-                                    <excludes>
-                                        <exclude>bin/nexus.bat</exclude>
-                                        <exclude>bin/jsw/windows-x86**/**</exclude>
-                                    </excludes>
-                                </source>
-                            </sources>
-                        </mapping>
+                      <!-- conf files -->
+                      <mapping>
+                        <directory>${destConf}</directory>
+                        <configuration>true</configuration>
+                        <sources>
+                          <source>
+                            <location>target/classes/${appServiceName}</location>
+                          </source>
+                        </sources>
+                      </mapping>
+                      <mapping>
+                        <directory>/etc/sysconfig</directory>
+                        <username>root</username>
+                        <groupname>root</groupname>
+                        <filemode>644</filemode>
+                        <configuration>true</configuration>
+                        <sources>
+                          <source>
+                            <location>target/classes/sysconfig/${appServiceName}</location>
+                          </source>
+                        </sources>
+                      </mapping>
+                      <mapping>
+                        <directory>/etc/logrotate.d</directory>
+                        <username>root</username>
+                        <groupname>root</groupname>
+                        <filemode>644</filemode>
+                        <configuration>true</configuration>
+                        <sources>
+                          <source>
+                            <location>target/classes/logrotate.d/${appServiceName}</location>
+                          </source>
+                        </sources>
+                      </mapping>
 
-                        <!-- conf files -->
-                        <mapping>
-                            <directory>${destConf}</directory>
-                            <configuration>true</configuration>
-                            <sources>
-                                <source>
-                                    <location>${appSrcLocation}/conf</location>
-                                    <includes>
-                                        <include>*.xml</include>
-                                        <include>*.properties</include>
-                                    </includes>
-                                </source>
-                                <source>
-                                    <location>${appSrcLocation}/bin/jsw/conf/wrapper.conf</location>
-                                </source>
-                            </sources>
-                        </mapping>
-
-                        <!-- service -->
-                        <mapping>
-                            <directory>/etc/rc.d/init.d</directory>
-                            <username>root</username>
-                            <groupname>root</groupname>
-                            <filemode>755</filemode>
-                            <configuration>true</configuration>
-                            <sources>
-                                <source>
-                                    <location>target/classes/init.d/${appServiceName}</location>
-                                </source>
-                            </sources>
-                        </mapping>
-                        <mapping>
-                            <directory>/var/run/${appServiceName}</directory>
-                        </mapping>
+                      <!-- webapps (add containing folder explicitly to set owner correctly -->
+                      <mapping>
+                        <directory>${destBase}/webapps</directory>
+                      </mapping>
+                      <mapping>
+                        <directory>${destBase}/webapps/ROOT</directory>
+                        <sources>
+                          <source>
+                            <location>${appSrcLocation}</location>
+                          </source>
+                        </sources>
+                      </mapping>
                     </mappings>
                 </configuration>
             </plugin>

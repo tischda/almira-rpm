@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Server port="8015" shutdown="SHUTDOWN">
+<Server port="8005" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
   <Listener className="org.apache.catalina.core.JasperListener" />
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
@@ -7,10 +7,10 @@
   <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
 
   <Service name="Catalina">
-    <Connector port="9000" protocol="HTTP/1.1"
+    <Connector port="8081" protocol="HTTP/1.1"
       connectionTimeout="20000"
       URIEncoding="UTF-8"
-      redirectPort="8453" />
+      redirectPort="8443" />
 
     <Engine name="Catalina" defaultHost="localhost">
 

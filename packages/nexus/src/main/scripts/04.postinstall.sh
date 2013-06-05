@@ -1,19 +1,29 @@
 # Initial installation
 if [ "$1" = "1" ]; then
+  mkdir -p -m775 @{destBase}/{conf,logs,temp,work,webapps}
+  mkdir -p -m775 @{appWorkFolder}/conf
   chown -R @{appUserName}:@{appGroupName} @{destBase}
-  mkdir -p -m775 @{appWorkFolder}/nexus
   chown -R @{appUserName}:@{appGroupName} @{appWorkFolder}
+
+  cd /etc/rc.d/init.d
+  ln -sf tomcat @{appServiceName}
+
   chkconfig --add @{appServiceName}
 fi
 
-# Make wrapper executable
-chmod -R 755 @{destBase}/bin/jsw/linux-x86-64
+# When we update, make sure we're clean
+if [ "$1" = "2" ]; then
+  rm -rf @{destBase}/temp/*
+  rm -rf @{destBase}/work/*
+  rm -rf @{destBase}/webapps/*
+fi
 
 # Workaround for BUG: http://jira.codehaus.org/browse/MRPM-89
 chown -R root:root @{destConf}
 
 # Link back from /etc
-ln -sf @{destConf}/jetty.xml @{destBase}/conf/jetty.xml
-ln -sf @{destConf}/logback.xml @{destBase}/conf/logback.xml
-ln -sf @{destConf}/nexus.properties @{destBase}/conf/nexus.properties
-ln -sf @{destConf}/wrapper.conf @{destBase}/bin/jsw/conf/wrapper.conf
+ln -sf @{destConf}/catalina.policy @{destBase}/conf/catalina.policy
+ln -sf @{destConf}/catalina.properties @{destBase}/conf/catalina.properties
+ln -sf @{destConf}/context.xml @{destBase}/conf/context.xml
+ln -sf @{destConf}/server.xml @{destBase}/conf/server.xml
+ln -sf @{destConf}/web.xml @{destBase}/conf/web.xml
