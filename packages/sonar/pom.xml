@@ -1,117 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>almira.rpm</groupId>
-        <artifactId>master-rpm</artifactId>
-        <version>12</version>
-        <relativePath>../../master-rpm/pom.xml</relativePath>
-    </parent>
+  <parent>
+    <groupId>almira.rpm</groupId>
+    <artifactId>master-rpm</artifactId>
+    <version>12</version>
+    <relativePath>../../master-rpm/pom.xml</relativePath>
+  </parent>
 
-    <artifactId>sonar</artifactId>
-    <version>3.5.1.5</version>
-    <packaging>rpm</packaging>
-    <name>almira.rpm.sonar</name>
+  <artifactId>sonar</artifactId>
+  <version>3.5.1.5</version>
+  <packaging>rpm</packaging>
+  <name>almira.rpm.sonar</name>
 
-    <description>Sonar is an open platform to manage code quality.</description>
-    <url>http://www.sonarsource.org</url>
+  <description>Sonar is an open platform to manage code quality.</description>
+  <url>http://www.sonarsource.org</url>
 
-    <properties>
-        <appVersion>3.5.1</appVersion>
-        <rpmRelease>5</rpmRelease>
+  <properties>
+    <appVersion>3.5.1</appVersion>
+    <rpmRelease>5</rpmRelease>
 
-        <appServiceName>sonar</appServiceName>
-        <appContextPath>sonar</appContextPath>
+    <appServiceName>sonar</appServiceName>
+    <appContextPath>sonar</appContextPath>
 
-        <jdbcDriverName>mysql-connector-java</jdbcDriverName>
-        <jdbcDriverVersion>5.1.25</jdbcDriverVersion>
+    <jdbcDriverName>mysql-connector-java</jdbcDriverName>
+    <jdbcDriverVersion>5.1.25</jdbcDriverVersion>
 
-        <!-- Overrides -->
-        <destPrefix>/home/${appUserName}</destPrefix>
-        <appWorkFolder>${destPrefix}/sonar-work</appWorkFolder>
-    </properties>
+    <!-- Overrides -->
+    <destPrefix>/home/${appUserName}</destPrefix>
+    <appWorkFolder>${destPrefix}/sonar-work</appWorkFolder>
+  </properties>
 
-    <build>
-        <defaultGoal>package</defaultGoal>
-        <plugins>
+  <build>
+    <defaultGoal>package</defaultGoal>
+    <plugins>
 
-            <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>rpm-maven-plugin</artifactId>
-                <configuration>
-                    <vendor>Sonarsource</vendor>
-                    <copyright>GNU Lesser GPL License, Version 3</copyright>
-                    <summary>Sonar is an open platform to manage code quality.</summary>
-                    <mappings>
-                        <!-- conf files -->
-                        <mapping>
-                            <directory>${destConf}</directory>
-                            <configuration>true</configuration>
-                            <sources>
-                                <source>
-                                    <location>${appSrcLocation}/conf/logback.xml</location>
-                                </source>
-                                <source>
-                                    <location>target/classes/${appServiceName}</location>
-                                </source>
-                            </sources>
-                        </mapping>
-                        <mapping>
-                            <directory>/etc/sysconfig</directory>
-                            <username>root</username>
-                            <groupname>root</groupname>
-                            <filemode>644</filemode>
-                            <configuration>true</configuration>
-                            <sources>
-                                <source>
-                                    <location>target/classes/sysconfig/${appServiceName}</location>
-                                </source>
-                            </sources>
-                        </mapping>
-                        <mapping>
-                            <directory>/etc/logrotate.d</directory>
-                            <username>root</username>
-                            <groupname>root</groupname>
-                            <filemode>644</filemode>
-                            <configuration>true</configuration>
-                            <sources>
-                                <source>
-                                    <location>target/classes/logrotate.d/${appServiceName}</location>
-                                </source>
-                            </sources>
-                        </mapping>
+      <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>rpm-maven-plugin</artifactId>
+        <configuration>
+          <prereqs>
+            <prereq>apache-tomcat &gt;= 7.0.40</prereq>
+          </prereqs>
+          <vendor>Sonarsource</vendor>
+          <copyright>GNU Lesser GPL License, Version 3</copyright>
+          <summary>Sonar is an open platform to manage code quality.</summary>
+          <mappings>
+            <!-- conf files -->
+            <mapping>
+              <directory>${destConf}</directory>
+              <configuration>true</configuration>
+              <sources>
+                <source>
+                  <location>${appSrcLocation}/conf/logback.xml</location>
+                </source>
+                <source>
+                  <location>target/classes/${appServiceName}</location>
+                </source>
+              </sources>
+            </mapping>
+            <mapping>
+              <directory>/etc/sysconfig</directory>
+              <username>root</username>
+              <groupname>root</groupname>
+              <filemode>644</filemode>
+              <configuration>true</configuration>
+              <sources>
+                <source>
+                  <location>target/classes/sysconfig/${appServiceName}</location>
+                </source>
+              </sources>
+            </mapping>
+            <mapping>
+              <directory>/etc/logrotate.d</directory>
+              <username>root</username>
+              <groupname>root</groupname>
+              <filemode>644</filemode>
+              <configuration>true</configuration>
+              <sources>
+                <source>
+                  <location>target/classes/logrotate.d/${appServiceName}</location>
+                </source>
+              </sources>
+            </mapping>
 
-                        <!-- bin files -->
-                        <mapping>
-                            <directory>${destBase}</directory>
-                            <sources>
-                                <source>
-                                    <location>target/unpack/${jdbcDriverName}-${jdbcDriverVersion}</location>
-                                    <includes>
-                                        <include>*.jar</include>
-                                    </includes>
-                                </source>
-                            </sources>
-                        </mapping>
+            <!-- bin files -->
+            <mapping>
+              <directory>${destBase}</directory>
+              <sources>
+                <source>
+                  <location>target/unpack/${jdbcDriverName}-${jdbcDriverVersion}</location>
+                  <includes>
+                    <include>*.jar</include>
+                  </includes>
+                </source>
+              </sources>
+            </mapping>
 
-                        <!-- sources files-->
-                        <mapping>
-                            <directory>${appWorkFolder}</directory>
-                            <sources>
-                                <source>
-                                    <location>${appSrcLocation}</location>
-                                    <excludes>
-                                        <exclude>bin/</exclude>
-                                        <exclude>conf/</exclude>
-                                    </excludes>
-                                </source>
-                            </sources>
-                        </mapping>
-                    </mappings>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+            <!-- sources files-->
+            <mapping>
+              <directory>${appWorkFolder}</directory>
+              <sources>
+                <source>
+                  <location>${appSrcLocation}</location>
+                  <excludes>
+                    <exclude>bin/</exclude>
+                    <exclude>conf/</exclude>
+                  </excludes>
+                </source>
+              </sources>
+            </mapping>
+          </mappings>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

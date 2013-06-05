@@ -6,7 +6,6 @@ License: ASL 2.0
 Vendor: Apache
 URL: http://tomcat.apache.org/native-doc/
 Group: System Environment/Libraries
-Requires: java >= 1.7
 Requires: apr >= 1.4.6
 autoprov: yes
 autoreq: yes
@@ -51,5 +50,3 @@ rm -rf $RPM_BUILD_ROOT
 if [ "$1" = "0" ] ; then
     echo "%{name}-%{version} has been removed from the system"
 fi
-
-

@@ -1,99 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>almira.rpm</groupId>
-        <artifactId>master-rpm</artifactId>
-        <version>12</version>
-        <relativePath>../../master-rpm/pom.xml</relativePath>
-    </parent>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>almira.rpm</groupId>
+    <artifactId>master-rpm</artifactId>
+    <version>12</version>
+    <relativePath>../../master-rpm/pom.xml</relativePath>
+  </parent>
 
-    <artifactId>nexus</artifactId>
-    <version>2.5.0-04.1</version>
-    <packaging>rpm</packaging>
-    <name>almira.rpm.nexus</name>
+  <artifactId>nexus</artifactId>
+  <version>2.5.0-04.1</version>
+  <packaging>rpm</packaging>
+  <name>almira.rpm.nexus</name>
 
-    <description>Sonatype Nexus sets the standard for repository management
+  <description>Sonatype Nexus sets the standard for repository management
 providing development teams with the ability to proxy remote repositories and
 share software artifacts.</description>
 
-    <url>http://www.sonatype.org/nexus/</url>
+  <url>http://www.sonatype.org/nexus/</url>
 
-    <properties>
-        <appVersion>2.5.0-04</appVersion>
-        <rpmRelease>1</rpmRelease>
-        <appServiceName>nexus</appServiceName>
+  <properties>
+    <appVersion>2.5.0-04</appVersion>
+    <rpmRelease>1</rpmRelease>
+    <appServiceName>nexus</appServiceName>
 
-        <!-- overrides -->
-        <destPrefix>/home/${appUserName}</destPrefix>
-        <appWorkFolder>${destPrefix}/sonatype-work</appWorkFolder>
-        <appSrcLocation>target/unpack</appSrcLocation>
-    </properties>
+    <!-- overrides -->
+    <destPrefix>/home/${appUserName}</destPrefix>
+    <appWorkFolder>${destPrefix}/sonatype-work</appWorkFolder>
+    <appSrcLocation>target/unpack</appSrcLocation>
+  </properties>
 
-    <build>
-        <defaultGoal>package</defaultGoal>
-        <plugins>
+  <build>
+    <defaultGoal>package</defaultGoal>
+    <plugins>
 
-            <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>rpm-maven-plugin</artifactId>
-                <configuration>
-                    <vendor>Sonatype</vendor>
-                    <copyright>Commercial</copyright>
-                    <summary>Sonatype Nexus artifact repository</summary>
-                    <mappings>
+      <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>rpm-maven-plugin</artifactId>
+        <configuration>
+          <prereqs>
+            <prereq>apache-tomcat &gt;= 7.0.40</prereq>
+          </prereqs>
+          <vendor>Sonatype</vendor>
+          <copyright>Commercial</copyright>
+          <summary>Sonatype Nexus artifact repository</summary>
+          <mappings>
 
-                      <!-- conf files -->
-                      <mapping>
-                        <directory>${destConf}</directory>
-                        <configuration>true</configuration>
-                        <sources>
-                          <source>
-                            <location>target/classes/${appServiceName}</location>
-                          </source>
-                        </sources>
-                      </mapping>
-                      <mapping>
-                        <directory>/etc/sysconfig</directory>
-                        <username>root</username>
-                        <groupname>root</groupname>
-                        <filemode>644</filemode>
-                        <configuration>true</configuration>
-                        <sources>
-                          <source>
-                            <location>target/classes/sysconfig/${appServiceName}</location>
-                          </source>
-                        </sources>
-                      </mapping>
-                      <mapping>
-                        <directory>/etc/logrotate.d</directory>
-                        <username>root</username>
-                        <groupname>root</groupname>
-                        <filemode>644</filemode>
-                        <configuration>true</configuration>
-                        <sources>
-                          <source>
-                            <location>target/classes/logrotate.d/${appServiceName}</location>
-                          </source>
-                        </sources>
-                      </mapping>
+            <!-- conf files -->
+            <mapping>
+              <directory>${destConf}</directory>
+              <configuration>true</configuration>
+              <sources>
+                <source>
+                  <location>target/classes/${appServiceName}</location>
+                </source>
+              </sources>
+            </mapping>
+            <mapping>
+              <directory>/etc/sysconfig</directory>
+              <username>root</username>
+              <groupname>root</groupname>
+              <filemode>644</filemode>
+              <configuration>true</configuration>
+              <sources>
+                <source>
+                  <location>target/classes/sysconfig/${appServiceName}</location>
+                </source>
+              </sources>
+            </mapping>
+            <mapping>
+              <directory>/etc/logrotate.d</directory>
+              <username>root</username>
+              <groupname>root</groupname>
+              <filemode>644</filemode>
+              <configuration>true</configuration>
+              <sources>
+                <source>
+                  <location>target/classes/logrotate.d/${appServiceName}</location>
+                </source>
+              </sources>
+            </mapping>
 
-                      <!-- webapps (add containing folder explicitly to set owner correctly -->
-                      <mapping>
-                        <directory>${destBase}/webapps</directory>
-                      </mapping>
-                      <mapping>
-                        <directory>${destBase}/webapps/ROOT</directory>
-                        <sources>
-                          <source>
-                            <location>${appSrcLocation}</location>
-                          </source>
-                        </sources>
-                      </mapping>
-                    </mappings>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+            <!-- webapps (add containing folder explicitly to set owner correctly -->
+            <mapping>
+              <directory>${destBase}/webapps</directory>
+            </mapping>
+            <mapping>
+              <directory>${destBase}/webapps/ROOT</directory>
+              <sources>
+                <source>
+                  <location>${appSrcLocation}</location>
+                </source>
+              </sources>
+            </mapping>
+          </mappings>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
