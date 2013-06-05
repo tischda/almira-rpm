@@ -44,11 +44,4 @@ rm -rf $RPM_BUILD_ROOT%{_libdir}/pkgconfig
 
 %post -p /sbin/ldconfig
 
-
-%postun
-/sbin/ldconfig
-
-# Remove last version of package: 0
-if [ "$1" = "0" ] ; then
-    echo "%{name}-%{version} has been removed from the system"
-fi
+%postun -p /sbin/ldconfig
