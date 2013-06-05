@@ -24,6 +24,7 @@ share software artifacts.</description>
   <properties>
     <appVersion>2.5.0-04</appVersion>
     <rpmRelease>1</rpmRelease>
+
     <appServiceName>nexus</appServiceName>
 
     <!-- overrides -->
@@ -33,6 +34,7 @@ share software artifacts.</description>
   </properties>
 
   <build>
+    <finalName>${artifactId}-${version}.el6.noarch</finalName>
     <defaultGoal>package</defaultGoal>
     <plugins>
 

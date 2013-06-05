@@ -1,98 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>almira.rpm</groupId>
-        <artifactId>master-rpm</artifactId>
-        <version>12</version>
-        <relativePath>../../master-rpm/pom.xml</relativePath>
-    </parent>
+  <parent>
+    <groupId>almira.rpm</groupId>
+    <artifactId>master-rpm</artifactId>
+    <version>12</version>
+    <relativePath>../../master-rpm/pom.xml</relativePath>
+  </parent>
 
-    <artifactId>apache-maven</artifactId>
-    <version>3.0.5.3</version>
-    <packaging>rpm</packaging>
-    <name>almira.rpm.apache-maven</name>
+  <artifactId>apache-maven</artifactId>
+  <version>3.0.5.3</version>
+  <packaging>rpm</packaging>
+  <name>almira.rpm.apache-maven</name>
 
-    <description>Apache Maven is a software project management and
+  <description>Apache Maven is a software project management and
 comprehension tool. Based on the concept of a project object model (POM), Maven
 can manage a project's build, reporting and documentation from a central piece
 of information.</description>
 
-    <url>http://maven.apache.org</url>
+  <url>http://maven.apache.org</url>
 
-    <properties>
-        <appVersion>3.0.5</appVersion>
-        <rpmRelease>3</rpmRelease>
-        <appServiceName>maven</appServiceName>
-        <appUserName>root</appUserName>
-        <appGroupName>root</appGroupName>
-    </properties>
+  <properties>
+    <appVersion>3.0.5</appVersion>
+    <rpmRelease>3</rpmRelease>
 
-    <build>
-        <defaultGoal>package</defaultGoal>
-        <plugins>
+    <appServiceName>maven</appServiceName>
+    <appUserName>root</appUserName>
+    <appGroupName>root</appGroupName>
+  </properties>
 
-            <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>rpm-maven-plugin</artifactId>
-                <configuration>
-                    <vendor>Apache</vendor>
-                    <copyright>ASL 2.0</copyright>
-                    <summary>Java project management and project comprehension tool</summary>
-                    <mappings>
-                        <!-- conf files -->
-                        <mapping>
-                            <directory>${destConf}</directory>
-                            <configuration>true</configuration>
-                            <sources>
-                                <source>
-                                    <location>${appSrcLocation}/bin</location>
-                                    <includes>
-                                        <include>m2.conf</include>
-                                    </includes>
-                                </source>
-                                <source>
-                                    <location>${appSrcLocation}/conf</location>
-                                    <includes>
-                                        <include>settings.xml</include>
-                                    </includes>
-                                </source>
-                            </sources>
-                        </mapping>
+  <build>
+    <finalName>${artifactId}-${version}.el6.noarch</finalName>
+    <defaultGoal>package</defaultGoal>
+    <plugins>
 
-                        <!-- all files -->
-                        <mapping>
-                            <directory>${destBase}</directory>
-                            <sources>
-                                <source>
-                                    <location>${appSrcLocation}</location>
-                                    <excludes>
-                                        <exclude>bin/*.bat</exclude>
-                                    </excludes>
-                                </source>
-                            </sources>
-                        </mapping>
+      <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>rpm-maven-plugin</artifactId>
+        <configuration>
+          <vendor>Apache</vendor>
+          <copyright>ASL 2.0</copyright>
+          <summary>Java project management and project comprehension tool</summary>
+          <mappings>
+            <!-- conf files -->
+            <mapping>
+              <directory>${destConf}</directory>
+              <configuration>true</configuration>
+              <sources>
+                <source>
+                  <location>${appSrcLocation}/bin</location>
+                  <includes>
+                    <include>m2.conf</include>
+                  </includes>
+                </source>
+                <source>
+                  <location>${appSrcLocation}/conf</location>
+                  <includes>
+                    <include>settings.xml</include>
+                  </includes>
+                </source>
+              </sources>
+            </mapping>
 
-                        <!-- symlinks -->
-                        <mapping>
-                            <directory>/usr/bin</directory>
-                            <sources>
-                                <softlinkSource>
-                                    <location>${destBase}/bin</location>
-                                    <includes>
-                                        <include>mvn*</include>
-                                    </includes>
-                                    <excludes>
-                                        <exclude>*.bat</exclude>
-                                    </excludes>
-                                </softlinkSource>
-                            </sources>
-                        </mapping>
-                    </mappings>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+            <!-- all files -->
+            <mapping>
+              <directory>${destBase}</directory>
+              <sources>
+                <source>
+                  <location>${appSrcLocation}</location>
+                  <excludes>
+                    <exclude>bin/*.bat</exclude>
+                  </excludes>
+                </source>
+              </sources>
+            </mapping>
+
+            <!-- symlinks -->
+            <mapping>
+              <directory>/usr/bin</directory>
+              <sources>
+                <softlinkSource>
+                  <location>${destBase}/bin</location>
+                  <includes>
+                    <include>mvn*</include>
+                  </includes>
+                  <excludes>
+                    <exclude>*.bat</exclude>
+                  </excludes>
+                </softlinkSource>
+              </sources>
+            </mapping>
+          </mappings>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

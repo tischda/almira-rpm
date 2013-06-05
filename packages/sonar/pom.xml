@@ -35,6 +35,7 @@
   </properties>
 
   <build>
+    <finalName>${artifactId}-${version}.el6.noarch</finalName>
     <defaultGoal>package</defaultGoal>
     <plugins>
 

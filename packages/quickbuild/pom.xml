@@ -1,83 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>almira.rpm</groupId>
-        <artifactId>master-rpm</artifactId>
-        <version>12</version>
-        <relativePath>../../master-rpm/pom.xml</relativePath>
-    </parent>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>almira.rpm</groupId>
+    <artifactId>master-rpm</artifactId>
+    <version>12</version>
+    <relativePath>../../master-rpm/pom.xml</relativePath>
+  </parent>
 
-    <artifactId>quickbuild</artifactId>
-    <version>5.0.22.1</version>
-    <packaging>rpm</packaging>
-    <name>almira.rpm.quickbuild</name>
+  <artifactId>quickbuild</artifactId>
+  <version>5.0.23.1</version>
+  <packaging>rpm</packaging>
+  <name>almira.rpm.quickbuild</name>
 
-    <description>QuickBuild is a fabulous and easy to maintain build tool.</description>
+  <description>QuickBuild is a fabulous and easy to maintain build tool.</description>
 
-    <url>http://www.sonatype.org/quickbuild/</url>
+  <url>http://www.sonatype.org/quickbuild/</url>
 
-    <properties>
-        <appVersion>5.0.22</appVersion>
-        <rpmRelease>1</rpmRelease>
-        <appServiceName>quickbuild</appServiceName>
+  <properties>
+    <appVersion>5.0.23</appVersion>
+    <rpmRelease>1</rpmRelease>
 
-        <jdbcDriverName>mysql-connector-java</jdbcDriverName>
-        <jdbcDriverVersion>5.1.25</jdbcDriverVersion>
+    <appServiceName>quickbuild</appServiceName>
 
-        <!-- overrides -->
-        <destPrefix>/home/${appUserName}</destPrefix>
-    </properties>
+    <jdbcDriverName>mysql-connector-java</jdbcDriverName>
+    <jdbcDriverVersion>5.1.25</jdbcDriverVersion>
 
-    <build>
-        <defaultGoal>package</defaultGoal>
-        <plugins>
+    <!-- overrides -->
+    <destPrefix>/home/${appUserName}</destPrefix>
+  </properties>
 
-            <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>rpm-maven-plugin</artifactId>
-                <configuration>
-                    <needarch>x86_64</needarch>
-                    <vendor>PMEase</vendor>
-                    <copyright>Commercial</copyright>
-                    <summary>QuickBuild is a fabulous and easy to maintain build tool</summary>
-                    <mappings>
+  <build>
+    <finalName>${artifactId}-${version}.el6.x86_64</finalName>
+    <defaultGoal>package</defaultGoal>
+    <plugins>
 
-                        <!-- conf files -->
-                        <mapping>
-                            <directory>${destConf}</directory>
-                            <configuration>true</configuration>
-                            <sources>
-                                <source>
-                                    <location>${appSrcLocation}/conf</location>
-                                </source>
-                            </sources>
-                        </mapping>
+      <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>rpm-maven-plugin</artifactId>
+        <configuration>
+          <needarch>x86_64</needarch>
+          <vendor>PMEase</vendor>
+          <copyright>Commercial</copyright>
+          <summary>QuickBuild is a fabulous and easy to maintain build tool</summary>
+          <mappings>
 
-                        <!-- bin files -->
-                        <mapping>
-                            <directory>${destBase}</directory>
-                            <sources>
-                                <source>
-                                    <location>${appSrcLocation}</location>
-                                </source>
-                                <source>
-                                    <location>target/unpack/${jdbcDriverName}-${jdbcDriverVersion}</location>
-                                    <includes>
-                                        <include>*.jar</include>
-                                    </includes>
-                                </source>
-                            </sources>
-                        </mapping>
+            <!-- conf files -->
+            <mapping>
+              <directory>${destConf}</directory>
+              <configuration>true</configuration>
+              <sources>
+                <source>
+                  <location>${appSrcLocation}/conf</location>
+                </source>
+              </sources>
+            </mapping>
 
-                        <!-- service -->
-                        <mapping>
-                            <directory>/var/run/${appServiceName}/</directory>
-                        </mapping>
-                    </mappings>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+            <!-- bin files -->
+            <mapping>
+              <directory>${destBase}</directory>
+              <sources>
+                <source>
+                  <location>${appSrcLocation}</location>
+                </source>
+                <source>
+                  <location>target/unpack/${jdbcDriverName}-${jdbcDriverVersion}</location>
+                  <includes>
+                    <include>*.jar</include>
+                  </includes>
+                </source>
+              </sources>
+            </mapping>
+
+            <!-- service -->
+            <mapping>
+              <directory>/var/run/${appServiceName}/</directory>
+            </mapping>
+          </mappings>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
