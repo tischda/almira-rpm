@@ -9,11 +9,12 @@ Apache Tomcat Native RPM.
 
 Customization
 -------------
-Unpacking the source package and replacing the existing spec file so we can
-build it directly with 'rpmbuild -tb' command.
+The original spec does not work and the package is not even named correctly.
 
-The original spec does not work and the package is not even named correctly,
-so we repack from jni/native into tomcat-native-${version}.tar.gz
+Our spec file is inspired from Fedora's, we just changed a few dependencies so
+that we can build with java 7.
+
+http://rpm.pbone.net/index.php3/stat/3/srodzaj/2/search/tomcat-native-1.1.27-1.el6.src.rpm
 
 
 Update
