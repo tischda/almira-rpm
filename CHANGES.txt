@@ -2,6 +2,16 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.121 (14 June 2013)
+----------------------------
+* apache-tomcat-7.0.41.tar.gz
+* atlassian-jira-6.0.2.tar.gz
+* cmake-2.8.11.1.tar.gz
+* git-1.8.3.1.tar.gz
+* git-manpages-1.8.3.1.tar.gz
+* quickbuild-5.0.24.tar.gz
+
+
 Version 0.119 (05 June 2013)
 ----------------------------
 * nexus-2.5.0-04.war

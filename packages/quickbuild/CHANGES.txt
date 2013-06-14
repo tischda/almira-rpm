@@ -2,6 +2,11 @@
 almira.rpm.quickbuild - change history
 ===============================================================================
 
+Version 5.0.24-1 (14 June 2013)
+-------------------------------
+* Update QuickBuild to 5.0.24
+
+
 Version 5.0.23-1 (05 June 2013)
 -------------------------------
 * Update QuickBuild to 5.0.23
