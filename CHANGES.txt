@@ -2,6 +2,18 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.122 (02 July 2013)
+----------------------------
+* apr-1.4.8.tar.bz2
+* jira-dvcs-connector-plugin-1.4.0.1.jar
+* atlassian-jira-6.0.3.tar.gz
+* git-1.8.3.2.tar.gz
+* git-manpages-1.8.3.2.tar.gz
+* quickbuild-5.0.28.tar.gz
+* sonar-plugins-3.6-bundle.zip
+* sonar-3.6.zip
+
+
 Version 0.121 (14 June 2013)
 ----------------------------
 * apache-tomcat-7.0.41.tar.gz
