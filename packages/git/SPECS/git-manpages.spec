@@ -1,5 +1,5 @@
 Name: git-manpages
-Version: 1.8.3.1
+Version: 1.8.3.2
 Release: 1%{?dist}
 Summary: GIT man pages
 

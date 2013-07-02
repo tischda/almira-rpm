@@ -12,7 +12,7 @@
   </parent>
 
   <artifactId>sonar</artifactId>
-  <version>3.5.1.5</version>
+  <version>3.6.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.sonar</name>
 
@@ -20,8 +20,8 @@
   <url>http://www.sonarsource.org</url>
 
   <properties>
-    <appVersion>3.5.1</appVersion>
-    <rpmRelease>5</rpmRelease>
+    <appVersion>3.6</appVersion>
+    <rpmRelease>1</rpmRelease>
 
     <appServiceName>sonar</appServiceName>
     <appContextPath>sonar</appContextPath>

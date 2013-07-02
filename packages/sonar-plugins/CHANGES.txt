@@ -2,6 +2,15 @@
 almira.rpm.sonar-plugins - change history
 ===============================================================================
 
+Version 3.6-1 (02 July 2013)
+----------------------------
+* removed deprecated c plugin
+* removed deprecated csv plugin (cf. http://docs.codehaus.org/display/SONAR/CSV+Export+Plugin)
+* sonar-cxx-plugin-0.2.jar
+* sonar-php-plugin-1.2.jar
+* sonar-scm-activity-plugin-1.5.1.jar
+
+
 Version 3.3-1 (05 May 2013)
 ---------------------------
 * sonar-build-stability-plugin-1.2.jar
