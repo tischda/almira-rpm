@@ -25,6 +25,7 @@ ln -sf @{destConf}/logback.xml @{appWorkFolder}/conf/logback.xml
 ln -sf @{destConf}/sonar.properties @{appWorkFolder}/conf/sonar.properties
 
 # Install MySQL connector
+rm -f  @{appWorkFolder}/extensions/jdbc-driver/mysql/mysql*.jar
 mv @{destBase}/mysql-connector-java-*.jar @{appWorkFolder}/extensions/jdbc-driver/mysql
 
 # Recompile WAR

@@ -13,7 +13,6 @@ if [ "$1" = "2" ]; then
   rm -rf @{destBase}/work/*
   rm -rf @{destBase}/webapps/*
   rm -f  @{appWorkFolder}/extensions/plugins/*
-  rm -f  @{appWorkFolder}/extensions/jdbc-driver/mysql/mysql*.jar
 fi
 
 
