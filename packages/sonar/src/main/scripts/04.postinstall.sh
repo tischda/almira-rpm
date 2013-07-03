@@ -11,13 +11,6 @@ if [ "$1" = "1" ]; then
   chkconfig --add @{appServiceName}
 fi
 
-# When we update, make sure we're clean
-if [ "$1" = "2" ]; then
-  rm -rf @{destBase}/temp/*
-  rm -rf @{destBase}/work/*
-  rm -rf @{destBase}/webapps/*
-fi
-
 # Workaround for BUG: http://jira.codehaus.org/browse/MRPM-89
 chown -R root:root @{destConf}
 
@@ -32,7 +25,6 @@ ln -sf @{destConf}/logback.xml @{appWorkFolder}/conf/logback.xml
 ln -sf @{destConf}/sonar.properties @{appWorkFolder}/conf/sonar.properties
 
 # Install MySQL connector
-rm -f @{appWorkFolder}/extensions/jdbc-driver/mysql/mysql*.jar
 mv @{destBase}/mysql-connector-java-*.jar @{appWorkFolder}/extensions/jdbc-driver/mysql
 
 # Recompile WAR

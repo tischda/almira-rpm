@@ -12,7 +12,7 @@
   </parent>
 
   <artifactId>sonar</artifactId>
-  <version>3.6.1</version>
+  <version>3.6.2</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.sonar</name>
 
@@ -21,7 +21,7 @@
 
   <properties>
     <appVersion>3.6</appVersion>
-    <rpmRelease>1</rpmRelease>
+    <rpmRelease>2</rpmRelease>
 
     <appServiceName>sonar</appServiceName>
     <appContextPath>sonar</appContextPath>
@@ -98,6 +98,16 @@
                   <includes>
                     <include>*.jar</include>
                   </includes>
+                </source>
+              </sources>
+            </mapping>
+
+            <!-- plugins -->
+            <mapping>
+              <directory>${appWorkFolder}/extensions/plugins</directory>
+              <sources>
+                <source>
+                  <location>target/unpack/sonar-plugins/</location>
                 </source>
               </sources>
             </mapping>
