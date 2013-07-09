@@ -2,6 +2,15 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.125 (09 July 2013)
+----------------------------
+* apache-tomcat-7.0.42.tar.gz
+* atlassian-jira-6.0.4.tar.gz
+* cmake-2.8.11.2.tar.gz
+* nexus-2.5.1-01.war
+* quickbuild-5.0.29.tar.gz
+
+
 Version 0.123 (03 July 2013)
 ----------------------------
 * moved sonar-plugins into sonar
