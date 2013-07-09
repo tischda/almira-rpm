@@ -2,9 +2,10 @@
 almira.rpm.nexus - change history
 ===============================================================================
 
-Version 2.5.1-01-1 (05 June 2013)
+Version 2.5.1-01-2 (05 June 2013)
 ---------------------------------
 * Updated Nexus to 2.5.1-01
+* Fixed postinstall deleting webapps folder
 
 
 Version 2.5.0-04-1 (05 June 2013)

@@ -1,6 +1,6 @@
 # Initial installation
 if [ "$1" = "1" ]; then
-  mkdir -p -m775 @{destBase}/{conf,logs,temp,work,webapps}
+  mkdir -p -m775 @{destBase}/{conf,logs,temp,work}
   mkdir -p -m775 @{appWorkFolder}/conf
   chown -R @{appUserName}:@{appGroupName} @{destBase}
   chown -R @{appUserName}:@{appGroupName} @{appWorkFolder}
@@ -9,13 +9,6 @@ if [ "$1" = "1" ]; then
   ln -sf tomcat @{appServiceName}
 
   chkconfig --add @{appServiceName}
-fi
-
-# When we update, make sure we're clean
-if [ "$1" = "2" ]; then
-  rm -rf @{destBase}/temp/*
-  rm -rf @{destBase}/work/*
-  rm -rf @{destBase}/webapps/*
 fi
 
 # Workaround for BUG: http://jira.codehaus.org/browse/MRPM-89
