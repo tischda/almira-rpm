@@ -2,6 +2,11 @@
 almira.rpm.apache-maven - change history
 ===============================================================================
 
+Version 3.1.0-1 (16 July 2013)
+------------------------------
+* Update Maven to 3.1.0
+
+
 Version 3.0.5-3 (27 March 2013)
 -------------------------------
 * Master pom 11 fixes user rights

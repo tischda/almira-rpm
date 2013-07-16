@@ -2,7 +2,13 @@
 almira.rpm - change history
 ===============================================================================
 
-Version 0.125 (13 July 2013)
+Version 0.127 (16 July 2013)
+----------------------------
+* apache-ant-1.9.2-bin.tar.gz
+* apache-maven-3.1.0-bin.tar.gz
+
+
+Version 0.126 (13 July 2013)
 ----------------------------
 * sonar-3.6.1.zip
 
