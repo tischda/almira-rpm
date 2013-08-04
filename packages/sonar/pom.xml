@@ -27,7 +27,7 @@
     <appContextPath>sonar</appContextPath>
 
     <jdbcDriverName>mysql-connector-java</jdbcDriverName>
-    <jdbcDriverVersion>5.1.25</jdbcDriverVersion>
+    <jdbcDriverVersion>5.1.26</jdbcDriverVersion>
 
     <!-- Overrides -->
     <destPrefix>/home/${appUserName}</destPrefix>

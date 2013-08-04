@@ -2,15 +2,22 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.130 (03 August 2013)
+------------------------------
+* httpd-2.4.6.tar.bz2
+* quickbuild-5.0.33.tar.gz
+* mysql-connector-java-5.1.26.tar.gz
+
+
 Version 0.129 (31 July 2013)
 ----------------------------
-atlassian-jira-6.0.5.tar.gz
-git-1.8.3.4.tar.gz
-git-manpages-1.8.3.4.tar.gz
-MySQL-xxx-5.6.13
-nexus-2.6.0-05.war
-quickbuild-5.0.32.tar.gz
-sonar-3.6.2.zip
+* atlassian-jira-6.0.5.tar.gz
+* git-1.8.3.4.tar.gz
+* git-manpages-1.8.3.4.tar.gz
+* MySQL-5.6.13
+* nexus-2.6.0-05.war
+* quickbuild-5.0.32.tar.gz
+* sonar-3.6.2.zip
 
 
 Version 0.128 (16 July 2013)
