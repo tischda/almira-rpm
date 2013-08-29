@@ -15,6 +15,5 @@
         <module>nexus</module>
         <module>quickbuild</module>
         <module>sonar</module>
-        <module>sonar-plugins</module>
     </modules>
 </project>

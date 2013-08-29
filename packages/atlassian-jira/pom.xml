@@ -12,7 +12,7 @@
   </parent>
 
   <artifactId>atlassian-jira</artifactId>
-  <version>6.0.5.1</version>
+  <version>6.0.7.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.atlassian-jira</name>
 
@@ -22,7 +22,7 @@ great products.</description>
   <url>http://www.atlassian.com/software/jira/overview</url>
 
   <properties>
-    <appVersion>6.0.5</appVersion>
+    <appVersion>6.0.7</appVersion>
     <rpmRelease>1</rpmRelease>
 
     <appServiceName>jira</appServiceName>
@@ -48,7 +48,7 @@ great products.</description>
         <artifactId>rpm-maven-plugin</artifactId>
         <configuration>
           <prereqs>
-            <prereq>apache-tomcat &gt;= 7.0.40</prereq>
+            <prereq>apache-tomcat &gt;= 7.0.42</prereq>
           </prereqs>
           <vendor>Atlassian</vendor>
           <copyright>Commercial</copyright>

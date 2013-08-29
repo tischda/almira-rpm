@@ -12,7 +12,7 @@
   </parent>
 
   <artifactId>sonar</artifactId>
-  <version>3.6.2.1</version>
+  <version>3.7.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.sonar</name>
 
@@ -20,7 +20,7 @@
   <url>http://www.sonarsource.org</url>
 
   <properties>
-    <appVersion>3.6.2</appVersion>
+    <appVersion>3.7</appVersion>
     <rpmRelease>1</rpmRelease>
 
     <appServiceName>sonar</appServiceName>
@@ -45,7 +45,7 @@
         <artifactId>rpm-maven-plugin</artifactId>
         <configuration>
           <prereqs>
-            <prereq>apache-tomcat &gt;= 7.0.40</prereq>
+            <prereq>apache-tomcat &gt;= 7.0.42</prereq>
           </prereqs>
           <vendor>Sonarsource</vendor>
           <copyright>GNU Lesser GPL License, Version 3</copyright>

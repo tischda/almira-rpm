@@ -2,6 +2,16 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.133 (29 August 2013)
+------------------------------
+* atlassian-jira-6.0.7.tar.gz
+* git-1.8.4.tar.gz
+* git-manpages-1.8.4.tar.gz
+* nexus-2.6.2-01.war
+* quickbuild-5.0.36.tar.gz
+* sonar-3.7.zip
+
+
 Version 0.130 (03 August 2013)
 ------------------------------
 * httpd-2.4.6.tar.bz2
