@@ -12,12 +12,7 @@ if [ "$1" = "2" ]; then
   rm -rf @{destBase}/temp/*
   rm -rf @{destBase}/work/*
   rm -rf @{destBase}/webapps/*
-  rm -f  @{appWorkFolder}/extensions/plugins/*
-fi
 
-echo `date` > /tmp/sonar-rpm-install.log
-echo "destbase is @{destBase}" >> /tmp/sonar-rpm-install.log
-echo "PRE *****************" >> /tmp/sonar-rpm-install.log
-ls -al /home/sonar/sonar >> /tmp/sonar-rpm-install.log
-echo "PRE *****************" >> /tmp/sonar-rpm-install.log
-ls @{appWorkFolder}/war/sonar-server/WEB-INF/lib >> /tmp/sonar-rpm-install.log
+  # RPM removes old versions *after* postinstall... uh, this is ugly:
+  rm -f  @{appWorkFolder}/{extensions,extras,lib,temp,war}
+fi

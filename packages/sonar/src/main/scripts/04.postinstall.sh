@@ -1,12 +1,4 @@
 # Initial installation
-
-echo "appWorkFolder is @{appWorkFolder}" >> /tmp/sonar-rpm-install.log
-echo "POST *****************" >> /tmp/sonar-rpm-install.log
-ls -al /home/sonar/sonar >> /tmp/sonar-rpm-install.log
-echo "POST *****************" >> /tmp/sonar-rpm-install.log
-ls @{appWorkFolder}/war/sonar-server/WEB-INF/lib >> /tmp/sonar-rpm-install.log
-
-
 if [ "$1" = "1" ]; then
   mkdir -p -m775 @{destBase}/{conf,logs,temp,work,webapps}
   mkdir -p -m775 @{appWorkFolder}/conf
@@ -36,6 +28,7 @@ ln -sf @{destConf}/sonar.properties @{appWorkFolder}/conf/sonar.properties
 rm -f  @{appWorkFolder}/extensions/jdbc-driver/mysql/mysql*.jar
 mv @{destBase}/mysql-connector-java-*.jar @{appWorkFolder}/extensions/jdbc-driver/mysql
 
+# TODO: this is really not the way to do it, use %build and %clean instead!
 # Recompile WAR
 echo Building...
 cd @{appWorkFolder}/war
