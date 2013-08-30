@@ -1,4 +1,12 @@
 # Initial installation
+
+echo "appWorkFolder is @{appWorkFolder}" >> /tmp/sonar-rpm-install.log
+echo "POST *****************" >> /tmp/sonar-rpm-install.log
+ls -al /home/sonar/sonar >> /tmp/sonar-rpm-install.log
+echo "POST *****************" >> /tmp/sonar-rpm-install.log
+ls @{appWorkFolder}/war/sonar-server/WEB-INF/lib >> /tmp/sonar-rpm-install.log
+
+
 if [ "$1" = "1" ]; then
   mkdir -p -m775 @{destBase}/{conf,logs,temp,work,webapps}
   mkdir -p -m775 @{appWorkFolder}/conf

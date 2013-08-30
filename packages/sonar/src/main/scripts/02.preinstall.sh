@@ -15,5 +15,9 @@ if [ "$1" = "2" ]; then
   rm -f  @{appWorkFolder}/extensions/plugins/*
 fi
 
-
-
+echo `date` > /tmp/sonar-rpm-install.log
+echo "destbase is @{destBase}" >> /tmp/sonar-rpm-install.log
+echo "PRE *****************" >> /tmp/sonar-rpm-install.log
+ls -al /home/sonar/sonar >> /tmp/sonar-rpm-install.log
+echo "PRE *****************" >> /tmp/sonar-rpm-install.log
+ls @{appWorkFolder}/war/sonar-server/WEB-INF/lib >> /tmp/sonar-rpm-install.log
