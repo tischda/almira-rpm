@@ -2,6 +2,11 @@
 almira.rpm.sonar - change history
 ===============================================================================
 
+Version 3.7-6 (30 August 2013)
+------------------------------
+* Fixed ALM-128 Sonar update does not remove old libraries
+
+
 Version 3.7-1 (29 August 2013)
 ------------------------------
 * Updated Sonar to 3.7
