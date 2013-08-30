@@ -14,5 +14,5 @@ if [ "$1" = "2" ]; then
   rm -rf @{destBase}/webapps/*
 
   # RPM removes old versions *after* postinstall... uh, this is ugly:
-  rm -f  @{appWorkFolder}/{extensions,extras,lib,temp,war}
+  rm -rf  @{appWorkFolder}/{extensions,extras,lib,temp,war}
 fi
