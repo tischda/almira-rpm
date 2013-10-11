@@ -2,6 +2,12 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.136 (11 October 2013)
+-------------------------------
+* apache-maven-3.1.1-bin.tar.gz
+* sonar-3.7.1.zip
+
+
 Version 0.135 (03 October 2013)
 -------------------------------
 * atlassian-jira-6.1.tar.gz
