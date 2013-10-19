@@ -2,6 +2,14 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.137 (19 October 2013)
+-------------------------------
+* atlassian-jira-6.1.1.tar.gz
+* cmake-2.8.12.tar.gz
+* quickbuild-5.0.39.tar.gz
+* tomcat-native-1.1.29-src.tar.gz
+
+
 Version 0.136 (11 October 2013)
 -------------------------------
 * apache-maven-3.1.1-bin.tar.gz

@@ -1,6 +1,6 @@
 Name: tomcat-native
-Version: 1.1.27
-Release: 2%{?dist}
+Version: 1.1.29
+Release: 1%{?dist}
 Summary: Tomcat native library
 
 License: ASL 2.0

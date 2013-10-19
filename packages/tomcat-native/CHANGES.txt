@@ -2,6 +2,11 @@
 almira.rpm.tomcat-native - change history
 ===============================================================================
 
+Version 1.1.29-1 (19 October 2013)
+----------------------------------
+* Updated to 1.1.29
+
+
 Version 1.1.27-2 (05 June 2013)
 -------------------------------
 * From scratch inspired from Fedora src.rpm
