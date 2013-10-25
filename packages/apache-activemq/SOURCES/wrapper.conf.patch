@@ -1,9 +1,9 @@
-diff -Nur apache-activemq-5.8.0.orig/bin/linux-x86-64/wrapper.conf apache-activemq-5.8.0/bin/linux-x86-64/wrapper.conf
---- apache-activemq-5.8.0.orig/bin/linux-x86-64/wrapper.conf	2013-02-06 17:53:14.000000000 +0100
-+++ apache-activemq-5.8.0/bin/linux-x86-64/wrapper.conf	2013-05-12 14:15:45.430843489 +0200
+diff -Nur apache-activemq-5.9.0.orig/bin/linux-x86-64/wrapper.conf apache-activemq-5.9.0/bin/linux-x86-64/wrapper.conf
+--- apache-activemq-5.9.0.orig/bin/linux-x86-64/wrapper.conf  2013-10-15 01:03:15.000000000 +0200
++++ apache-activemq-5.9.0/bin/linux-x86-64/wrapper.conf 2013-10-25 15:54:32.782417426 +0200
 @@ -20,11 +20,11 @@
  #********************************************************************
- 
+
  #wrapper.debug=TRUE
 -set.default.ACTIVEMQ_HOME=../..
 -set.default.ACTIVEMQ_BASE=../..
@@ -13,21 +13,21 @@ diff -Nur apache-activemq-5.8.0.orig/bin/linux-x86-64/wrapper.conf apache-active
  set.default.ACTIVEMQ_DATA=%ACTIVEMQ_BASE%/data
 -wrapper.working.dir=.
 +wrapper.working.dir=/
- 
+
  # Java Application
  wrapper.java.command=java
 @@ -41,7 +41,7 @@
  wrapper.java.classpath.2=%ACTIVEMQ_HOME%/bin/activemq.jar
- 
+
  # Java Library Path (location of Wrapper.DLL or libwrapper.so)
 -wrapper.java.library.path.1=%ACTIVEMQ_HOME%/bin/linux-x86-64/
 +wrapper.java.library.path.1=%ACTIVEMQ_HOME%/bin
- 
+
  # Java Additional Parameters
  # note that n is the parameter number starting from 1.
-@@ -140,4 +140,4 @@
+@@ -144,4 +144,4 @@
  wrapper.ntservice.starttype=AUTO_START
- 
+
  # Allow the service to interact with the desktop.
 -wrapper.ntservice.interactive=false
 \ No newline at end of file

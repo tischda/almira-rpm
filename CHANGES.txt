@@ -2,6 +2,13 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.138 (25 October 2013)
+-------------------------------
+* apache-activemq-5.9.0-bin.tar.gz
+* nexus-2.6.4-02.war
+* sonar-3.7.3.zip
+
+
 Version 0.137 (19 October 2013)
 -------------------------------
 * atlassian-jira-6.1.1.tar.gz

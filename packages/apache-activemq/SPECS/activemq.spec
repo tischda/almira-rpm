@@ -1,8 +1,8 @@
 %define amqhome /usr/share/activemq
 
 Name: apache-activemq
-Version: 5.8.0
-Release: 2%{?dist}
+Version: 5.9.0
+Release: 1%{?dist}
 Summary: ActiveMQ Messaging Broker
 Group: System Environment/Daemons
 License: ASL 2.0
@@ -118,6 +118,10 @@ fi
 
 
 %changelog
+* Fri Oct 25 2013 Daniel Tischer <dos.7182@gmail.com> - 5.9.0-1
+- rebuild for 5.9.0
+- updated wrapper.conf 5.8.0 -> 5.9.0
+
 * Sun May 12 2013 Daniel Tischer <dos.7182@gmail.com> - 5.8.0-1
 - rebuild for 5.8.0
 - removed dependency on jre to support oracle jdk
