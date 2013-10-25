@@ -2,7 +2,7 @@
 
 Name: apache-activemq
 Version: 5.9.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: ActiveMQ Messaging Broker
 Group: System Environment/Daemons
 License: ASL 2.0
@@ -76,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT%{amqhome}/bin/macosx
 
 # Fix up permissions (rpmlint complains)
 find $RPM_BUILD_ROOT%{amqhome}/webapps -perm 755 -type f -exec chmod -x '{}' \;
-find $RPM_BUILD_ROOT%{amqhome}/example/stomp/ruby -name \*.rb -type f -exec chmod +x '{}' \;
+find $RPM_BUILD_ROOT%{amqhome}/examples/stomp/ruby -name \*.rb -type f -exec chmod +x '{}' \;
 
 
 %clean
@@ -118,7 +118,7 @@ fi
 
 
 %changelog
-* Fri Oct 25 2013 Daniel Tischer <dos.7182@gmail.com> - 5.9.0-2
+* Fri Oct 25 2013 Daniel Tischer <dos.7182@gmail.com> - 5.9.0-3
 - rebuild for 5.9.0
 - updated wrapper.conf 5.8.0 -> 5.9.0
 
