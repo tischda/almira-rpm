@@ -3,7 +3,6 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
   xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>almira.rpm</groupId>
     <artifactId>master-rpm</artifactId>
@@ -12,7 +11,7 @@
   </parent>
 
   <artifactId>sonar</artifactId>
-  <version>3.7.3.1</version>
+  <version>3.7.3.7</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.sonar</name>
 
@@ -21,13 +20,13 @@
 
   <properties>
     <appVersion>3.7.3</appVersion>
-    <rpmRelease>6</rpmRelease>
+    <rpmRelease>7</rpmRelease>
 
     <appServiceName>sonar</appServiceName>
     <appContextPath>sonar</appContextPath>
 
     <jdbcDriverName>mysql-connector-java</jdbcDriverName>
-    <jdbcDriverVersion>5.1.26</jdbcDriverVersion>
+    <jdbcDriverVersion>5.1.27</jdbcDriverVersion>
 
     <!-- Overrides -->
     <destPrefix>/home/${appUserName}</destPrefix>

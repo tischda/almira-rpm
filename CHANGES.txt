@@ -2,6 +2,18 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.139 (09 November 2013)
+--------------------------------
+* apache-tomcat-7.0.47.tar.gz
+* atlassian-jira-6.1.2.tar.gz
+* git-1.8.4.3.tar.gz
+* git-manpages-1.8.4.3.tar.gz
+* mysql-connector-java-5.1.27.tar.gz
+* perl-YAML-0.84-1.2.noarch.rpm
+- removed jira-dvcs-connector-plugin
+ (see: https://answers.atlassian.com/questions/217745/support-for-dvcs-connector-on-jira-6-1)
+
+
 Version 0.138 (25 October 2013)
 -------------------------------
 * apache-activemq-5.9.0-bin.tar.gz

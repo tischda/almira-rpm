@@ -2,7 +2,12 @@
 almira.rpm.sonar - change history
 ===============================================================================
 
-Version 3.7.3-1 (25 October 2013)
+Version 3.7.3-7 (09 November 2013)
+----------------------------------
+* mysql-connector-java-5.1.27.tar.gz
+
+
+Version 3.7.3-6 (25 October 2013)
 ---------------------------------
 * Updated Sonar to 3.7.3
 
