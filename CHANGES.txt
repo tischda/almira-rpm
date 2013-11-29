@@ -2,6 +2,15 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.141 (29 November 2013)
+--------------------------------
+atlassian-jira-6.1.4.tar.gz
+git-1.8.5.tar.gz
+git-manpages-1.8.5.tar.gz
+nexus-2.7.0-04.war
+quickbuild-5.1.0.tar.gz
+
+
 Version 0.140 (20 November 2013)
 --------------------------------
 * apr-1.5.0.tar.bz2
