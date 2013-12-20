@@ -13,7 +13,7 @@ Version 0.142 (20 December 2013)
 * MySQL-server-5.6.15-1.el6.x86_64.rpm
 * MySQL-shared-5.6.15-1.el6.x86_64.rpm
 * MySQL-shared-compat-5.6.15-1.el6.x86_64.rpm
-* nexus-2.7.0-05.war
+* nexus-2.7.0-06.war
 * quickbuild-5.1.4.tar.gz
 * sonar-3.7.4.zip
 
