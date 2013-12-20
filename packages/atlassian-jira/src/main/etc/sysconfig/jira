@@ -47,7 +47,7 @@
 
 # Run as a service, so profile.d is not read => JAVA_HOME must be defined!
 export JAVA_HOME="/usr/java/default"
-export JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxPermSize=256m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -XX:+UseParNewGC -server ${JAVA_OTPS}"
+export JAVA_OPTS="-Xms1024m -Xmx2048m -XX:MaxPermSize=512m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -XX:+UseParNewGC -server ${JAVA_OTPS}"
 
 export CATALINA_OPTS="-Djira.home=@{appWorkFolder} -Djira.jms.broker.uri=tcp://`hostname`:54663 -Dmail.mime.decodeparameters=true -Dorg.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true"
 

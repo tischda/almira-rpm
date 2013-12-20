@@ -2,6 +2,22 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.142 (20 December 2013)
+--------------------------------
+* atlassian-jira-6.1.5.tar.gz
+* git-1.8.5.2.tar.gz
+* git-manpages-1.8.5.2.tar.gz
+* httpd-2.4.7.tar.bz2
+* MySQL-client-5.6.15-1.el6.x86_64.rpm
+* MySQL-devel-5.6.15-1.el6.x86_64.rpm
+* MySQL-server-5.6.15-1.el6.x86_64.rpm
+* MySQL-shared-5.6.15-1.el6.x86_64.rpm
+* MySQL-shared-compat-5.6.15-1.el6.x86_64.rpm
+* nexus-2.7.0-05.war
+* quickbuild-5.1.4.tar.gz
+* sonar-3.7.4.zip
+
+
 Version 0.141 (29 November 2013)
 --------------------------------
 atlassian-jira-6.1.4.tar.gz
