@@ -2,6 +2,17 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.143 (17 January 2014)
+-------------------------------
+* apache-tomcat-7.0.50.tar.gz
+* atlassian-jira-6.1.6.tar.gz
+* git-1.8.5.3.tar.gz
+* git-manpages-1.8.5.3.tar.gz
+* mysql-connector-java-5.1.28.tar.gz
+* nexus-2.7.1-01.war
+* quickbuild-5.1.7.tar.gz
+
+
 Version 0.142 (20 December 2013)
 --------------------------------
 * atlassian-jira-6.1.5.tar.gz

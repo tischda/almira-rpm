@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>sonar</artifactId>
-  <version>3.7.4.1</version>
+  <version>3.7.4.2</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.sonar</name>
 
@@ -20,13 +20,13 @@
 
   <properties>
     <appVersion>3.7.4</appVersion>
-    <rpmRelease>1</rpmRelease>
+    <rpmRelease>2</rpmRelease>
 
     <appServiceName>sonar</appServiceName>
     <appContextPath>sonar</appContextPath>
 
     <jdbcDriverName>mysql-connector-java</jdbcDriverName>
-    <jdbcDriverVersion>5.1.27</jdbcDriverVersion>
+    <jdbcDriverVersion>5.1.28</jdbcDriverVersion>
 
     <!-- Overrides -->
     <destPrefix>/home/${appUserName}</destPrefix>
@@ -44,7 +44,7 @@
         <artifactId>rpm-maven-plugin</artifactId>
         <configuration>
           <prereqs>
-            <prereq>apache-tomcat &gt;= 7.0.42</prereq>
+            <prereq>apache-tomcat &gt;= 7.0.50</prereq>
           </prereqs>
           <vendor>Sonarsource</vendor>
           <copyright>GNU Lesser GPL License, Version 3</copyright>
