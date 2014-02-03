@@ -16,7 +16,7 @@ yum install rpm-build gcc gcc-c++ make ncurses-devel
 
 rpmbuild/
 ├── SOURCES
-│   └── cmake-2.8.11.tar.gz
+│   └── cmake-2.8.12.2.tar.gz
 └── SPECS
     └── cmake.spec
 

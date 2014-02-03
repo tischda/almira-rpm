@@ -1,5 +1,5 @@
 Name: cmake
-Version: 2.8.12.1
+Version: 2.8.12.2
 Release: 1%{?dist}
 Summary: Cross-platform make system
 
