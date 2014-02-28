@@ -18,31 +18,28 @@ Binaries are not checked into VCS.
 To package the 'dist' directory, execute 'mvn assembly:single'
 
 
-Installation
+Installation ("c:\windows\System32\tree.com" /A /F dist | find /v ".url")
 ------------
 Copy binary files to 'dist' directory:
 
 +---apache-activemq
-|       apache-activemq-5.8.0-bin.tar.gz
+|       apache-activemq-5.9.0-bin.tar.gz
 |
 +---apache-ant
-|       apache-ant-1.9.2-bin.tar.gz
+|       apache-ant-1.9.3-bin.tar.gz
 |       apache-ivy-2.3.0-bin-with-deps.tar.gz
 |
 +---apache-httpd
-|       apr-1.4.8.tar.bz2
-|       apr-util-1.5.2.tar.bz2
-|       apr.url
+|       apr-1.5.0.tar.bz2
+|       apr-util-1.5.3.tar.bz2
 |       distcache-1.4.5-23.src.rpm
-|       distcache.url
-|       httpd-2.4.4.tar.bz2
-|       httpd.url
+|       httpd-2.4.7.tar.bz2
 |
 +---apache-maven
-|       apache-maven-3.1.0-bin.tar.gz
+|       apache-maven-3.2.1-bin.tar.gz
 |
 +---apache-tomcat
-|   |   apache-tomcat-7.0.42.tar.gz
+|   |   apache-tomcat-7.0.52.tar.gz
 |   |
 |   \---extra
 |           catalina-jmx-remote.jar
@@ -51,41 +48,42 @@ Copy binary files to 'dist' directory:
 |           tomcat-juli.jar
 |
 +---atlassian-jira
-|       atlassian-jira-6.0.4.tar.gz
-|       mysql-connector-java-5.1.25.tar.gz
-|
-+---atlassian-jira-plugins
-|       jira-dvcs-connector-plugin-1.4.0.1.jar
+|       atlassian-jira-6.2.tar.gz
+|       mysql-connector-java-5.1.29.tar.gz
 |
 +---cmake
-|       cmake-2.8.11.2.tar.gz
+|       cmake-2.8.12.2.tar.gz
 |
 +---git
-|       git-1.8.3.2.tar.gz
-|       git-manpages-1.8.3.2.tar.gz
-|       perl-YAML-0.81-20.2.noarch.rpm
+|       git-1.9.0.tar.gz
+|       git-manpages-1.9.0.tar.gz
+|       perl-YAML-0.84-1.2.noarch.rpm
 |
 +---nexus
-|       nexus-2.5.1-01.war
+|       nexus-2.7.2-03.war
 |
 +---oracle-mysql
-|       MySQL-client-5.6.12-1.el6.x86_64.rpm
-|       MySQL-devel-5.6.12-1.el6.x86_64.rpm
-|       MySQL-server-5.6.12-1.el6.x86_64.rpm
-|       MySQL-shared-5.6.12-1.el6.x86_64.rpm
-|       MySQL-shared-compat-5.6.12-1.el6.x86_64.rpm
+|       MySQL-client-5.6.16-1.el6.x86_64.rpm
+|       MySQL-devel-5.6.16-1.el6.x86_64.rpm
+|       MySQL-server-5.6.16-1.el6.x86_64.rpm
+|       MySQL-shared-5.6.16-1.el6.x86_64.rpm
+|       MySQL-shared-compat-5.6.16-1.el6.x86_64.rpm
 |
 +---quickbuild
-|       mysql-connector-java-5.1.25.tar.gz
-|       quickbuild-5.0.29.tar.gz
+|       mysql-connector-java-5.1.29.tar.gz
+|       quickbuild-5.1.14.tar.gz
 |
 +---sonar
-|       mysql-connector-java-5.1.25.tar.gz
-|       sonar-3.6.1.zip
-|       sonar-plugins-3.6-2.zip
+|   |   mysql-connector-java-5.1.29.tar.gz
+|   |   sonar-3.7.4.zip
+|   |   sonar-plugins-3.7-1.zip
+|   |
+|   \---other-plugins
+|           sonar-doxygen-plugin-0.1.jar
+|           sonar-xml-plugin-1.0.1.jar
 |
 \---tomcat-native
-        tomcat-native-1.1.27-src.tar.gz
+        tomcat-native-1.1.29-src.tar.gz
 
 
 References

@@ -2,6 +2,16 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.146 (28 February 2014)
+--------------------------------
+* apache-maven-3.2.1-bin.tar.gz
+* apache-tomcat-7.0.52.tar.gz
+* atlassian-jira-6.2.tar.gz
+* mysql-connector-java-5.1.29.tar.gz
+* nexus-2.7.2-03.war
+* quickbuild-5.1.14.tar.gz
+
+
 Version 0.145 (18 February 2014)
 --------------------------------
 * git-1.9.0.tar.gz
