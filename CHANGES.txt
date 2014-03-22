@@ -2,6 +2,14 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.147 (22 March 2014)
+-----------------------------
+* atlassian-jira-6.2.1.tar.gz
+* httpd-2.4.9.tar.bz2
+* jdk-8-linux-x64.rpm
+* quickbuild-5.1.18.tar.gz
+
+
 Version 0.146 (28 February 2014)
 --------------------------------
 * apache-maven-3.2.1-bin.tar.gz
