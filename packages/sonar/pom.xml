@@ -40,6 +40,7 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>rpm-maven-plugin</artifactId>
         <configuration>
+          <needarch>x86_64</needarch>
           <vendor>Sonarsource</vendor>
           <copyright>GNU Lesser GPL License, Version 3</copyright>
           <summary>Sonar is an open platform to manage code quality.</summary>
