@@ -1,4 +1,4 @@
-@{destBase}/logs/catalina.out {
+@{destBase}/logs/sonar.log {
     copytruncate
     weekly
     rotate 52

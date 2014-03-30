@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>sonar</artifactId>
-  <version>3.7.4.3</version>
+  <version>4.2.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.sonar</name>
 
@@ -19,18 +19,15 @@
   <url>http://www.sonarsource.org</url>
 
   <properties>
-    <appVersion>3.7.4</appVersion>
-    <rpmRelease>3</rpmRelease>
+    <appVersion>4.2</appVersion>
+    <rpmRelease>1</rpmRelease>
 
     <appServiceName>sonar</appServiceName>
     <appContextPath>sonar</appContextPath>
 
-    <jdbcDriverName>mysql-connector-java</jdbcDriverName>
-    <jdbcDriverVersion>5.1.29</jdbcDriverVersion>
-
     <!-- Overrides -->
     <destPrefix>/home/${appUserName}</destPrefix>
-    <appWorkFolder>${destPrefix}/sonar-work</appWorkFolder>
+    <appSrcLocation>target/unpack/sonarqube-${appVersion}</appSrcLocation>
   </properties>
 
   <build>
@@ -43,9 +40,6 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>rpm-maven-plugin</artifactId>
         <configuration>
-          <prereqs>
-            <prereq>apache-tomcat &gt;= 7.0.52</prereq>
-          </prereqs>
           <vendor>Sonarsource</vendor>
           <copyright>GNU Lesser GPL License, Version 3</copyright>
           <summary>Sonar is an open platform to manage code quality.</summary>
@@ -56,22 +50,7 @@
               <configuration>true</configuration>
               <sources>
                 <source>
-                  <location>${appSrcLocation}/conf/logback.xml</location>
-                </source>
-                <source>
-                  <location>target/classes/${appServiceName}</location>
-                </source>
-              </sources>
-            </mapping>
-            <mapping>
-              <directory>/etc/sysconfig</directory>
-              <username>root</username>
-              <groupname>root</groupname>
-              <filemode>644</filemode>
-              <configuration>true</configuration>
-              <sources>
-                <source>
-                  <location>target/classes/sysconfig/${appServiceName}</location>
+                  <location>${appSrcLocation}/conf</location>
                 </source>
               </sources>
             </mapping>
@@ -88,37 +67,32 @@
               </sources>
             </mapping>
 
-            <!-- bin files -->
-            <mapping>
-              <directory>${destBase}</directory>
-              <sources>
-                <source>
-                  <location>target/unpack/${jdbcDriverName}-${jdbcDriverVersion}</location>
-                  <includes>
-                    <include>*.jar</include>
-                  </includes>
-                </source>
-              </sources>
-            </mapping>
-
             <!-- plugins -->
             <mapping>
-              <directory>${appWorkFolder}/extensions/plugins</directory>
+              <directory>${destBase}/extensions/plugins</directory>
               <sources>
                 <source>
-                  <location>target/unpack/sonar-plugins/</location>
+                  <location>target/unpack/plugins/</location>
                 </source>
               </sources>
             </mapping>
 
             <!-- sources files-->
             <mapping>
-              <directory>${appWorkFolder}</directory>
+              <directory>${destBase}</directory>
               <sources>
                 <source>
                   <location>${appSrcLocation}</location>
                   <excludes>
-                    <exclude>bin/</exclude>
+                    <exclude>bin/jsw-license/</exclude>
+                    <exclude>bin/linux-ppc-64/</exclude>
+                    <exclude>bin/linux-x86-32/</exclude>
+                    <exclude>bin/macosx-universal-64/</exclude>
+                    <exclude>bin/solaris-sparc-32/</exclude>
+                    <exclude>bin/solaris-sparc-64/</exclude>
+                    <exclude>bin/solaris-x86-32/</exclude>
+                    <exclude>bin/windows-x86-32/</exclude>
+                    <exclude>bin/windows-x86-64/</exclude>
                     <exclude>conf/</exclude>
                   </excludes>
                 </source>
