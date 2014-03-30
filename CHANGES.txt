@@ -2,6 +2,11 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.148 (30 March 2014)
+-----------------------------
+* sonar-4.2.2.tar.gz (x86_64 and runs on JDK 7 only)
+
+
 Version 0.147 (22 March 2014)
 -----------------------------
 * atlassian-jira-6.2.1.tar.gz
