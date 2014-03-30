@@ -1,5 +1,6 @@
 # Make scripts executable
 chmod -R 755 @{destBase}/bin/linux-x86-64/*.sh
+chmod -R 755 @{destBase}/bin/linux-x86-64/wrapper
 
 # Configure startup script
 sed -i 's|chkconfig: 2345 20 80|chkconfig: 2345 70 20|g' @{destBase}/bin/linux-x86-64/sonar.sh
@@ -22,4 +23,4 @@ chown -R root:root @{destConf}
 # Link back from /etc
 mkdir -p @{destBase}/conf
 ln -sf @{destConf}/sonar.properties @{destBase}/conf/sonar.properties
-ln -sf @{destConf}/wrapper.xml @{destBase}/conf/wrapper.xml
+ln -sf @{destConf}/wrapper.conf @{destBase}/conf/wrapper.conf
