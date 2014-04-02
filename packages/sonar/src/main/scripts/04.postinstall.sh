@@ -7,10 +7,11 @@ sed -i 's|chkconfig: 2345 20 80|chkconfig: 2345 70 20|g' @{destBase}/bin/linux-x
 sed -i 's|PIDDIR="."|PIDDIR="/var/run/@{appServiceName}"|g' @{destBase}/bin/linux-x86-64/sonar.sh
 sed -i 's|#RUN_AS_USER=|RUN_AS_USER=@{appUserName}|g' @{destBase}/bin/linux-x86-64/sonar.sh
 
+# Fix user rights
+chown -R @{appUserName}:@{appGroupName} @{destBase}
+
 # Initial installation
 if [ "$1" = "1" ]; then
-  chown -R @{appUserName}:@{appGroupName} @{destBase}
-
   cd /etc/rc.d/init.d
   ln -sf @{destBase}/bin/linux-x86-64/sonar.sh @{appServiceName}
 
