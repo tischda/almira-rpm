@@ -5,7 +5,7 @@
     <groupId>almira.rpm</groupId>
     <artifactId>dist</artifactId>
     <packaging>pom</packaging>
-    <version>0.148</version>
+    <version>0.149</version>
     <name>almira.rpm.dist</name>
 
     <build>
