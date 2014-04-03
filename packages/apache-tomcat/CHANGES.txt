@@ -2,9 +2,7 @@
 almira.rpm.apache-tomcat - change history
 ===============================================================================
 
-Version 7.0.53-1 (02 April 2014)
---------------------------------
-* Updated Tomcat to 7.0.53
+Attention: Tomcat to 7.0.53 breaks JIRA 6.2.2 !
 
 
 Version 7.0.52-1 (28 Feburary 2014)
