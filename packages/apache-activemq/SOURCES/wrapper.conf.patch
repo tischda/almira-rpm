@@ -1,9 +1,8 @@
-diff -Nur apache-activemq-5.9.0.orig/bin/linux-x86-64/wrapper.conf apache-activemq-5.9.0/bin/linux-x86-64/wrapper.conf
---- apache-activemq-5.9.0.orig/bin/linux-x86-64/wrapper.conf  2013-10-15 01:03:15.000000000 +0200
-+++ apache-activemq-5.9.0/bin/linux-x86-64/wrapper.conf 2013-10-25 15:54:32.782417426 +0200
+--- apache-activemq-5.9.1.orig/bin/linux-x86-64/wrapper.conf	2014-04-18 12:01:12.513200189 +0200
++++ apache-activemq-5.9.1/bin/linux-x86-64/wrapper.conf	2014-04-18 12:28:59.821995518 +0200
 @@ -20,11 +20,11 @@
  #********************************************************************
-
+ 
  #wrapper.debug=TRUE
 -set.default.ACTIVEMQ_HOME=../..
 -set.default.ACTIVEMQ_BASE=../..
@@ -13,21 +12,31 @@ diff -Nur apache-activemq-5.9.0.orig/bin/linux-x86-64/wrapper.conf apache-active
  set.default.ACTIVEMQ_DATA=%ACTIVEMQ_BASE%/data
 -wrapper.working.dir=.
 +wrapper.working.dir=/
-
+ 
  # Java Application
  wrapper.java.command=java
 @@ -41,7 +41,7 @@
  wrapper.java.classpath.2=%ACTIVEMQ_HOME%/bin/activemq.jar
-
+ 
  # Java Library Path (location of Wrapper.DLL or libwrapper.so)
 -wrapper.java.library.path.1=%ACTIVEMQ_HOME%/bin/linux-x86-64/
 +wrapper.java.library.path.1=%ACTIVEMQ_HOME%/bin
-
+ 
  # Java Additional Parameters
  # note that n is the parameter number starting from 1.
-@@ -144,4 +144,4 @@
+@@ -57,6 +57,9 @@
+ wrapper.java.additional.10=-Dactivemq.conf=%ACTIVEMQ_CONF%
+ wrapper.java.additional.11=-Dactivemq.data=%ACTIVEMQ_DATA%
+ wrapper.java.additional.12=-Djava.security.auth.login.config=%ACTIVEMQ_CONF%/login.config
++wrapper.java.additional.13=-Dhawtio.realm=activemq
++wrapper.java.additional.14=-Dhawtio.role=admins
++wrapper.java.additional.15=-Dhawtio.rolePrincipalClasses=org.apache.activemq.jaas.GroupPrincipal
+ 
+ # Uncomment to enable jmx
+ #wrapper.java.additional.n=-Dcom.sun.management.jmxremote.port=1616
+@@ -141,4 +144,4 @@
  wrapper.ntservice.starttype=AUTO_START
-
+ 
  # Allow the service to interact with the desktop.
 -wrapper.ntservice.interactive=false
 \ No newline at end of file

@@ -2,9 +2,21 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.150 (18 April 2014)
+-----------------------------
+* apache-activemq-5.9.1-bin.tar.gz
+* atlassian-jira-6.2.3.tar.gz
+* git-1.9.2.tar.gz
+* git-manpages-1.9.2.tar.gz
+* jdk-7u55-linux-x64.gz (for sonar)
+* jdk-8u5-linux-x64.rpm
+* nexus-2.8.0-05.war
+* quickbuild-5.1.21.tar.gz
+* tomcat-native-1.1.30-src.tar.gz
+
+
 Version 0.149 (02 April 2014)
 -----------------------------
-* apache-tomcat-7.0.53.tar.gz
 * atlassian-jira-6.2.2.tar.gz
 * MySQL-*-5.6.17-1.el6.x86_64.rpm
 * quickbuild-5.1.19.tar.gz
