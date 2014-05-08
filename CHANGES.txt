@@ -2,6 +2,13 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.151 (08 May 2014)
+---------------------------
+* atlassian-jira-6.2.4.tar.gz
+* quickbuild-5.1.24.tar.gz
+* sonarqube-4.3.zip
+
+
 Version 0.150 (18 April 2014)
 -----------------------------
 * apache-activemq-5.9.1-bin.tar.gz
