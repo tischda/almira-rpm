@@ -46,3 +46,12 @@ RPM will be located in rpmbuild/RPMS/x86_64
 
 
 TODO: replace '%define amqhome /usr/share/activemq' by prefix
+
+
+Changes
+-------
+Configuration has not changed between 5.9.1 and 5.10.0:
+
+  [root@jawas ~]# diff apache-activemq-5.9.1.orig/bin/linux-x86-64/activemq apache-activemq-5.10.0/bin/linux-x86-64/activemq
+  [root@jawas ~]# diff apache-activemq-5.9.1.orig/bin/linux-x86-64/wrapper.conf apache-activemq-5.10.0/bin/linux-x86-64/wrapper.conf
+
