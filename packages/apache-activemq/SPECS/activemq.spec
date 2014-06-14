@@ -1,7 +1,7 @@
 %define amqhome /usr/share/activemq
 
 Name: apache-activemq
-Version: 5.9.1
+Version: 5.10.0
 Release: 1%{?dist}
 Summary: ActiveMQ Messaging Broker
 Group: System Environment/Daemons

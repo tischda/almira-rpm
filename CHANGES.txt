@@ -2,6 +2,25 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.151 (14 June 2014)
+----------------------------
+* apache-activemq-5.10.0-bin.tar.gz
+* atlassian-jira-6.2.7.tar.gz
+* cmake-3.0.0.tar.gz
+* git-2.0.0.tar.gz
+* git-manpages-2.0.0.tar.gz
+* jdk-7u60-linux-x64.gz
+* MySQL-client-5.6.19-1.el6.x86_64.rpm
+* mysql-connector-java-5.1.31.tar.gz
+* MySQL-devel-5.6.19-1.el6.x86_64.rpm
+* MySQL-server-5.6.19-1.el6.x86_64.rpm
+* MySQL-shared-5.6.19-1.el6.x86_64.rpm
+* MySQL-shared-compat-5.6.19-1.el6.x86_64.rpm
+* nexus-2.8.1-01.war
+* quickbuild-5.1.29.tar.gz
+* sonarqube-4.3.1.zip
+
+
 Version 0.151 (08 May 2014)
 ---------------------------
 * atlassian-jira-6.2.4.tar.gz

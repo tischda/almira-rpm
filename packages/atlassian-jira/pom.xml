@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>atlassian-jira</artifactId>
-  <version>6.2.4.1</version>
+  <version>6.2.7.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.atlassian-jira</name>
 
@@ -21,14 +21,14 @@ great products.</description>
   <url>http://www.atlassian.com/software/jira/overview</url>
 
   <properties>
-    <appVersion>6.2.4</appVersion>
+    <appVersion>6.2.7</appVersion>
     <rpmRelease>1</rpmRelease>
 
     <appServiceName>jira</appServiceName>
     <appContextPath>jira</appContextPath>
 
     <jdbcDriverName>mysql-connector-java</jdbcDriverName>
-    <jdbcDriverVersion>5.1.30</jdbcDriverVersion>
+    <jdbcDriverVersion>5.1.31</jdbcDriverVersion>
 
     <!-- overrides -->
     <appSrcLocation>target/unpack/${project.artifactId}-${appVersion}-standalone</appSrcLocation>
