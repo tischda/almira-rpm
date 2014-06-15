@@ -61,13 +61,13 @@ to support complex environments requiring system configuration, preprocessor
 generation, code generation, and template instantiation.
 
 
-%package        doc
-Summary:        Documentation for %{name}
-Group:          Development/Tools
-Requires:       %{name} = %{version}-%{release}
+#%package        doc
+#Summary:        Documentation for %{name}
+#Group:          Development/Tools
+#Requires:       %{name} = %{version}-%{release}
 
-%description    doc
-This package contains documentation for CMake.
+#%description    doc
+#This package contains documentation for CMake.
 
 
 %prep
@@ -93,8 +93,8 @@ pushd build
 ../bootstrap --prefix=%{_prefix} --datadir=/share/%{name} \
              --docdir=/share/doc/%{name} --mandir=/share/man \
              --no-system-libs \
-             --parallel=`/usr/bin/getconf _NPROCESSORS_ONLN` \
-             --sphinx-man
+             --parallel=`/usr/bin/getconf _NPROCESSORS_ONLN`
+#             --sphinx-man
 make VERBOSE=1 %{?_smp_mflags}
 
 
@@ -145,9 +145,9 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%dir %{_docdir}/%{name}
-%{_docdir}/%{name}/Copyright.txt*
-%{_docdir}/%{name}/COPYING*
+#%dir %{_docdir}/%{name}
+#%{_docdir}/%{name}/Copyright.txt*
+#%{_docdir}/%{name}/COPYING*
 %{rpm_macros_dir}/macros.cmake
 %{_bindir}/ccmake
 %{_bindir}/cmake
@@ -156,15 +156,15 @@ rm -rf %{buildroot}
 %{_datadir}/aclocal/cmake.m4
 %{_datadir}/bash-completion/
 %{_datadir}/%{name}/
-%{_mandir}/man1/ccmake.1.gz
-%{_mandir}/man1/cmake.1.gz
-%{_mandir}/man1/cpack.1.gz
-%{_mandir}/man1/ctest.1.gz
-%{_mandir}/man7/*.7.gz
+#%{_mandir}/man1/ccmake.1.gz
+#%{_mandir}/man1/cmake.1.gz
+#%{_mandir}/man1/cpack.1.gz
+#%{_mandir}/man1/ctest.1.gz
+#%{_mandir}/man7/*.7.gz
 %{_libdir}/%{name}/
 
-%files doc
-%{_docdir}/%{name}/
+#%files doc
+#%{_docdir}/%{name}/
 
 
 %changelog
