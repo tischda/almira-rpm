@@ -119,14 +119,14 @@ touch -r %{SOURCE2} %{buildroot}%{rpm_macros_dir}/macros.cmake
 mkdir -p %{buildroot}%{_libdir}/%{name}
 
 # Install copyright files for main package
-cp -p Copyright.txt %{buildroot}/%{_docdir}/%{name}/
-find Source Utilities -type f -iname copy\* | while read f
-do
-  fname=$(basename $f)
-  dir=$(dirname $f)
-  dname=$(basename $dir)
-  cp -p $f %{buildroot}/%{_docdir}/%{name}/${fname}_${dname}
-done
+#cp -p Copyright.txt %{buildroot}/%{_docdir}/%{name}/
+#find Source Utilities -type f -iname copy\* | while read f
+#do
+#  fname=$(basename $f)
+#  dir=$(dirname $f)
+#  dname=$(basename $dir)
+#  cp -p $f %{buildroot}/%{_docdir}/%{name}/${fname}_${dname}
+#done
 
 
 %check
