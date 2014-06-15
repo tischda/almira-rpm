@@ -160,8 +160,6 @@ rm -rf %{buildroot}
 %{_mandir}/man1/cpack.1.gz
 %{_mandir}/man1/ctest.1.gz
 %{_mandir}/man7/*.7.gz
-%{_emacs_sitelispdir}/%{name}
-%{_emacs_sitestartdir}/%{name}-init.el
 %{_libdir}/%{name}/
 
 %files doc
