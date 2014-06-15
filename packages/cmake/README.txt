@@ -55,3 +55,4 @@ Before you can compile manpages, you need:
    easy_install sphinx
    easy_install pygments
    easy_install markupsafe
+   sphinx-build --version

@@ -50,8 +50,8 @@ pushd build
 ../bootstrap --prefix=%{_prefix} --datadir=/share/%{name} \
              --docdir=/share/doc/%{name}-%{version} --mandir=/share/man \
              --no-system-libs \
-             --parallel=`/usr/bin/getconf _NPROCESSORS_ONLN`
-            --sphinx-man
+             --parallel=`/usr/bin/getconf _NPROCESSORS_ONLN` \
+             --sphinx-man
 make VERBOSE=1 %{?_smp_mflags}
 
 
