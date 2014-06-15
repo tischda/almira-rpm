@@ -39,7 +39,7 @@ This package contains documentation for CMake.
 
 
 %prep
-%setup -q -n cmake-%{version}
+%setup -q -n %{name}-%{version}
 
 
 %build
@@ -48,7 +48,7 @@ export CXXFLAGS="$RPM_OPT_FLAGS"
 mkdir build
 pushd build
 ../bootstrap --prefix=%{_prefix} --datadir=/share/%{name} \
-             --docdir=/share/doc/%{name}-%{version} --mandir=/share/man \
+             --docdir=/share/doc/%{name} --mandir=/share/man \
              --no-system-libs \
              --parallel=`/usr/bin/getconf _NPROCESSORS_ONLN` \
              --sphinx-man
@@ -56,10 +56,10 @@ make VERBOSE=1 %{?_smp_mflags}
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 pushd build
-make install DESTDIR=$RPM_BUILD_ROOT
-find $RPM_BUILD_ROOT/%{_datadir}/%{name}/Modules -type f | xargs chmod -x
+make install DESTDIR=%{buildroot}
+find %{buildroot}/%{_datadir}/%{name}/Modules -type f | xargs chmod -x
 popd
 
 # Install bash completion symlinks
@@ -68,13 +68,6 @@ for f in %{buildroot}%{_datadir}/%{name}/completions/*
 do
   ln -s ../../%{name}/completions/$(basename $f) %{buildroot}%{_datadir}/bash-completion/completions/
 done
-
-# Install emacs cmake mode
-#mkdir -p %{buildroot}%{_emacs_sitelispdir}/%{name}
-#install -p -m 0644 Auxiliary/cmake-mode.el %{buildroot}%{_emacs_sitelispdir}/%{name}/
-#%{_emacs_bytecompile} %{buildroot}%{_emacs_sitelispdir}/%{name}/cmake-mode.el
-#mkdir -p %{buildroot}%{_emacs_sitestartdir}
-#install -p -m 0644 %SOURCE1 %{buildroot}%{_emacs_sitestartdir}/
 
 # RPM macros
 install -p -m0644 -D %{SOURCE2} %{buildroot}%{rpm_macros_dir}/macros.cmake
@@ -104,7 +97,7 @@ popd
 
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 
 %files
