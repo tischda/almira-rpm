@@ -18,6 +18,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: gcc-c++
 BuildRequires: ncurses-devel
+BuildRequires: python-sphinx
 
 %description
 CMake is used to control the software compilation process using simple
