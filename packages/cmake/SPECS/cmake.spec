@@ -89,6 +89,10 @@ export CFLAGS="$RPM_OPT_FLAGS"
 export CXXFLAGS="$RPM_OPT_FLAGS"
 mkdir build
 pushd build
+
+# avoid "error: Installed (but unpackaged) file(s) found"
+rm -f Help/manual/cmake-gui.1.rst
+
 ../bootstrap --prefix=%{_prefix} --datadir=/share/%{name} \
              --docdir=/share/doc/%{name} --mandir=/share/man \
              --no-system-libs \
