@@ -18,7 +18,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires: gcc-c++
 BuildRequires: ncurses-devel
-BuildRequires: python-sphinx
+#BuildRequires: python-sphinx
 
 %description
 CMake is used to control the software compilation process using simple
@@ -29,13 +29,13 @@ to support complex environments requiring system configuration, preprocessor
 generation, code generation, and template instantiation.
 
 
-%package        doc
-Summary:        Documentation for %{name}
-Group:          Development/Tools
-Requires:       %{name} = %{version}-%{release}
+#%package        doc
+#Summary:        Documentation for %{name}
+#Group:          Development/Tools
+#Requires:       %{name} = %{version}-%{release}
 
-%description    doc
-This package contains documentation for CMake.
+#%description    doc
+#This package contains documentation for CMake.
 
 
 %prep
@@ -50,8 +50,8 @@ pushd build
 ../bootstrap --prefix=%{_prefix} --datadir=/share/%{name} \
              --docdir=/share/doc/%{name}-%{version} --mandir=/share/man \
              --no-system-libs \
-             --parallel=`/usr/bin/getconf _NPROCESSORS_ONLN` \
-             --sphinx-man
+             --parallel=`/usr/bin/getconf _NPROCESSORS_ONLN`
+#            --sphinx-man
 make VERBOSE=1 %{?_smp_mflags}
 
 
@@ -129,8 +129,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_emacs_sitestartdir}/%{name}-init.el
 %{_libdir}/%{name}/
 
-%files doc
-%{_docdir}/%{name}/
+#%files doc
+#%{_docdir}/%{name}/
 
 
 %changelog

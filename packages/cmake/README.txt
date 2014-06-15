@@ -21,6 +21,7 @@ rpm2cpio cmake-3.0.0-0.11.rc6.fc21.src.rpm | cpio -mi cmake-init.el
 rpm2cpio cmake-3.0.0-0.11.rc6.fc21.src.rpm | cpio -mi macros.cmake
 
 Patches and GUI removed!
+Documentation removed (python-sphinx and python-docutils are too old).
 
 rpmbuild/
 ├── SOURCES
