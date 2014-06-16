@@ -61,13 +61,13 @@ to support complex environments requiring system configuration, preprocessor
 generation, code generation, and template instantiation.
 
 
-#%package        doc
-#Summary:        Documentation for %{name}
-#Group:          Development/Tools
-#Requires:       %{name} = %{version}-%{release}
+%package        doc
+Summary:        Documentation for %{name}
+Group:          Development/Tools
+Requires:       %{name} = %{version}-%{release}
 
-#%description    doc
-#This package contains documentation for CMake.
+%description    doc
+This package contains documentation for CMake.
 
 
 %prep
@@ -119,14 +119,14 @@ touch -r %{SOURCE2} %{buildroot}%{rpm_macros_dir}/macros.cmake
 mkdir -p %{buildroot}%{_libdir}/%{name}
 
 # Install copyright files for main package
-#cp -p Copyright.txt %{buildroot}/%{_docdir}/%{name}/
-#find Source Utilities -type f -iname copy\* | while read f
-#do
-#  fname=$(basename $f)
-#  dir=$(dirname $f)
-#  dname=$(basename $dir)
-#  cp -p $f %{buildroot}/%{_docdir}/%{name}/${fname}_${dname}
-#done
+cp -p Copyright.txt %{buildroot}/%{_docdir}/%{name}/
+find Source Utilities -type f -iname copy\* | while read f
+do
+  fname=$(basename $f)
+  dir=$(dirname $f)
+  dname=$(basename $dir)
+  cp -p $f %{buildroot}/%{_docdir}/%{name}/${fname}_${dname}
+done
 
 
 %check
@@ -135,7 +135,7 @@ pushd build
 # ModuleNotices fails for some unknown reason, and we don't care
 # CMake.HTML currently requires internet access
 # CTestTestUpload requires internet access
-bin/ctest -V -E ModuleNotices -E CMake.HTML -E CTestTestUpload %{?_smp_mflags}
+#bin/ctest -V -E ModuleNotices -E CMake.HTML -E CTestTestUpload %{?_smp_mflags}
 popd
 
 
@@ -145,9 +145,8 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-#%dir %{_docdir}/%{name}
-#%{_docdir}/%{name}/Copyright.txt*
-#%{_docdir}/%{name}/COPYING*
+%dir %{_docdir}/%{name}
+%{_docdir}/%{name}/Copyright.txt*
 %{rpm_macros_dir}/macros.cmake
 %{_bindir}/ccmake
 %{_bindir}/cmake
@@ -156,15 +155,10 @@ rm -rf %{buildroot}
 %{_datadir}/aclocal/cmake.m4
 %{_datadir}/bash-completion/
 %{_datadir}/%{name}/
-#%{_mandir}/man1/ccmake.1.gz
-#%{_mandir}/man1/cmake.1.gz
-#%{_mandir}/man1/cpack.1.gz
-#%{_mandir}/man1/ctest.1.gz
-#%{_mandir}/man7/*.7.gz
 %{_libdir}/%{name}/
 
-#%files doc
-#%{_docdir}/%{name}/
+%files doc
+%{_docdir}/%{name}/
 
 
 %changelog
@@ -173,3 +167,4 @@ rm -rf %{buildroot}
 
 * Tue May 27 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.10.rc6
 - Update to 3.0.0-rc6
+
