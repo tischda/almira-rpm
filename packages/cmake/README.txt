@@ -36,7 +36,7 @@ Our SPEC file was created by adapting Fedora's spec file:
 Removed:
 
     GUI and Emacs     (we don't want this as prereq to install cmake)
-
+    Manpages          (cmake-gui doc not packaged fails build)
 
 Layout:
 
