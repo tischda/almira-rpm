@@ -11,6 +11,8 @@ Customization
 -------------
 Excluding Tomcat libraries so that we can start our own.
 
+Deleted atlassian-jira/WEB-INF/atlassian-bundled-plugins from original distribution
+
 
 References
 ----------
