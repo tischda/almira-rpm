@@ -2,7 +2,7 @@
 almira.rpm - change history
 ===============================================================================
 
-Version 0.153 (19 September 2014) *** ongoing ***
+Version 0.153 (20 September 2014) *** ongoing ***
 ---------------------------------
 * apache-maven-3.2.3-bin.tar.gz
 * apr-1.5.1.tar.bz2

@@ -2,7 +2,7 @@
 almira.rpm.apache-maven - change history
 ===============================================================================
 
-Version 3.2.3-1 (19 September 2014)
+Version 3.2.3-1 (20 September 2014)
 -----------------------------------
 * Update Maven to 3.2.3
 

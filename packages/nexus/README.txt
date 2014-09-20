@@ -1,5 +1,5 @@
 ===============================================================================
-almira.rpm.nexus 
+almira.rpm.nexus
 ===============================================================================
 
 Overview
@@ -9,22 +9,10 @@ Sonatype Nexus RPM.
 
 Customization
 -------------
-Changes to the startup script:
-Original is located in ${nexus_home}/bin/nexus. Copy it to src/main/etc/init.d
+Using WAR distribution to run on Tomcat.
 
-Change this:
-
-    NEXUS_HOME="@{app.dest.home}"
-    RUN_AS_USER=@{app.username}
-    PIDDIR="${sys.pid.folder}"
-
-
-Run 'mvn package'
-
-
-Note that Nexus expects its default directory structure, it's quite hard to
-change the location of the work directory. PLEXUS_NEXUS_WORK does not work.  
-
+Nexus expects its default directory structure, it's quite hard to change the
+location of the work directory. PLEXUS_NEXUS_WORK does not work.
 
 
 Passwords
