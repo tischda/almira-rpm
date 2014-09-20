@@ -2,7 +2,7 @@
 almira.rpm.sonar - change history
 ===============================================================================
 
-Version 4.4-1 (20 September 2014)
+Version 4.4-2 (20 September 2014)
 ---------------------------------
 * Updated Sonar to 4.4 (x86_64 and runs on JDK 7 only)
 
