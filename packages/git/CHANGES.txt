@@ -2,9 +2,9 @@
 almira.rpm.git - change history
 ===============================================================================
 
-Version 2.1.0-1 (20 September 2014)
------------------------------------
-* Updated to version 2.1.0
+Version 2.1.2-1 (07 October 2014)
+---------------------------------
+* Updated to version 2.1.2
 
 
 Version 2.0.0-1 (14 June 2014)

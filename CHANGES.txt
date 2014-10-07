@@ -2,18 +2,18 @@
 almira.rpm - change history
 ===============================================================================
 
-Version 0.153 (20 September 2014) *** ongoing ***
+Version 0.153 (07 October 2014) *** ongoing ***
 ---------------------------------
 * apache-maven-3.2.3-bin.tar.gz
 * apr-1.5.1.tar.bz2
-* atlassian-jira-6.3.6.tar.gz
+* atlassian-jira-6.3.7.tar.gz
 * cmake-3.0.2.tar.gz
-* git-2.1.0.tar.gz
+* git-2.1.2.tar.gz
 * httpd-2.4.10.tar.bz2
-* MySQL-5.6.20
-* nexus-2.9.1-02.war
-* quickbuild-5.1.34.tar.gz
-* sonarqube-4.4.zip
+* MySQL-5.6.21
+* nexus-2.10.0-02.war
+* quickbuild-5.1.36.tar.gz
+* sonarqube-4.5.zip
 * tomcat-native-1.1.31-src.tar.gz
 
 
