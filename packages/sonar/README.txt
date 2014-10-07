@@ -11,6 +11,4 @@ Customization
 -------------
 Minor changes to sonar.sh service script.
 
-Custom Plugins to support Java 8.
-
 Deleted lib/bundled-plugins in original sonar distribution zip.
