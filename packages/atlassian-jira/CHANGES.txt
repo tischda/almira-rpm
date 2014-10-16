@@ -2,6 +2,11 @@
 almira.rpm.atlassian-jira - change history
 ===============================================================================
 
+Version 6.3.8-2 (16 October 2014)
+---------------------------------
+* Updated to version 6.3.8
+
+
 Version 6.3.7-2 (07 October 2014)
 ---------------------------------
 * Updated to version 6.3.7
