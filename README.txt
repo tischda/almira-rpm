@@ -30,19 +30,19 @@ Copy binary files to 'dist' directory:
 |       apache-ivy-2.3.0-bin-with-deps.tar.gz
 |
 +---apache-httpd
-|   |   apr-1.5.0.tar.bz2
+|   |   apr-1.5.1.tar.bz2
 |   |   apr-util-1.5.3.tar.bz2
 |   |   distcache-1.4.5-23.src.rpm
-|   |   httpd-2.4.9.tar.bz2
+|   |   httpd-2.4.10.tar.bz2
 |   |
 |   \---deps
-|           httpd-2.4.9-deps.tar.bz2
+|           httpd-2.4.10-deps.tar.bz2
 |
 +---apache-maven
-|       apache-maven-3.2.1-bin.tar.gz
+|       apache-maven-3.2.3-bin.tar.gz
 |
 +---apache-tomcat
-|   |   apache-tomcat-7.0.52.tar.gz
+|   |   apache-tomcat-7.0.56.tar.gz
 |   |
 |   \---extra
 |           catalina-jmx-remote.jar
@@ -51,63 +51,40 @@ Copy binary files to 'dist' directory:
 |           tomcat-juli.jar
 |
 +---atlassian-jira
-|   |   atlassian-jira-6.2.7-patched.tar.gz
-|   |   mysql-connector-java-5.1.31.tar.gz
-|   |
-|   \---patch
-|       |   README.txt
-|       |   spring-2.5.6.SEC03-atlassian-1.jar
-|       |
-|       +---original.6.2.2
-|       |       atlassian-plugins-osgi-3.0.12.jar
-|       |
-|       +---original.6.2.3
-|       |       atlassian-plugins-osgi-3.0.12.jar
-|       |
-|       +---original.6.2.4
-|       |       atlassian-plugins-osgi-3.0.12.jar
-|       |
-|       +---original.6.2.7
-|       |       atlassian-plugins-osgi-3.0.12.jar
-|       |
-|       +---patched.6.2.1
-|       |       atlassian-plugins-osgi-3.0.12.jar.6.2.1-patched
-|       |
-|       \---patched.6.2.2
-|               atlassian-plugins-osgi-3.0.12.jar
-|
-+---cmake
-|       cmake-3.0.0.tar.gz
-|
-+---git
-|       git-2.0.0.tar.gz
-|       git-manpages-2.0.0.tar.gz
-|       git.spec
-|       perl-YAML-0.84-1.2.noarch.rpm
+|       atlassian-jira-6.3.9.tar.gz
+|       mysql-connector-java-5.1.33.tar.gz
 |       README.txt
 |
++---cmake
+|       cmake-3.0.2.tar.gz
+|
++---git
+|       git-2.1.3.tar.gz
+|       git-manpages-2.1.3.tar.gz
+|       perl-YAML-0.84-1.2.noarch.rpm
+|
 +---nexus
-|       nexus-2.8.1-01.war
+|       nexus-2.10.0-02.war
 |
 +---oracle-mysql
-|       MySQL-client-5.6.19-1.el6.x86_64.rpm
-|       MySQL-devel-5.6.19-1.el6.x86_64.rpm
-|       MySQL-server-5.6.19-1.el6.x86_64.rpm
-|       MySQL-shared-5.6.19-1.el6.x86_64.rpm
-|       MySQL-shared-compat-5.6.19-1.el6.x86_64.rpm
+|       MySQL-client-5.6.21-1.el6.x86_64.rpm
+|       MySQL-devel-5.6.21-1.el6.x86_64.rpm
+|       MySQL-server-5.6.21-1.el6.x86_64.rpm
+|       MySQL-shared-5.6.21-1.el6.x86_64.rpm
+|       MySQL-shared-compat-5.6.21-1.el6.x86_64.rpm
 |
 +---quickbuild
-|       mysql-connector-java-5.1.31.tar.gz
-|       quickbuild-5.1.29.tar.gz
+|       mysql-connector-java-5.1.33.tar.gz
+|       quickbuild-5.1.37.tar.gz
 |
 +---sonar
 |       README.md
-|       sonar-plugins-4.3-1.zip
-|       sonarqube-4.3.1.zip
+|       sonar-plugins-4.4-1.zip
+|       sonarqube-4.5.1.zip
 |
 \---tomcat-native
-        tomcat-native-1.1.30-src.tar.gz
-
+        tomcat-native-1.1.32-src.tar.gz
+        
 
 References
 ----------
