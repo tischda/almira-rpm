@@ -25,10 +25,6 @@ run migrate.sh --> does not work with symlinks in quickbuild/conf !
 
 TODO with Puppet:
 
-* Add the following line ine wrapper.conf (probably requires dos2unix)
-
-      wrapper.java.additional.4=-XX:MaxPermSize=256m
-
 * prepare a template for hibernate.properties so that the settings below
   MySQL comments are modified and not the ones below H2.
 

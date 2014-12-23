@@ -2,6 +2,17 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.157 (23 December 2014) - ongoing ...
+--------------------------------
+* apache-maven-3.2.5-bin.tar.gz
+* atlassian-jira-6.3.12.tar.gz
+* cmake-3.1.0.tar.gz
+* git-2.2.1.tar.gz
+* git-manpages-2.2.1.tar.gz
+* nexus-2.11.1-01.war
+* quickbuild-5.1.40.tar.gz
+
+
 Version 0.156 (28 November 2014)
 --------------------------------
 * apache-tomcat-7.0.57.tar.gz

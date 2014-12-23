@@ -1,49 +1,32 @@
 %define rpm_macros_dir %{_sysconfdir}/rpm
 
-Name: cmake
-Version: 3.0.2
-Release: 1%{?dist}
-Summary: Cross-platform make system
+Name:           cmake
+Version:        3.1.0
+Release:        1%{?dist}
+Summary:        Cross-platform make system
 
-Group: Development/Tools
+Group:          Development/Tools
 
-License: BSD and MIT and zlib
-URL: http://www.cmake.org
-Source0: http://www.cmake.org/files/v3.0/cmake-%{version}%{?rcver}.tar.gz
+License:        BSD and MIT and zlib
+URL:            http://www.cmake.org
+Source0:        http://www.cmake.org/files/v3.1/cmake-%{version}%{?rcver}.tar.gz
 Source1:        cmake-init.el
 Source2:        macros.cmake
 
 # Patch to find DCMTK in Fedora (bug #720140)
 Patch0:         cmake-dcmtk.patch
-# Patch to fix FindRuby vendor settings
-# http://public.kitware.com/Bug/view.php?id=12965
-# https://bugzilla.redhat.com/show_bug.cgi?id=822796
 # Patch to use ninja-build instead of ninja (renamed in Fedora)
 # https://bugzilla.redhat.com/show_bug.cgi?id=886184
 Patch1:         cmake-ninja.patch
+# Patch to fix FindRuby vendor settings
+# http://public.kitware.com/Bug/view.php?id=12965
+# https://bugzilla.redhat.com/show_bug.cgi?id=822796
 Patch2:         cmake-findruby.patch
-# Patch to fix FindPostgreSQL
-# https://bugzilla.redhat.com/show_bug.cgi?id=828467
-# http://public.kitware.com/Bug/view.php?id=13378
-Patch3:         cmake-FindPostgreSQL.patch
-# Fix issue with finding consistent python versions
-# http://public.kitware.com/Bug/view.php?id=13794
-# https://bugzilla.redhat.com/show_bug.cgi?id=876118
-Patch4:         cmake-FindPythonLibs.patch
 # Add FindLua52.cmake
 Patch5:         cmake-2.8.11-rc4-lua-5.2.patch
 # Add -fno-strict-aliasing when compiling cm_sha2.c
 # http://www.cmake.org/Bug/view.php?id=14314
 Patch6:         cmake-strict_aliasing.patch
-# Remove automatic Qt module dep adding
-# http://public.kitware.com/Bug/view.php?id=14750
-Patch8:         cmake-qtdeps.patch
-# Additiona python fixes from upstream
-Patch9:         cmake-FindPythonLibs2.patch
-# Fix FindwxWidgets when cross-compiling for Windows
-# https://bugzilla.redhat.com/show_bug.cgi?id=1081207
-# http://public.kitware.com/Bug/view.php?id=11296
-Patch10:         cmake-FindwxWidgets.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -75,13 +58,8 @@ This package contains documentation for CMake.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
-%patch4 -p1
 %patch5 -p1
 %patch6 -p1 -b .strict_aliasing
-%patch8 -p1
-%patch9 -p1
-%patch10 -p1
 
 
 %build
@@ -94,7 +72,6 @@ pushd build
              --docdir=/share/doc/%{name} --mandir=/share/man \
              --no-system-libs \
              --parallel=`/usr/bin/getconf _NPROCESSORS_ONLN`
-#             --sphinx-man
 make VERBOSE=1 %{?_smp_mflags}
 
 
@@ -135,7 +112,7 @@ pushd build
 # ModuleNotices fails for some unknown reason, and we don't care
 # CMake.HTML currently requires internet access
 # CTestTestUpload requires internet access
-#bin/ctest -V -E ModuleNotices -E CMake.HTML -E CTestTestUpload %{?_smp_mflags}
+bin/ctest -V -E ModuleNotices -E CMake.HTML -E CTestTestUpload %{?_smp_mflags}
 popd
 
 
@@ -162,9 +139,71 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Dec 17 2014 Orion Poplawski <orion@cora.nwra.com> - 3.1.0-1
+- Update to 3.1.0 final
+
+* Sat Nov 15 2014 Orion Poplawski <orion@cora.nwra.com> - 3.1.0-0.2.rc2
+- Update to 3.1.0-rc2
+
+* Wed Oct 29 2014 Orion Poplawski <orion@cora.nwra.com> - 3.1.0-0.1.rc1
+- Update to 3.1.0-rc1
+
+* Mon Sep 15 2014 Dan Horák <dan[at]danny.cz> - 3.0.2-2
+- fix FindJNI for ppc64le (#1141782)
+
+* Sun Sep 14 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.2-1
+- Update to 3.0.2
+
+* Mon Aug 25 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.1-3
+- Update wxWidgets patches
+
+* Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.0.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
+* Wed Aug 6 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.1-1
+- Update to 3.0.1
+
+* Thu Jul 03 2014 Rex Dieter <rdieter@fedoraproject.org> 3.0.0-2
+- optimize mimeinfo scriptlet
+
+* Sat Jun 14 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-1
+- Update to 3.0.0 final
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.0.0-0.11.rc6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
 * Tue May 27 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.10.rc6
 - Update to 3.0.0-rc6
+
+* Wed May 14 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.9.rc5
+- Update to 3.0.0-rc5
+- Drop icon patch applied upstream
+
+* Tue Apr 22 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.8.rc4
+- Update to 3.0.0-rc4
+
+* Thu Apr 10 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.7.rc3
+- Fix doc duplication
+
+* Fri Apr 4 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.6.rc3
+- Rebase patches to prevent .orig files in Modules
+- Add install check for .orig files
+
+* Wed Mar 26 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.5.rc3
+- Update to 3.0.0-rc3
+- Add patch to fix FindwxWidgets when cross-compiling for Windows (bug #1081207)
+
+* Wed Mar 5 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.4.rc1
+- Add additional FindPythonLibs patch from upstream (bug #1072964)
+
+* Mon Mar 3 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.3.rc1
+- Update to upstreams version of FindPythonLibs patch
+
+* Mon Mar 3 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.2.rc1
+- Use symlinks for bash completions
+
+* Fri Feb 28 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.1.rc1
+- Update to 3.0.0-rc1
+- Update qtdeps patch to upstreamed version
+- Install bash completions
 

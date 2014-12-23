@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="16.0">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="almira-rpm.xpr">
+        <folder path="master-rpm/"/>
+        <folder path="packages/"/>
+        <file name="CHANGES.txt"/>
+        <file name="pom.xml"/>
+        <file name="README.txt"/>
+    </projectTree>
+</project>
