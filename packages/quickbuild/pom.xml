@@ -33,7 +33,7 @@
   </properties>
 
   <build>
-    <finalName>${artifactId}-${version}.el6.x86_64</finalName>
+    <finalName>${project.artifactId}-${project.version}.el6.x86_64</finalName>
     <defaultGoal>package</defaultGoal>
     <plugins>
 

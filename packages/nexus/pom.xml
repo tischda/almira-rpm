@@ -34,7 +34,7 @@ share software artifacts.</description>
   </properties>
 
   <build>
-    <finalName>${artifactId}-${version}.el6.noarch</finalName>
+    <finalName>${project.artifactId}-${project.version}.el6.noarch</finalName>
     <defaultGoal>package</defaultGoal>
     <plugins>
 
