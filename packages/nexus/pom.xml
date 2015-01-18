@@ -44,7 +44,7 @@ share software artifacts.</description>
         <artifactId>rpm-maven-plugin</artifactId>
         <configuration>
           <prereqs>
-            <prereq>apache-tomcat &gt;= 7.0.52</prereq>
+            <prereq>apache-tomcat &gt;= 7.0.57</prereq>
           </prereqs>
           <vendor>Sonatype</vendor>
           <copyright>Commercial</copyright>

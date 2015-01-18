@@ -2,6 +2,15 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.159 (18 January 2015)
+-------------------------------
+atlassian-jira-6.3.13.tar.gz
+git-2.2.2.tar.gz
+git-manpages-2.2.2.tar.gz
+quickbuild-6.0.4.tar.gz
+sonarqube-5.0.zip
+
+
 Version 0.158 (28 December 2014)
 --------------------------------
 * quickbuild-6.0.0.tar.gz

@@ -47,15 +47,15 @@ Copy binary files to 'dist' directory:
 |           tomcat-juli.jar
 |
 +---atlassian-jira
-|       atlassian-jira-6.3.12.tar.gz
+|       atlassian-jira-6.3.13.tar.gz
 |       mysql-connector-java-5.1.34.tar.gz
 |
 +---cmake
 |       cmake-3.1.0.tar.gz
 |
 +---git
-|       git-2.2.1.tar.gz
-|       git-manpages-2.2.1.tar.gz
+|       git-2.2.2.tar.gz
+|       git-manpages-2.2.2.tar.gz
 |       perl-YAML-0.84-1.2.noarch.rpm
 |
 +---java
@@ -73,14 +73,18 @@ Copy binary files to 'dist' directory:
 |
 +---quickbuild
 |       mysql-connector-java-5.1.34.tar.gz
-|       quickbuild-5.1.40.tar.gz
+|       quickbuild-6.0.4.tar.gz
+|
++---rsync
+|       rsync-3.1.1.tar.gz
 |
 +---sonar
-|       sonar-plugins-4.4-1.zip
-|       sonarqube-4.5.1.zip
+|       sonar-plugins-5.0-1.zip
+|       sonarqube-5.0.zip
 |
 \---tomcat-native
         tomcat-native-1.1.32-src.tar.gz
+
                 
 
 References
