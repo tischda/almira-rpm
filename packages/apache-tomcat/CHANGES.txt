@@ -2,6 +2,11 @@
 almira.rpm.apache-tomcat - change history
 ===============================================================================
 
+Version 7.0.59-1 (22 February 2015)
+-----------------------------------
+* Updated Tomcat to 7.0.59
+
+
 Version 7.0.57-1 (28 November 2014)
 -----------------------------------
 * Updated Tomcat to 7.0.57
