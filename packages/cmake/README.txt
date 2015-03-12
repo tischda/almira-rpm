@@ -27,10 +27,10 @@ Before you compile, you also need (manpages):
 
 Our SPEC file was created by adapting Fedora's spec file:
 
-    rpm2cpio cmake-3.1.0-1.fc22.src.rpm | cpio -mi \*.spec
-    rpm2cpio cmake-3.1.0-1.fc22.src.rpm | cpio -mi \*.patch
-    rpm2cpio cmake-3.1.0-1.fc22.src.rpm | cpio -mi cmake-init.el
-    rpm2cpio cmake-3.1.0-1.fc22.src.rpm | cpio -mi macros.cmake
+    rpm2cpio cmake-3.2.1-1.fc23.src.rpm | cpio -mi \*.spec
+    rpm2cpio cmake-3.2.1-1.fc23.src.rpm | cpio -mi \*.patch
+    rpm2cpio cmake-3.2.1-1.fc23.src.rpm | cpio -mi cmake-init.el
+    rpm2cpio cmake-3.2.1-1.fc23.src.rpm | cpio -mi macros.cmake
 
 
 Removed:
@@ -42,13 +42,10 @@ Layout:
 
     rpmbuild/
     ├── SOURCES
-    │   ├── cmake-3.1.3.tar.gz
-    │   ├── cmake-2.8.11-rc4-lua-5.2.patch
+    │   ├── cmake-3.2.1.tar.gz
     │   ├── cmake-dcmtk.patch
     │   ├── cmake-findruby.patch
     │   ├── cmake-init.el
-    │   ├── cmake-ninja.patch
-    │   ├── cmake-strict_aliasing.patch
     │   └── macros.cmake
     └── SPECS
         └── cmake.spec

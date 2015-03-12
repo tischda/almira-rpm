@@ -1,7 +1,7 @@
 %define rpm_macros_dir %{_sysconfdir}/rpm
 
 Name:           cmake
-Version:        3.1.3
+Version:        3.2.1
 Release:        1%{?dist}
 Summary:        Cross-platform make system
 
@@ -9,24 +9,16 @@ Group:          Development/Tools
 
 License:        BSD and MIT and zlib
 URL:            http://www.cmake.org
-Source0:        http://www.cmake.org/files/v3.1/cmake-%{version}%{?rcver}.tar.gz
+Source0:        http://www.cmake.org/files/v3.2/cmake-%{version}%{?rcver}.tar.gz
 Source1:        cmake-init.el
 Source2:        macros.cmake
 
 # Patch to find DCMTK in Fedora (bug #720140)
 Patch0:         cmake-dcmtk.patch
-# Patch to use ninja-build instead of ninja (renamed in Fedora)
-# https://bugzilla.redhat.com/show_bug.cgi?id=886184
-Patch1:         cmake-ninja.patch
 # Patch to fix FindRuby vendor settings
 # http://public.kitware.com/Bug/view.php?id=12965
 # https://bugzilla.redhat.com/show_bug.cgi?id=822796
 Patch2:         cmake-findruby.patch
-# Add FindLua52.cmake
-Patch5:         cmake-2.8.11-rc4-lua-5.2.patch
-# Add -fno-strict-aliasing when compiling cm_sha2.c
-# http://www.cmake.org/Bug/view.php?id=14314
-Patch6:         cmake-strict_aliasing.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -56,10 +48,7 @@ This package contains documentation for CMake.
 %prep
 %setup -q -n %{name}-%{version}
 %patch0 -p1
-%patch1 -p1
 %patch2 -p1
-%patch5 -p1
-%patch6 -p1 -b .strict_aliasing
 
 
 %build
@@ -139,6 +128,33 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Mar 11 2015 Orion Poplawski <orion@cora.nwra.com> - 3.2.1-1
+- Update to 3.2.1
+
+* Thu Feb 26 2015 Orion Poplawski <orion@cora.nwra.com> - 3.2.0-0.2.rc2
+- Update to 3.2.0-rc2
+- Drop C++11 ABI workaround, fixed in gcc
+- Drop strict_aliasing patch fixed upstream long ago
+- Drop FindLua52, FindLua should work now for 5.1-5.3
+
+* Sun Feb 15 2015 Orion Poplawski <orion@cora.nwra.com> - 3.2.0-0.1.rc1
+- Update to 3.2.0-rc1
+- Drop ninja patch fixed upstream
+- Upstream now ships icons, add icon-cache scriptlets
+
+* Fri Feb 13 2015 Orion Poplawski <orion@cora.nwra.com> - 3.1.3-1
+- Update to 3.1.3
+
+* Sat Feb 7 2015 Orion Poplawski <orion@cora.nwra.com> - 3.1.2-1
+- Update to 3.1.2
+
+* Fri Jan 23 2015 Orion Poplawski <orion@cora.nwra.com> - 3.1.1-1
+- Update to 3.1.1
+- Drop ruby patch applied upstream
+
+* Sat Jan 17 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.1.0-2
+- Fix ruby 2.2.0 teeny (0) detection
+
 * Wed Dec 17 2014 Orion Poplawski <orion@cora.nwra.com> - 3.1.0-1
 - Update to 3.1.0 final
 
