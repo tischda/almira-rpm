@@ -2,7 +2,7 @@
 
 Name:           cmake
 Version:        3.2.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Cross-platform make system
 
 Group:          Development/Tools
@@ -101,7 +101,8 @@ pushd build
 # ModuleNotices fails for some unknown reason, and we don't care
 # CMake.HTML currently requires internet access
 # CTestTestUpload requires internet access
-bin/ctest -V -E ModuleNotices -E CMake.HTML -E CTestTestUpload %{?_smp_mflags}
+# CPackComponentsForAll-RPM-IgnoreGroup, RunCPackVerifyResult.cmake : should be no space before colon in "Relocations_:"
+bin/ctest -V -E ModuleNotices -E CMake.HTML -E CTestTestUpload -E CPackComponentsForAll-RPM-IgnoreGroup %{?_smp_mflags}
 popd
 
 
