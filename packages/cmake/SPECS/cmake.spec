@@ -101,7 +101,7 @@ pushd build
 # ModuleNotices fails for some unknown reason, and we don't care
 # CMake.HTML currently requires internet access
 # CTestTestUpload requires internet access
-# CPackComponentsForAll-RPM-IgnoreGroup, RunCPackVerifyResult.cmake : should be no space before colon in "Relocations_:"
+# CPackComponentsForAll-RPM-IgnoreGroup test fails: [http://www.cmake.org/Bug/view.php?id=15442]
 bin/ctest -V -E ModuleNotices -E CMake.HTML -E CTestTestUpload -E CPackComponentsForAll-RPM-IgnoreGroup %{?_smp_mflags}
 popd
 
