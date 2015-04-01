@@ -2,6 +2,17 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.163 (10 April 2015)
+-----------------------------
+atlassian-jira-6.4.1.tar.gz
+git-2.3.5.tar.gz
+git-manpages-2.3.5.tar.gz
+gradle-2.3-bin.zip (manual install)
+jdk-8u40-linux-x64.rpm (manual copy dist->rpm)
+sonar-plugins-5.0-4.zip
+tomcat-native-1.1.33-src.tar.gz
+
+
 Version 0.162 (21 March 2015)
 -----------------------------
 apache-maven-3.3.1-bin.tar.gz
