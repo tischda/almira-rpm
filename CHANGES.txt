@@ -2,6 +2,16 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.164 (20 April 2015)
+-----------------------------
+apache-tomcat-7.0.61.tar.gz
+cmake-3.2.2.tar.gz
+jdk-8u45-linux-x64.rpm (manual copy dist->rpm)
+MySQL-5.6.24
+quickbuild-6.0.11.tar.gz
+sonarqube-5.1.zip
+
+
 Version 0.163 (10 April 2015)
 -----------------------------
 atlassian-jira-6.4.1.tar.gz
