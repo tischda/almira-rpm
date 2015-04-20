@@ -4,6 +4,7 @@ almira.rpm - change history
 
 Version 0.164 (20 April 2015)
 -----------------------------
+atlassian-jira-6.4.2.tar.gz
 apache-tomcat-7.0.61.tar.gz
 cmake-3.2.2.tar.gz
 jdk-8u45-linux-x64.rpm (manual copy dist->rpm)
