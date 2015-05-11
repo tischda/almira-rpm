@@ -13,7 +13,7 @@ Source structure:
 
 rpmbuild/
 ├── SOURCES
-│   └── git-manpages-2.3.0.tar.gz
+│   └── git-manpages-2.4.0.tar.gz
 └── SPECS
     └── git-manpages.spec
 

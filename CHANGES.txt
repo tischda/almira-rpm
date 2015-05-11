@@ -2,6 +2,15 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.165 (11 May 2015)
+---------------------------
+apache-maven-3.3.3-bin.tar.gz
+atlassian-jira-6.4.3.tar.gz
+git-2.4.0.tar.gz
+git-manpages-2.4.0.tar.gz
+quickbuild-6.0.15.tar.gz
+
+
 Version 0.164 (20 April 2015)
 -----------------------------
 atlassian-jira-6.4.2.tar.gz
