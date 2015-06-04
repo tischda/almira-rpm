@@ -42,7 +42,7 @@ Layout:
 
     rpmbuild/
     ├── SOURCES
-    │   ├── cmake-3.2.1.tar.gz
+    │   ├── cmake-3.2.3.tar.gz
     │   ├── cmake-dcmtk.patch
     │   ├── cmake-findruby.patch
     │   ├── cmake-init.el

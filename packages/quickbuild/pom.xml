@@ -26,7 +26,7 @@
     <appServiceName>quickbuild</appServiceName>
 
     <jdbcDriverName>mysql-connector-java</jdbcDriverName>
-    <jdbcDriverVersion>5.1.34</jdbcDriverVersion>
+    <jdbcDriverVersion>5.1.35</jdbcDriverVersion>
 
     <!-- overrides -->
     <destPrefix>/home/${appUserName}</destPrefix>

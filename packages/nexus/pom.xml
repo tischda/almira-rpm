@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>nexus</artifactId>
-  <version>2.11.2.6.3</version>
+  <version>2.11.3.1.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.nexus</name>
 
@@ -22,8 +22,8 @@ share software artifacts.</description>
   <url>http://www.sonatype.org/nexus/</url>
 
   <properties>
-    <appVersion>2.11.2-06</appVersion>
-    <rpmRelease>3</rpmRelease>
+    <appVersion>2.11.3-01</appVersion>
+    <rpmRelease>1</rpmRelease>
 
     <appServiceName>nexus</appServiceName>
 

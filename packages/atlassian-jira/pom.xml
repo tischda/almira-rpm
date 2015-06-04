@@ -28,7 +28,7 @@ great products.</description>
     <appContextPath>jira</appContextPath>
 
     <jdbcDriverName>mysql-connector-java</jdbcDriverName>
-    <jdbcDriverVersion>5.1.34</jdbcDriverVersion>
+    <jdbcDriverVersion>5.1.35</jdbcDriverVersion>
 
     <!-- overrides -->
     <appSrcLocation>target/unpack/${project.artifactId}-${appVersion}-standalone</appSrcLocation>
@@ -47,7 +47,7 @@ great products.</description>
         <artifactId>rpm-maven-plugin</artifactId>
         <configuration>
           <prereqs>
-            <prereq>apache-tomcat &gt;= 7.0.57</prereq>
+            <prereq>apache-tomcat &gt;= 7.0.62</prereq>
           </prereqs>
           <vendor>Atlassian</vendor>
           <copyright>Commercial</copyright>
