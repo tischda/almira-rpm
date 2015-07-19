@@ -47,7 +47,7 @@ great products.</description>
         <artifactId>rpm-maven-plugin</artifactId>
         <configuration>
           <prereqs>
-            <prereq>apache-tomcat &gt;= 7.0.62</prereq>
+            <prereq>apache-tomcat &gt;= 7.0.63</prereq>
           </prereqs>
           <vendor>Atlassian</vendor>
           <copyright>Commercial</copyright>
