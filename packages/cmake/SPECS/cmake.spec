@@ -1,7 +1,7 @@
 %define rpm_macros_dir %{_sysconfdir}/rpm
 
 Name:           cmake
-Version:        3.2.3
+Version:        3.3.0
 Release:        1%{?dist}
 Summary:        Cross-platform make system
 
@@ -9,9 +9,12 @@ Group:          Development/Tools
 
 License:        BSD and MIT and zlib
 URL:            http://www.cmake.org
-Source0:        http://www.cmake.org/files/v3.2/cmake-%{version}%{?rcver}.tar.gz
+Source0:        http://www.cmake.org/files/v3.3/cmake-%{version}%{?rcver}.tar.gz
 Source1:        cmake-init.el
 Source2:        macros.cmake
+# See https://bugzilla.redhat.com/show_bug.cgi?id=1202899
+Source3:        cmake.attr
+Source4:        cmake.prov
 
 # Patch to find DCMTK in Fedora (bug #720140)
 Patch0:         cmake-dcmtk.patch
@@ -82,6 +85,11 @@ done
 install -p -m0644 -D %{SOURCE2} %{buildroot}%{rpm_macros_dir}/macros.cmake
 sed -i -e "s|@@CMAKE_VERSION@@|%{version}|" %{buildroot}%{rpm_macros_dir}/macros.cmake
 touch -r %{SOURCE2} %{buildroot}%{rpm_macros_dir}/macros.cmake
+%if 0%{?_rpmconfigdir:1}
+# RPM auto provides
+install -p -m0644 -D %{SOURCE3} %{buildroot}%{_prefix}/lib/rpm/fileattrs/cmake.attr
+install -p -m0755 -D %{SOURCE4} %{buildroot}%{_prefix}/lib/rpm/cmake.prov
+%endif
 mkdir -p %{buildroot}%{_libdir}/%{name}
 
 # Install copyright files for main package
@@ -98,11 +106,10 @@ done
 %check
 unset DISPLAY
 pushd build
-# ModuleNotices fails for some unknown reason, and we don't care
-# CMake.HTML currently requires internet access
-# CTestTestUpload requires internet access
-# CPackComponentsForAll-RPM-IgnoreGroup test fails: [http://www.cmake.org/Bug/view.php?id=15442]
-bin/ctest -V -E ModuleNotices -E CMake.HTML -E CTestTestUpload -E CPackComponentsForAll-RPM-IgnoreGroup %{?_smp_mflags}
+#ModuleNotices fails for some unknown reason, and we don't care
+#CMake.HTML currently requires internet access
+#CTestTestUpload requires internet access
+bin/ctest -V -E ModuleNotices -E CMake.HTML -E CTestTestUpload %{?_smp_mflags}
 popd
 
 
@@ -115,6 +122,10 @@ rm -rf %{buildroot}
 %dir %{_docdir}/%{name}
 %{_docdir}/%{name}/Copyright.txt*
 %{rpm_macros_dir}/macros.cmake
+%if 0%{?_rpmconfigdir:1}
+%{_prefix}/lib/rpm/fileattrs/cmake.attr
+%{_prefix}/lib/rpm/cmake.prov
+%endif
 %{_bindir}/ccmake
 %{_bindir}/cmake
 %{_bindir}/cpack
@@ -129,6 +140,37 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Jul 9 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.0-0.4.rc3
+- Update to 3.3.0-rc3
+- Fix cmake.attr to handle 32-bit libraries
+
+* Tue Jun 23 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.0-0.3.rc2
+- Update to 3.3.0-rc2
+
+* Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.3.0-0.2.rc1
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
+* Mon Jun 8 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.0-0.1.rc1
+- Update to 3.3.0-rc1
+
+* Mon Jun 8 2015 Orion Poplawski <orion@cora.nwra.com> - 3.2.3-1
+- Update to 3.2.3
+
+* Wed Apr 15 2015 Orion Poplawski <orion@cora.nwra.com> - 3.2.2-1
+- Update to 3.2.2
+
+* Thu Mar 26 2015 Richard Hughes <rhughes@redhat.com> - 3.2.1-5
+- Add an AppData file for the software center
+
+* Mon Mar 23 2015 Daniel Vrátil <dvratil@redhat.com> - 3.2.1-4
+- cmake.prov: handle exceptions
+
+* Wed Mar 18 2015 Rex Dieter <rdieter@fedoraproject.org> 3.2.1-3
+- cmake.prov: use /usr/bin/python (instead of /bin/python)
+
+* Tue Mar 17 2015 Rex Dieter <rdieter@fedoraproject.org> 3.2.1-2
+- RFE: CMake automatic RPM provides  (#1202899)
+
 * Wed Mar 11 2015 Orion Poplawski <orion@cora.nwra.com> - 3.2.1-1
 - Update to 3.2.1
 
@@ -158,69 +200,3 @@ rm -rf %{buildroot}
 
 * Wed Dec 17 2014 Orion Poplawski <orion@cora.nwra.com> - 3.1.0-1
 - Update to 3.1.0 final
-
-* Sat Nov 15 2014 Orion Poplawski <orion@cora.nwra.com> - 3.1.0-0.2.rc2
-- Update to 3.1.0-rc2
-
-* Wed Oct 29 2014 Orion Poplawski <orion@cora.nwra.com> - 3.1.0-0.1.rc1
-- Update to 3.1.0-rc1
-
-* Mon Sep 15 2014 Dan Horák <dan[at]danny.cz> - 3.0.2-2
-- fix FindJNI for ppc64le (#1141782)
-
-* Sun Sep 14 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.2-1
-- Update to 3.0.2
-
-* Mon Aug 25 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.1-3
-- Update wxWidgets patches
-
-* Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.0.1-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
-
-* Wed Aug 6 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.1-1
-- Update to 3.0.1
-
-* Thu Jul 03 2014 Rex Dieter <rdieter@fedoraproject.org> 3.0.0-2
-- optimize mimeinfo scriptlet
-
-* Sat Jun 14 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-1
-- Update to 3.0.0 final
-
-* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.0.0-0.11.rc6
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
-
-* Tue May 27 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.10.rc6
-- Update to 3.0.0-rc6
-
-* Wed May 14 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.9.rc5
-- Update to 3.0.0-rc5
-- Drop icon patch applied upstream
-
-* Tue Apr 22 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.8.rc4
-- Update to 3.0.0-rc4
-
-* Thu Apr 10 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.7.rc3
-- Fix doc duplication
-
-* Fri Apr 4 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.6.rc3
-- Rebase patches to prevent .orig files in Modules
-- Add install check for .orig files
-
-* Wed Mar 26 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.5.rc3
-- Update to 3.0.0-rc3
-- Add patch to fix FindwxWidgets when cross-compiling for Windows (bug #1081207)
-
-* Wed Mar 5 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.4.rc1
-- Add additional FindPythonLibs patch from upstream (bug #1072964)
-
-* Mon Mar 3 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.3.rc1
-- Update to upstreams version of FindPythonLibs patch
-
-* Mon Mar 3 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.2.rc1
-- Use symlinks for bash completions
-
-* Fri Feb 28 2014 Orion Poplawski <orion@cora.nwra.com> - 3.0.0-0.1.rc1
-- Update to 3.0.0-rc1
-- Update qtdeps patch to upstreamed version
-- Install bash completions
-

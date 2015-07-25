@@ -25,12 +25,14 @@ Before you compile, you also need (manpages):
    sphinx-build --version
 
 
-Our SPEC file was created by adapting Fedora's spec file:
+SPEC file is adapted from Fedora's spec file:
 
-    rpm2cpio cmake-3.2.1-1.fc23.src.rpm | cpio -mi \*.spec
-    rpm2cpio cmake-3.2.1-1.fc23.src.rpm | cpio -mi \*.patch
-    rpm2cpio cmake-3.2.1-1.fc23.src.rpm | cpio -mi cmake-init.el
-    rpm2cpio cmake-3.2.1-1.fc23.src.rpm | cpio -mi macros.cmake
+    rpm2cpio cmake-3.3.0-0.4.rc3.fc23.src.rpm | cpio -mi \*.spec
+    rpm2cpio cmake-3.3.0-0.4.rc3.fc23.src.rpm | cpio -mi \*.patch
+    rpm2cpio cmake-3.3.0-0.4.rc3.fc23.src.rpm | cpio -mi cmake.attr
+    rpm2cpio cmake-3.3.0-0.4.rc3.fc23.src.rpm | cpio -mi cmake.prov
+    rpm2cpio cmake-3.3.0-0.4.rc3.fc23.src.rpm | cpio -mi cmake-init.el
+    rpm2cpio cmake-3.3.0-0.4.rc3.fc23.src.rpm | cpio -mi macros.cmake
 
 
 Removed:
@@ -38,11 +40,13 @@ Removed:
     GUI and Emacs     (we don't want this as prereq to install cmake)
     Manpages          (cmake-gui doc not packaged fails build)
 
+
 Layout:
 
     rpmbuild/
     ├── SOURCES
-    │   ├── cmake-3.2.3.tar.gz
+    │   ├── cmake.attr
+    │   ├── cmake.prov
     │   ├── cmake-dcmtk.patch
     │   ├── cmake-findruby.patch
     │   ├── cmake-init.el
