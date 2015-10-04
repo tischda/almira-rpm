@@ -2,6 +2,21 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.171 (04 October 2015)
+-------------------------------
+apache-activemq-5.12.0-bin.tar.gz
+apache-tomcat-7.0.64.tar.gz
+atlassian-jira-6.4.12.tar.gz
+mysql-connector-java-5.1.36.tar.gz
+cmake-3.3.2.tar.gz
+git-2.6.0.tar.gz
+git-manpages-2.6.0.tar.gz
+MySQL-5.6.27
+quickbuild-6.0.28.tar.gz
+sonar-plugins-5.1.2-1.zip
+sonarqube-5.1.2.zip
+
+
 Version 0.170 (25 July 2015)
 ----------------------------
 cmake-3.3.0.tar.gz

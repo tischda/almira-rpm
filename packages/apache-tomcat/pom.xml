@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
   xmlns="http://maven.apache.org/POM/4.0.0">
@@ -12,7 +12,7 @@
   </parent>
 
   <artifactId>apache-tomcat</artifactId>
-  <version>7.0.63.1</version>
+  <version>7.0.64.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.apache-tomcat</name>
 
@@ -23,7 +23,7 @@ Pages specifications are developed under the Java Community Process.</descriptio
   <url>http://tomcat.apache.org</url>
 
   <properties>
-    <appVersion>7.0.63</appVersion>
+    <appVersion>7.0.64</appVersion>
     <rpmRelease>1</rpmRelease>
 
     <appServiceName>tomcat</appServiceName>

@@ -1,5 +1,5 @@
---- apache-activemq-5.11.1.orig/bin/linux-x86-64/wrapper.conf	2015-02-22 11:32:16.998808083 +0100
-+++ apache-activemq-5.11.1/bin/linux-x86-64/wrapper.conf	2015-02-22 11:34:41.492759772 +0100
+--- apache-activemq-5.12.0.orig/bin/linux-x86-64/wrapper.conf	2015-08-10 17:26:28.000000000 +0200
++++ apache-activemq-5.12.0/bin/linux-x86-64/wrapper.conf	2015-10-04 14:08:15.252538753 +0200
 @@ -20,11 +20,11 @@
  #********************************************************************
  

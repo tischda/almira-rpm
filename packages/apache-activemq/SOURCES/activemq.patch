@@ -1,5 +1,5 @@
---- apache-activemq-5.11.1.orig/bin/linux-x86-64/activemq	2015-02-22 11:32:16.998808083 +0100
-+++ apache-activemq-5.11.1/bin/linux-x86-64/activemq	2015-02-22 11:33:48.604679352 +0100
+--- apache-activemq-5.12.0.orig/bin/linux-x86-64/activemq	2015-08-10 17:26:28.000000000 +0200
++++ apache-activemq-5.12.0/bin/linux-x86-64/activemq	2015-10-04 14:10:36.005515658 +0200
 @@ -30,18 +30,18 @@
  # Application
  APP_NAME="ActiveMQ"

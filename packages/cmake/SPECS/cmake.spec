@@ -1,7 +1,7 @@
 %define rpm_macros_dir %{_sysconfdir}/rpm
 
 Name:           cmake
-Version:        3.3.0
+Version:        3.3.2
 Release:        1%{?dist}
 Summary:        Cross-platform make system
 
@@ -22,6 +22,15 @@ Patch0:         cmake-dcmtk.patch
 # http://public.kitware.com/Bug/view.php?id=12965
 # https://bugzilla.redhat.com/show_bug.cgi?id=822796
 Patch2:         cmake-findruby.patch
+# Fix issue with redhat-hardened-ld
+# http://www.cmake.org/Bug/view.php?id=15737
+# https://bugzilla.redhat.com/show_bug.cgi?id=1260490
+Patch3:         cmake.git-97ffbcd8.patch
+
+## upstream patches
+# some post v3.3.1 tag commits
+Patch624:       0624-FindBoost-Add-support-for-Boost-1.59.patch
+Patch640:       0640-FindPkgConfig-remove-variable-dereference.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -29,6 +38,8 @@ BuildRequires: gcc-c++
 BuildRequires: ncurses-devel
 BuildRequires: python-devel
 
+# https://fedorahosted.org/fpc/ticket/555
+Provides: bundled(kwsys)
 
 %description
 CMake is used to control the software compilation process using simple
@@ -52,11 +63,14 @@ This package contains documentation for CMake.
 %setup -q -n %{name}-%{version}
 %patch0 -p1
 %patch2 -p1
-
+%patch3 -p1
+%patch624 -p1
+%patch640 -p1
 
 %build
-export CFLAGS="$RPM_OPT_FLAGS"
-export CXXFLAGS="$RPM_OPT_FLAGS"
+export CFLAGS="%{optflags}"
+export CXXFLAGS="%{optflags}"
+export LDFLAGS="%{__global_ldflags}"
 mkdir build
 pushd build
 
@@ -106,10 +120,10 @@ done
 %check
 unset DISPLAY
 pushd build
-#ModuleNotices fails for some unknown reason, and we don't care
-#CMake.HTML currently requires internet access
-#CTestTestUpload requires internet access
-bin/ctest -V -E ModuleNotices -E CMake.HTML -E CTestTestUpload %{?_smp_mflags}
+
+
+#CMake.FileDownload, and CTestTestUpload require internet access
+bin/ctest -V -E 'CMake.FileDownload|CTestTestUpload' %{?_smp_mflags}
 popd
 
 
@@ -121,6 +135,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %dir %{_docdir}/%{name}
 %{_docdir}/%{name}/Copyright.txt*
+%{_docdir}/%{name}/COPYING*
 %{rpm_macros_dir}/macros.cmake
 %if 0%{?_rpmconfigdir:1}
 %{_prefix}/lib/rpm/fileattrs/cmake.attr
@@ -140,6 +155,30 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Sep 17 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.2-1
+- Update to 3.3.2
+- Use %%{__global_ldflags}
+- Fix test exclusion
+
+* Fri Sep 11 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.1-5
+- Apply upstream patch to fix Fortran linker detection with redhat-hardened-ld
+  (bug #1260490)
+
+* Wed Sep 9 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.1-4
+- Apply upstream patch to fix trycompile output (bug #1260490)
+
+* Tue Aug 25 2015 Rex Dieter <rdieter@fedoraproject.org> 3.3.1-3
+- pull in some upstream fixes (FindPkgConfig,boost-1.59)
+
+* Fri Aug 21 2015 Rex Dieter <rdieter@fedoraproject.org> 3.3.1-2
+- Provides: bundled(kwsys)
+
+* Thu Aug 13 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.1-1
+- Update to 3.3.1
+
+* Thu Jul 23 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.0-1
+- Update to 3.3.0
+
 * Thu Jul 9 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.0-0.4.rc3
 - Update to 3.3.0-rc3
 - Fix cmake.attr to handle 32-bit libraries
