@@ -70,7 +70,6 @@ This package contains documentation for CMake.
 %build
 export CFLAGS="%{optflags}"
 export CXXFLAGS="%{optflags}"
-export LDFLAGS="%{__global_ldflags}"
 mkdir build
 pushd build
 
@@ -157,7 +156,6 @@ rm -rf %{buildroot}
 %changelog
 * Thu Sep 17 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.2-1
 - Update to 3.3.2
-- Use %%{__global_ldflags}
 - Fix test exclusion
 
 * Fri Sep 11 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.1-5
