@@ -1,4 +1,5 @@
 %define amqhome /usr/share/activemq
+%undefine _missing_build_ids_terminate_build
 
 Name: apache-activemq
 Version: 5.12.0
