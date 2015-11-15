@@ -24,8 +24,7 @@ f=CHANGELOG.txt ; iconv -f iso-8859-1 -t utf-8 $f > $f.utf8 ; mv $f.utf8 $f
 %build
 cd native
 %configure \
-    --with-apr=%{_bindir}/apr-1-config \
-    --with-java-platform=2
+    --with-apr=%{_bindir}/apr-1-config
 make %{?_smp_mflags}
 
 
