@@ -69,7 +69,7 @@ great products.</description>
               <configuration>true</configuration>
               <sources>
                 <source>
-                  <location>target/classes/init.d/${project.appServiceName}</location>
+                  <location>target/classes/init.d/${appServiceName}</location>
                 </source>
               </sources>
             </mapping>
@@ -81,7 +81,7 @@ great products.</description>
               <configuration>true</configuration>
               <sources>
                 <source>
-                  <location>target/classes/logrotate.d/${project.appServiceName}</location>
+                  <location>target/classes/logrotate.d/${appServiceName}</location>
                 </source>
               </sources>
             </mapping>
