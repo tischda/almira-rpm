@@ -60,7 +60,7 @@ great products.</description>
                   <location>${appSrcLocation}/conf</location>
                 </source>
                 <source>
-                  <location>target/classes/${appServiceName}</location>
+                  <location>target/classes/${project.artifactId}</location>
                 </source>
               </sources>
             </mapping>
@@ -72,7 +72,7 @@ great products.</description>
               <configuration>true</configuration>
               <sources>
                 <source>
-                  <location>target/classes/init.d/${appServiceName}</location>
+                  <location>target/classes/init.d/${project.artifactId}</location>
                 </source>
               </sources>
             </mapping>
@@ -84,7 +84,7 @@ great products.</description>
               <configuration>true</configuration>
               <sources>
                 <source>
-                  <location>target/classes/logrotate.d/${appServiceName}</location>
+                  <location>target/classes/logrotate.d/${project.artifactId}</location>
                 </source>
               </sources>
             </mapping>
