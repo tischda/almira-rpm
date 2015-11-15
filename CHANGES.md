@@ -2,47 +2,63 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.172 (15 November 2015)
+--------------------------------
+* apache-activemq-5.12.1-bin.tar.gz
+* httpd-2.4.17.tar.bz2
+* apache-tomcat-7.0.65.tar.gz
+* mysql-connector-java-5.1.36.tar.gz
+* cmake-3.4.0.tar.gz
+* git-2.6.3.tar.gz
+* git-manpages-2.6.3.tar.gz
+* jdk-8u66-linux-x64.rpm
+* quickbuild-6.0.34.tar.gz
+* sonar-plugins-5.2.0-1.zip
+* sonarqube-5.2.zip
+* tomcat-native-1.2.2-src.tar.gz
+
+
 Version 0.171 (04 October 2015)
 -------------------------------
-apache-activemq-5.12.0-bin.tar.gz
-apache-tomcat-7.0.64.tar.gz
-atlassian-jira-6.4.12.tar.gz
-mysql-connector-java-5.1.36.tar.gz
-cmake-3.3.2.tar.gz
-git-2.6.0.tar.gz
-git-manpages-2.6.0.tar.gz
-MySQL-5.6.27
-quickbuild-6.0.28.tar.gz
-sonar-plugins-5.1.2-1.zip
-sonarqube-5.1.2.zip
+* apache-activemq-5.12.0-bin.tar.gz
+* apache-tomcat-7.0.64.tar.gz
+* atlassian-jira-6.4.12.tar.gz
+* mysql-connector-java-5.1.36.tar.gz
+* cmake-3.3.2.tar.gz
+* git-2.6.0.tar.gz
+* git-manpages-2.6.0.tar.gz
+* MySQL-5.6.27
+* quickbuild-6.0.28.tar.gz
+* sonar-plugins-5.1.2-1.zip
+* sonarqube-5.1.2.zip
 
 
 Version 0.170 (25 July 2015)
 ----------------------------
-cmake-3.3.0.tar.gz
-MySQL-5.6.26
+* cmake-3.3.0.tar.gz
+* MySQL-5.6.26
 
 
 Version 0.169 (19 July 2015)
 ----------------------------
-apache-tomcat-7.0.63.tar.gz
-atlassian-jira-6.4.8.tar.gz
-git-2.4.6.tar.gz
-git-manpages-2.4.6.tar.gz
-httpd-2.4.16.tar.bz2
-jdk-8u51-linux-x64.rpm
-nexus-2.11.4-01.war
-quickbuild-6.0.23.tar.gz
-sonar-cxx-plugin-0.9.3.jar
-sonar-java-plugin-3.4.jar
+* apache-tomcat-7.0.63.tar.gz
+* atlassian-jira-6.4.8.tar.gz
+* git-2.4.6.tar.gz
+* git-manpages-2.4.6.tar.gz
+* httpd-2.4.16.tar.bz2
+* jdk-8u51-linux-x64.rpm
+* nexus-2.11.4-01.war
+* quickbuild-6.0.23.tar.gz
+* sonar-cxx-plugin-0.9.3.jar
+* sonar-java-plugin-3.4.jar
 
 
 Version 0.168 (29 June 2015)
 ----------------------------
-atlassian-jira-6.4.7.tar.gz
-git-2.4.5.tar.gz
-git-manpages-2.4.5.tar.gz
-quickbuild-6.0.21.tar.gz
+* atlassian-jira-6.4.7.tar.gz
+* git-2.4.5.tar.gz
+* git-manpages-2.4.5.tar.gz
+* quickbuild-6.0.21.tar.gz
 
 
 Version 0.167 (22 June 2015)

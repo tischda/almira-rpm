@@ -11,7 +11,8 @@
 
     <artifactId>master-rpm</artifactId>
     <packaging>pom</packaging>
-    <version>12</version>
+    <version>13</version>
+
     <name>almira.rpm.master-rpm</name>
     <description>Parent POM for Almira custom RPMs</description>
 
@@ -129,7 +130,7 @@
                     </executions>
                 </plugin>
 
-                <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+                <!-- http://www.mojohaus.org/rpm-maven-plugin/index.html -->
                 <!-- BUG: http://jira.codehaus.org/browse/MRPM-83 -->
                 <!-- BUG: http://jira.codehaus.org/browse/MRPM-89 -->
                 <!-- BUG: http://jira.codehaus.org/browse/MRPM-8 -->

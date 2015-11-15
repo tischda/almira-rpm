@@ -11,7 +11,7 @@
     <modules>
         <module>apache-maven</module>
         <module>apache-tomcat</module>
-        <module>atlassian-jira</module>
+        <module>atlassian-jira-software</module>
         <module>nexus</module>
         <module>quickbuild</module>
         <module>sonar</module>

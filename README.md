@@ -14,31 +14,25 @@ git clone git://github.com/tischda/almira-rpm.git
 
 Dependencies
 ------------
-Binaries are not checked into VCS.
-To package the 'dist' directory, execute 'mvn assembly:single'
-
-
-Installation
-------------
-Copy binary files to 'dist' directory:
+Binaries are not checked into VCS. This is what you need in your `dist` directory:
 
 +---apache-activemq
-|       apache-activemq-5.11.1-bin.tar.gz
+|       apache-activemq-5.12.1-bin.tar.gz
 |
 +---apache-httpd
-|   |   apr-1.5.1.tar.bz2
+|   |   apr-1.5.2.tar.bz2
 |   |   apr-util-1.5.4.tar.bz2
 |   |   distcache-1.4.5-23.src.rpm
-|   |   httpd-2.4.12.tar.bz2
+|   |   httpd-2.4.17.tar.bz2
 |   |
 |   \---deps
-|           httpd-2.4.12-deps.tar.bz2
+|           httpd-2.4.17-deps.tar.bz2
 |
 +---apache-maven
 |       apache-maven-3.3.3-bin.tar.gz
 |
 +---apache-tomcat
-|   |   apache-tomcat-7.0.62.tar.gz
+|   |   apache-tomcat-7.0.65.tar.gz
 |   |
 |   \---extra
 |           catalina-jmx-remote.jar
@@ -46,51 +40,50 @@ Copy binary files to 'dist' directory:
 |           tomcat-juli-adapters.jar
 |           tomcat-juli.jar
 |
-+---atlassian-jira
-|       atlassian-jira-6.4.5.tar.gz
-|       mysql-connector-java-5.1.35.tar.gz
++---atlassian-jira-software
+|       atlassian-jira-software-7.0.0-jira-7.0.0.tar.gz
+|       mysql-connector-java-5.1.36.tar.gz
 |
 +---cmake
-|       cmake-3.2.3.tar.gz
+|       cmake-3.4.0.tar.gz
 |
 +---git
-|       git-2.4.2.tar.gz
-|       git-manpages-2.4.2.tar.gz
-|       perl-YAML-0.84-1.2.noarch.rpm
+|       git-2.6.3.tar.gz
+|       git-manpages-2.6.3.tar.gz
 |
 +---java
-|       jdk-8u45-linux-x64.rpm
+|       jdk-8u66-linux-x64.rpm
 |
 +---nexus
-|       nexus-2.11.3-01.war
+|       nexus-2.11.4-01.war
 |
 +---oracle-mysql
-|       MySQL-client-5.6.25-1.el6.x86_64.rpm
-|       MySQL-devel-5.6.25-1.el6.x86_64.rpm
-|       MySQL-server-5.6.25-1.el6.x86_64.rpm
-|       MySQL-shared-5.6.25-1.el6.x86_64.rpm
-|       MySQL-shared-compat-5.6.25-1.el6.x86_64.rpm
+|       MySQL-client-5.6.27-1.el6.x86_64.rpm
+|       MySQL-devel-5.6.27-1.el6.x86_64.rpm
+|       MySQL-server-5.6.27-1.el6.x86_64.rpm
+|       MySQL-shared-5.6.27-1.el6.x86_64.rpm
+|       MySQL-shared-compat-5.6.27-1.el6.x86_64.rpm
 |
 +---quickbuild
-|       mysql-connector-java-5.1.35.tar.gz
-|       quickbuild-6.0.17.tar.gz
+|       mysql-connector-java-5.1.36.tar.gz
+|       quickbuild-6.0.34.tar.gz
 |
 +---rsync
 |       rsync-3.1.1.tar.gz
 |
 +---sonar
 |       README.md
-|       sonar-plugins-5.1-1.zip
-|       sonarqube-5.1.zip
+|       sonar-plugins-5.2.0-1.zip
+|       sonarqube-5.2.zip
 |
 \---tomcat-native
-        tomcat-native-1.1.33-src.tar.gz
+        tomcat-native-1.2.2-src.tar.gz
                 
 
 References
 ----------
-http://blog.quilitz.de/2010/03/checkout-sub-directories-in-git-sparse-checkouts/comment-page-1/#comment-3146
-http://stackoverflow.com/questions/4114887/is-it-possible-to-do-a-sparse-checkout-without-checking-out-the-whole-repository
+* http://blog.quilitz.de/2010/03/checkout-sub-directories-in-git-sparse-checkouts/comment-page-1/#comment-3146
+* http://stackoverflow.com/questions/4114887/is-it-possible-to-do-a-sparse-checkout-without-checking-out-the-whole-repository
 
 
 Known Issues

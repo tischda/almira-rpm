@@ -2,11 +2,11 @@
 almira.rpm.atlassian-jira - change history
 ===============================================================================
 
-Version 7.0.0-1 (14 November 2015)
+Version 7.0.0-2 (15 November 2015)
 ----------------------------------
 * Updated to version 7.0.0
 * Renamed artifact from `atlassian-jira` to `atlassian-jira-software`
-* Jira 7 now uses Tomcat 8. Changed configuration to used embedded Tomcat.
+* Jira 7 now uses Tomcat 8 : Changed configuration to used embedded Tomcat
 
 
 Version 6.4.12-1 (04 October 2015)
