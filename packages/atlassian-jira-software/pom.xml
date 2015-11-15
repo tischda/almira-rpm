@@ -10,24 +10,30 @@
     <relativePath>../../master-rpm/pom.xml</relativePath>
   </parent>
 
-  <artifactId>sonar</artifactId>
-  <version>5.2.0.1</version>
+  <artifactId>atlassian-jira-software</artifactId>
+  <version>7.0.0.1</version>
   <packaging>rpm</packaging>
-  <name>almira.rpm.sonar</name>
+  <name>almira.rpm.atlassian-jira-software</name>
 
-  <description>Sonar is an open platform to manage code quality.</description>
-  <url>http://www.sonarsource.org</url>
+  <description>Project tracker for teams planning, building and launching
+great products.</description>
+
+  <url>http://www.atlassian.com/software/jira/overview</url>
 
   <properties>
-    <appVersion>5.2</appVersion>
+    <appVersion>7.0.0</appVersion>
     <rpmRelease>1</rpmRelease>
 
-    <appServiceName>sonar</appServiceName>
-    <appContextPath>sonar</appContextPath>
+    <appServiceName>jira</appServiceName>
+    <appContextPath>jira</appContextPath>
 
-    <!-- Overrides -->
+    <jdbcDriverName>mysql-connector-java</jdbcDriverName>
+    <jdbcDriverVersion>5.1.36</jdbcDriverVersion>
+
+    <!-- overrides -->
+    <appSrcLocation>target/unpack/${project.artifactId}-${appVersion}-standalone</appSrcLocation>
     <destPrefix>/home/${appUserName}</destPrefix>
-    <appSrcLocation>target/unpack/sonarqube-${appVersion}</appSrcLocation>
+    <appWorkFolder>${destPrefix}/jira-data</appWorkFolder>
   </properties>
 
   <build>
@@ -40,11 +46,11 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>rpm-maven-plugin</artifactId>
         <configuration>
-          <needarch>x86_64</needarch>
-          <vendor>Sonarsource</vendor>
-          <copyright>GNU Lesser GPL License, Version 3</copyright>
-          <summary>Sonar is an open platform to manage code quality.</summary>
+          <vendor>Atlassian</vendor>
+          <copyright>Commercial</copyright>
+          <summary>Project tracker.</summary>
           <mappings>
+
             <!-- conf files -->
             <mapping>
               <directory>${destConf}</directory>
@@ -52,6 +58,21 @@
               <sources>
                 <source>
                   <location>${appSrcLocation}/conf</location>
+                </source>
+                <source>
+                  <location>target/classes/${appServiceName}</location>
+                </source>
+              </sources>
+            </mapping>
+            <mapping>
+              <directory>/etc/init.d</directory>
+              <username>root</username>
+              <groupname>root</groupname>
+              <filemode>755</filemode>
+              <configuration>true</configuration>
+              <sources>
+                <source>
+                  <location>target/classes/init.d/${appServiceName}</location>
                 </source>
               </sources>
             </mapping>
@@ -68,35 +89,18 @@
               </sources>
             </mapping>
 
-            <!-- plugins -->
+            <!-- catalina-base -->
             <mapping>
-              <directory>${destBase}/extensions/plugins</directory>
+              <directory>${destBase}/lib</directory>
               <sources>
                 <source>
-                  <location>target/unpack/plugins/</location>
+                  <location>${appSrcLocation}/lib</location>
                 </source>
-              </sources>
-            </mapping>
-
-            <!-- sources files-->
-            <mapping>
-              <directory>${destBase}</directory>
-              <sources>
                 <source>
-                  <location>${appSrcLocation}</location>
-                  <excludes>
-                    <exclude>bin/jsw-license/</exclude>
-                    <exclude>bin/linux-ppc-64/</exclude>
-                    <exclude>bin/linux-x86-32/</exclude>
-                    <exclude>bin/macosx-universal-64/</exclude>
-                    <exclude>bin/solaris-sparc-32/</exclude>
-                    <exclude>bin/solaris-sparc-64/</exclude>
-                    <exclude>bin/solaris-x86-32/</exclude>
-                    <exclude>bin/windows-x86-32/</exclude>
-                    <exclude>bin/windows-x86-64/</exclude>
-                    <exclude>conf/</exclude>
-                    <exclude>lib/bundled-plugins/</exclude>
-                  </excludes>
+                  <location>target/unpack/${jdbcDriverName}-${jdbcDriverVersion}</location>
+                  <includes>
+                    <include>*.jar</include>
+                  </includes>
                 </source>
               </sources>
             </mapping>

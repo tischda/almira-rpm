@@ -1,0 +1,55 @@
+#!/bin/sh -e
+# JIRA startup script (https://confluence.atlassian.com/jira/starting-jira-automatically-on-linux-211060709.html)
+#
+# chkconfig: 2345 80 20
+# description: JIRA
+
+APP=@{appServiceName}
+export JIRA_HOME=@{appWorkFolder}
+export CATALINA_PID=/var/run/@{appServiceName}.pid
+
+export JAVA_HOME="/usr/java/default"
+export JAVA_OPTS="-Xms1024m -Xmx2048m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -XX:+UseG1GC -server ${JAVA_OPTS}"
+# export CATALINA_OPTS="-Djira.home=@{appWorkFolder} -Djira.jms.broker.uri=tcp://`hostname`:54663 -Dmail.mime.decodeparameters=true -Dorg.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true"
+
+# Location of application's bin directory
+BASE=@{destBase}
+
+case "$1" in
+  # Start command
+  start)
+    echo "Starting $APP"
+
+    # touch $CATALINA_PID
+    # chown @{appUserName}:@{appGroupName} $CATALINA_PID
+
+    $BASE/bin/startup.sh &> /dev/null
+    ;;
+  # Stop command
+  stop)
+    echo "Stopping $APP"
+    $BASE/bin/shutdown.sh &> /dev/null
+    echo "$APP stopped successfully"
+    ;;
+   # Stop-Wait command
+  stop-wait)
+    echo "Stopping $APP, waiting for actual termination"
+    COUNTER=1
+    while [  $COUNTER -gt 0 ]; do
+        $BASE/bin/shutdown.sh &> /dev/null
+        sleep 1
+        COUNTER=$(ps aux | grep "[c]atalina.base=$BASE" | wc -l)
+        done
+    echo "$APP stopped successfully"
+    ;;
+   # Restart command
+   restart)
+     $0 stop-wait
+     $0 start
+     ;;
+  *)
+    echo "Usage: /etc/init.d/$APP {start|restart|stop}"
+    exit 1
+    ;;
+esac
+exit 0

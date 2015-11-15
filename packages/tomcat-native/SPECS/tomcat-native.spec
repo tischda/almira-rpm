@@ -1,5 +1,5 @@
 Name: tomcat-native
-Version: 1.1.33
+Version: 1.2.2
 Release: 1%{?dist}
 Summary: Tomcat native library
 
@@ -7,8 +7,8 @@ License: ASL 2.0
 URL: http://tomcat.apache.org/tomcat-7.0-doc/apr.html
 Source0: http://www.apache.org/dist/tomcat/tomcat-connectors/native/%{version}/source/%{name}-%{version}-src.tar.gz
 
-BuildRequires: apr-devel >= 1.4.6
-BuildRequires: openssl-devel >= 1.0.0
+BuildRequires: apr-devel >= 1.5.2
+BuildRequires: openssl-devel >= 1.0.1e
 
 Provides: tcnative = %{version}-%{release}
 

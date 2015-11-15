@@ -1,7 +1,7 @@
 %define rpm_macros_dir %{_sysconfdir}/rpm
 
 Name:           cmake
-Version:        3.3.2
+Version:        3.4.0
 Release:        1%{?dist}
 Summary:        Cross-platform make system
 
@@ -9,7 +9,7 @@ Group:          Development/Tools
 
 License:        BSD and MIT and zlib
 URL:            http://www.cmake.org
-Source0:        http://www.cmake.org/files/v3.3/cmake-%{version}%{?rcver}.tar.gz
+Source0:        http://www.cmake.org/files/v3.4/cmake-%{version}.tar.gz
 Source1:        cmake-init.el
 Source2:        macros.cmake
 # See https://bugzilla.redhat.com/show_bug.cgi?id=1202899
@@ -22,15 +22,6 @@ Patch0:         cmake-dcmtk.patch
 # http://public.kitware.com/Bug/view.php?id=12965
 # https://bugzilla.redhat.com/show_bug.cgi?id=822796
 Patch2:         cmake-findruby.patch
-# Fix issue with redhat-hardened-ld
-# http://www.cmake.org/Bug/view.php?id=15737
-# https://bugzilla.redhat.com/show_bug.cgi?id=1260490
-Patch3:         cmake.git-97ffbcd8.patch
-
-## upstream patches
-# some post v3.3.1 tag commits
-Patch624:       0624-FindBoost-Add-support-for-Boost-1.59.patch
-Patch640:       0640-FindPkgConfig-remove-variable-dereference.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -63,9 +54,6 @@ This package contains documentation for CMake.
 %setup -q -n %{name}-%{version}
 %patch0 -p1
 %patch2 -p1
-%patch3 -p1
-%patch624 -p1
-%patch640 -p1
 
 %build
 export CFLAGS="%{optflags}"
@@ -154,6 +142,12 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Nov 5 2015 Orion Poplawski <orion@cora.nwra.com> - 3.4.0-0.3.rc3
+- Update to 3.4.0-rc3
+
+* Tue Oct 6 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.2-2
+- Add upstream patch to find python 3.5 (bug #1269095)
+
 * Thu Sep 17 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.2-1
 - Update to 3.3.2
 - Fix test exclusion
@@ -174,66 +168,3 @@ rm -rf %{buildroot}
 * Thu Aug 13 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.1-1
 - Update to 3.3.1
 
-* Thu Jul 23 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.0-1
-- Update to 3.3.0
-
-* Thu Jul 9 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.0-0.4.rc3
-- Update to 3.3.0-rc3
-- Fix cmake.attr to handle 32-bit libraries
-
-* Tue Jun 23 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.0-0.3.rc2
-- Update to 3.3.0-rc2
-
-* Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.3.0-0.2.rc1
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
-
-* Mon Jun 8 2015 Orion Poplawski <orion@cora.nwra.com> - 3.3.0-0.1.rc1
-- Update to 3.3.0-rc1
-
-* Mon Jun 8 2015 Orion Poplawski <orion@cora.nwra.com> - 3.2.3-1
-- Update to 3.2.3
-
-* Wed Apr 15 2015 Orion Poplawski <orion@cora.nwra.com> - 3.2.2-1
-- Update to 3.2.2
-
-* Thu Mar 26 2015 Richard Hughes <rhughes@redhat.com> - 3.2.1-5
-- Add an AppData file for the software center
-
-* Mon Mar 23 2015 Daniel Vrátil <dvratil@redhat.com> - 3.2.1-4
-- cmake.prov: handle exceptions
-
-* Wed Mar 18 2015 Rex Dieter <rdieter@fedoraproject.org> 3.2.1-3
-- cmake.prov: use /usr/bin/python (instead of /bin/python)
-
-* Tue Mar 17 2015 Rex Dieter <rdieter@fedoraproject.org> 3.2.1-2
-- RFE: CMake automatic RPM provides  (#1202899)
-
-* Wed Mar 11 2015 Orion Poplawski <orion@cora.nwra.com> - 3.2.1-1
-- Update to 3.2.1
-
-* Thu Feb 26 2015 Orion Poplawski <orion@cora.nwra.com> - 3.2.0-0.2.rc2
-- Update to 3.2.0-rc2
-- Drop C++11 ABI workaround, fixed in gcc
-- Drop strict_aliasing patch fixed upstream long ago
-- Drop FindLua52, FindLua should work now for 5.1-5.3
-
-* Sun Feb 15 2015 Orion Poplawski <orion@cora.nwra.com> - 3.2.0-0.1.rc1
-- Update to 3.2.0-rc1
-- Drop ninja patch fixed upstream
-- Upstream now ships icons, add icon-cache scriptlets
-
-* Fri Feb 13 2015 Orion Poplawski <orion@cora.nwra.com> - 3.1.3-1
-- Update to 3.1.3
-
-* Sat Feb 7 2015 Orion Poplawski <orion@cora.nwra.com> - 3.1.2-1
-- Update to 3.1.2
-
-* Fri Jan 23 2015 Orion Poplawski <orion@cora.nwra.com> - 3.1.1-1
-- Update to 3.1.1
-- Drop ruby patch applied upstream
-
-* Sat Jan 17 2015 Mamoru TASAKA <mtasaka@fedoraproject.org> - 3.1.0-2
-- Fix ruby 2.2.0 teeny (0) detection
-
-* Wed Dec 17 2014 Orion Poplawski <orion@cora.nwra.com> - 3.1.0-1
-- Update to 3.1.0 final

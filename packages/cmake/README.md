@@ -27,12 +27,12 @@ Before you compile, you also need (manpages):
 
 SPEC file is adapted from Fedora's spec file:
 
-    rpm2cpio cmake-3.3.2-1.fc24.src.rpm | cpio -mi \*.spec
-    rpm2cpio cmake-3.3.2-1.fc24.src.rpm | cpio -mi \*.patch
-    rpm2cpio cmake-3.3.2-1.fc24.src.rpm | cpio -mi cmake.attr
-    rpm2cpio cmake-3.3.2-1.fc24.src.rpm | cpio -mi cmake.prov
-    rpm2cpio cmake-3.3.2-1.fc24.src.rpm | cpio -mi cmake-init.el
-    rpm2cpio cmake-3.3.2-1.fc24.src.rpm | cpio -mi macros.cmake
+    rpm2cpio cmake-3.4.0-0.3.rc3.fc24.src.rpm | cpio -mi \*.spec
+    rpm2cpio cmake-3.4.0-0.3.rc3.fc24.src.rpm | cpio -mi \*.patch
+    rpm2cpio cmake-3.4.0-0.3.rc3.fc24.src.rpm | cpio -mi cmake.attr
+    rpm2cpio cmake-3.4.0-0.3.rc3.fc24.src.rpm | cpio -mi cmake.prov
+    rpm2cpio cmake-3.4.0-0.3.rc3.fc24.src.rpm | cpio -mi cmake-init.el
+    rpm2cpio cmake-3.4.0-0.3.rc3.fc24.src.rpm | cpio -mi macros.cmake
 
 
 Removed:
