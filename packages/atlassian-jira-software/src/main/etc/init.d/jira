@@ -1,4 +1,4 @@
-!/bin/sh -e
+#!/bin/sh -e
 # JIRA startup script (https://confluence.atlassian.com/jira/starting-jira-automatically-on-linux-211060709.html)
 #
 # chkconfig: 2345 80 20

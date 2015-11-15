@@ -2,7 +2,7 @@
 almira.rpm.atlassian-jira - change history
 ===============================================================================
 
-Version 7.0.0-2 (15 November 2015)
+Version 7.0.0-3 (15 November 2015)
 ----------------------------------
 * Updated to version 7.0.0
 * Renamed artifact from `atlassian-jira` to `atlassian-jira-software`

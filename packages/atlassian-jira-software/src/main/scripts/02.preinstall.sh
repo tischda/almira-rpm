@@ -12,8 +12,3 @@ if [ "$1" = "2" ]; then
   rm -rf @{destBase}/temp/*
   rm -rf @{destBase}/work/*
 fi
-
-# Run always, until we get Jira 7 update right
-service @{appServiceName} stop
-rm -rf @{destBase}/temp/*
-rm -rf @{destBase}/work/*
