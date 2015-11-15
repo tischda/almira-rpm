@@ -1,54 +1,59 @@
-#!/bin/sh -e
+!/bin/sh -e
 # JIRA startup script (https://confluence.atlassian.com/jira/starting-jira-automatically-on-linux-211060709.html)
 #
 # chkconfig: 2345 80 20
 # description: JIRA
 
-APP=@{appServiceName}
-export JIRA_HOME=@{appWorkFolder}
-export CATALINA_PID=/var/run/@{appServiceName}.pid
+APP=jira
+export JIRA_HOME=/home/jira/jira-data
+export CATALINA_PID=/var/run/jira.pid
 
 export JAVA_HOME="/usr/java/default"
 export JAVA_OPTS="-Xms1024m -Xmx2048m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -XX:+UseG1GC -server ${JAVA_OPTS}"
-# export CATALINA_OPTS="-Djira.home=@{appWorkFolder} -Djira.jms.broker.uri=tcp://`hostname`:54663 -Dmail.mime.decodeparameters=true -Dorg.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true"
 
 # Location of application's bin directory
-BASE=@{destBase}
+BASE=/home/jira/jira
 
 case "$1" in
-  # Start command
   start)
     echo "Starting $APP"
 
     # touch $CATALINA_PID
-    # chown @{appUserName}:@{appGroupName} $CATALINA_PID
+    # chown jira:jira $CATALINA_PID
 
     $BASE/bin/startup.sh &> /dev/null
     ;;
-  # Stop command
+
   stop)
     echo "Stopping $APP"
     $BASE/bin/shutdown.sh &> /dev/null
     echo "$APP stopped successfully"
     ;;
-   # Stop-Wait command
+
   stop-wait)
     echo "Stopping $APP, waiting for actual termination"
     COUNTER=1
-    while [  $COUNTER -gt 0 ]; do
+    while [ $COUNTER -gt 0 ]; do
         $BASE/bin/shutdown.sh &> /dev/null
         sleep 1
         COUNTER=$(ps aux | grep "[c]atalina.base=$BASE" | wc -l)
         done
     echo "$APP stopped successfully"
     ;;
-   # Restart command
-   restart)
+
+  restart)
      $0 stop-wait
      $0 start
      ;;
+
+  status)
+     PROCESS=$(ps aux | grep "[c]atalina.base=$BASE")
+     PID=`echo $PROCESS | awk {'print $2'}`
+     [ $(echo $PROCESS | wc -l) -gt 0 ] && echo "$APP (pid  $PID) is running..."
+     ;;
+
   *)
-    echo "Usage: /etc/init.d/$APP {start|restart|stop}"
+    echo "Usage: /etc/init.d/$APP {start|stop|stop-wait|restart|status}"
     exit 1
     ;;
 esac
