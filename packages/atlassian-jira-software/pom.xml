@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-  xmlns="http://maven.apache.org/POM/4.0.0">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>almira.rpm</groupId>
@@ -16,7 +16,8 @@
   <name>almira.rpm.atlassian-jira-software</name>
 
   <description>Project tracker for teams planning, building and launching
-great products.</description>
+    great products.
+  </description>
 
   <url>http://www.atlassian.com/software/jira/overview</url>
 
@@ -82,6 +83,16 @@ great products.</description>
               <sources>
                 <source>
                   <location>target/classes/logrotate.d/${appServiceName}</location>
+                </source>
+              </sources>
+            </mapping>
+
+            <!-- sources files-->
+            <mapping>
+              <directory>${destBase}</directory>
+              <sources>
+                <source>
+                  <location>${appSrcLocation}</location>
                 </source>
               </sources>
             </mapping>
