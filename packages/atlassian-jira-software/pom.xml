@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>atlassian-jira-software</artifactId>
-  <version>7.0.0.2</version>
+  <version>7.0.0.3</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.atlassian-jira-software</name>
 
