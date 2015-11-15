@@ -22,7 +22,7 @@ f=CHANGELOG.txt ; iconv -f iso-8859-1 -t utf-8 $f > $f.utf8 ; mv $f.utf8 $f
 
 
 %build
-cd jni/native
+cd native
 %configure \
     --with-apr=%{_bindir}/apr-1-config \
     --with-java-platform=2
@@ -31,7 +31,7 @@ make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%make_install -C jni/native
+%make_install -C native
 # Perhaps a devel package sometime?  Not for now; no headers are installed.
 rm -f $RPM_BUILD_ROOT%{_libdir}/libtcnative*.*a
 rm -rf $RPM_BUILD_ROOT%{_libdir}/pkgconfig
