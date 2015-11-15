@@ -162,10 +162,12 @@
                         <description>${project.description}</description>
 
                         <!-- %prep -->
+                        <!--
                         <prepareScriptlet>
                             <scriptFile>target/classes/01.prepare.sh</scriptFile>
                             <fileEncoding>utf-8</fileEncoding>
                         </prepareScriptlet>
+                        -->
 
                         <!-- %pre -->
                         <preinstallScriptlet>
@@ -174,10 +176,12 @@
                         </preinstallScriptlet>
 
                         <!-- %install -->
+                        <!--
                         <installScriptlet>
                             <scriptFile>target/classes/03.install.sh</scriptFile>
                             <fileEncoding>utf-8</fileEncoding>
                         </installScriptlet>
+                        -->
 
                         <!-- %post -->
                         <postinstallScriptlet>
@@ -192,34 +196,44 @@
                         </preremoveScriptlet>
 
                         <!-- %postun -->
+                        <!--
                         <postremoveScriptlet>
                             <scriptFile>target/classes/06.postremove.sh</scriptFile>
                             <fileEncoding>utf-8</fileEncoding>
                         </postremoveScriptlet>
+                        -->
 
                         <!-- %verifyScript -->
+                        <!--
                         <verifyScriptlet>
                             <scriptFile>target/classes/07.verify.sh</scriptFile>
                             <fileEncoding>utf-8</fileEncoding>
                         </verifyScriptlet>
+                        -->
 
                         <!-- %clean -->
+                        <!--
                         <cleanScriptlet>
                             <scriptFile>target/classes/08.clean.sh</scriptFile>
                             <fileEncoding>utf-8</fileEncoding>
                         </cleanScriptlet>
+                        -->
 
                         <!-- %pretrans -->
+                        <!--
                         <pretransScriptlet>
                             <scriptFile>target/classes/09.pretrans.sh</scriptFile>
                             <fileEncoding>utf-8</fileEncoding>
                         </pretransScriptlet>
+                        -->
 
                         <!-- %posttrans -->
+                        <!--
                         <posttransScriptlet>
                             <scriptFile>target/classes/10.posttrans.sh</scriptFile>
                             <fileEncoding>utf-8</fileEncoding>
                         </posttransScriptlet>
+                        -->
                     </configuration>
                 </plugin>
             </plugins>
