@@ -42,7 +42,7 @@
     <defaultGoal>package</defaultGoal>
     <plugins>
 
-      <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+      <!-- http://www.mojohaus.org/rpm-maven-plugin/ -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>rpm-maven-plugin</artifactId>
@@ -64,10 +64,10 @@
             </mapping>
             <mapping>
               <directory>/etc/init.d</directory>
+              <directoryIncluded>false</directoryIncluded>
               <username>root</username>
               <groupname>root</groupname>
               <filemode>755</filemode>
-              <configuration>true</configuration>
               <sources>
                 <source>
                   <location>target/classes/init.d/${appServiceName}</location>
@@ -76,6 +76,7 @@
             </mapping>
             <mapping>
               <directory>/etc/logrotate.d</directory>
+              <directoryIncluded>false</directoryIncluded>
               <username>root</username>
               <groupname>root</groupname>
               <filemode>644</filemode>

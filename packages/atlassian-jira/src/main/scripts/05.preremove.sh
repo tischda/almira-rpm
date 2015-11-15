@@ -4,4 +4,6 @@ if [ "$1" = "0" ] ; then
   chkconfig --del @{appServiceName}
   rm -rf /var/run/@{appServiceName}.pid
   rm -rf @{destBase}
+
+  rm -f /etc/rc.d/init.d/@{appServiceName}
 fi

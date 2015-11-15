@@ -30,7 +30,7 @@
         <installPluginVersion>      2.4          </installPluginVersion>
         <projectinfoPluginVersion>  2.6          </projectinfoPluginVersion>
         <resourcesPluginVersion>    2.6          </resourcesPluginVersion>
-        <rpmPluginVersion>          2.1-alpha-2  </rpmPluginVersion>
+        <rpmPluginVersion>          2.1.4        </rpmPluginVersion>
         <sitePluginVersion>         3.2          </sitePluginVersion>
         <versionsPluginVersion>     2.0          </versionsPluginVersion>
 
