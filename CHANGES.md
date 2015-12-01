@@ -2,6 +2,13 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.173 (01 December 2015)
+--------------------------------
+* apache-maven-3.3.9-bin.tar.gz
+* atlassian-jira-software-7.0.2-jira-7.0.2.tar.gz
+* quickbuild-6.0.35.tar.gz
+
+
 Version 0.172 (15 November 2015)
 --------------------------------
 * apache-activemq-5.12.1-bin.tar.gz
