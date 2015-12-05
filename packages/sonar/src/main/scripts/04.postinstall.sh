@@ -1,6 +1,6 @@
 # Make scripts executable
-chmod -R 755 @{destBase}/bin/linux-x86-64/*.sh
-chmod -R 755 @{destBase}/bin/linux-x86-64/wrapper
+chmod 755 @{destBase}/bin/linux-x86-64/*.sh
+chmod 755 @{destBase}/bin/linux-x86-64/wrapper
 
 # Configure startup script
 sed -i 's|chkconfig: 2345 20 80|chkconfig: 2345 70 20|g' @{destBase}/bin/linux-x86-64/sonar.sh
