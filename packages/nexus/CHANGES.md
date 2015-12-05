@@ -2,6 +2,11 @@
 almira.rpm.nexus - change history
 ===============================================================================
 
+Version 2.11.4.7 (05 December 2015)
+-----------------------------------
+* Moved Nexus to bundled Jetty instead of Tomcat
+
+
 Version 2.11.4.1 (19 July 2015)
 -------------------------------
 * Updated Nexus to 2.11.4-01
