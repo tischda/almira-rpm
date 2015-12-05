@@ -9,7 +9,5 @@ fi
 
 # When we update, make sure we're clean
 if [ "$1" = "2" ]; then
-  rm -rf @{destBase}/temp/*
-  rm -rf @{destBase}/work/*
-  rm -rf @{destBase}/webapps/*
+  rm -rf @{destBase}/*
 fi
