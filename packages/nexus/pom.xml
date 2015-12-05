@@ -30,7 +30,7 @@ share software artifacts.</description>
     <!-- overrides -->
     <destPrefix>/home/${appUserName}</destPrefix>
     <appWorkFolder>${destPrefix}/sonatype-work</appWorkFolder>
-    <appSrcLocation>target/unpack</appSrcLocation>
+    <appSrcLocation>target/unpack/nexus-${appVersion}</appSrcLocation>
   </properties>
 
   <build>
