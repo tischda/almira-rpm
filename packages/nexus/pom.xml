@@ -43,6 +43,7 @@ share software artifacts.</description>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>rpm-maven-plugin</artifactId>
         <configuration>
+          <needarch>x86_64</needarch>
           <vendor>Sonatype</vendor>
           <copyright>Commercial</copyright>
           <summary>Sonatype Nexus artifact repository</summary>
