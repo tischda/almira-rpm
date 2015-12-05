@@ -3,7 +3,7 @@ chmod 755 @{destBase}/bin/nexus
 chmod 755 @{destBase}/bin/jsw/linux-x86-64/wrapper
 
 # Configure startup script
-sed -i 's|PIDDIR="."|PIDDIR="/var/run/@{appServiceName}"|g' @{destBase}/nexus
+sed -i 's|PIDDIR="."|PIDDIR="/var/run/@{appServiceName}"|g' @{destBase}/bin/nexus
 sed -i 's|#RUN_AS_USER=|RUN_AS_USER=@{appUserName}|g' @{destBase}/bin/nexus
 
 # Fix user rights
