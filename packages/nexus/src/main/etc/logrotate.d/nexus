@@ -1,4 +1,4 @@
-@{destBase}/logs/catalina.out {
+@{destBase}/logs/wrapper.log {
     copytruncate
     weekly
     rotate 52
