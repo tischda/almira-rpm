@@ -15,6 +15,9 @@ if [ "$1" = "1" ]; then
   cd /etc/rc.d/init.d
   ln -sf @{destBase}/bin/linux-x86-64/sonar.sh @{appServiceName}
 
+  mkdir /var/run/@{appServiceName}
+  chown -R @{appUserName}:@{appGroupName} /var/run/@{appServiceName}
+
   chkconfig --add @{appServiceName}
 fi
 
