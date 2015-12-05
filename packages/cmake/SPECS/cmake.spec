@@ -1,7 +1,7 @@
 %define rpm_macros_dir %{_sysconfdir}/rpm
 
 Name:           cmake
-Version:        3.4.0
+Version:        3.4.1
 Release:        1%{?dist}
 Summary:        Cross-platform make system
 
@@ -142,6 +142,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Dec 2 2015 Orion Poplawski <orion@cora.nwra.com> - 3.4.1-1
+- Update to 3.4.1
+
 * Thu Nov 5 2015 Orion Poplawski <orion@cora.nwra.com> - 3.4.0-0.3.rc3
 - Update to 3.4.0-rc3
 

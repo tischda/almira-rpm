@@ -18,7 +18,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 
 ~~~
 +---apache-activemq
-|       apache-activemq-5.12.1-bin.tar.gz
+|       apache-activemq-5.13.0-bin.tar.gz
 |
 +---apache-httpd
 |   |   apr-1.5.2.tar.bz2
@@ -30,7 +30,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           httpd-2.4.17-deps.tar.bz2
 |
 +---apache-maven
-|       apache-maven-3.3.3-bin.tar.gz
+|       apache-maven-3.3.9-bin.tar.gz
 |
 +---apache-tomcat
 |   |   apache-tomcat-7.0.65.tar.gz
@@ -42,11 +42,11 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           tomcat-juli.jar
 |
 +---atlassian-jira-software
-|       atlassian-jira-software-7.0.0-jira-7.0.0.tar.gz
+|       atlassian-jira-software-7.0.3-jira-7.0.3.tar.gz
 |       mysql-connector-java-5.1.36.tar.gz
 |
 +---cmake
-|       cmake-3.4.0.tar.gz
+|       cmake-3.4.1.tar.gz
 |
 +---git
 |       git-2.6.3.tar.gz
@@ -67,13 +67,12 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |
 +---quickbuild
 |       mysql-connector-java-5.1.36.tar.gz
-|       quickbuild-6.0.34.tar.gz
+|       quickbuild-6.0.35.tar.gz
 |
 +---rsync
 |       rsync-3.1.1.tar.gz
 |
 +---sonar
-|       README.md
 |       sonar-plugins-5.2.0-1.zip
 |       sonarqube-5.2.zip
 |
@@ -120,9 +119,4 @@ not created with default username:
 
 Finally, because of the previous issue, when you do excludes, all files are
 listed but not the containing directory, which now also gets owned by root.
-
-See also:
-    http://jira.codehaus.org/browse/MRPM-89
-    http://jira.codehaus.org/browse/MRPM-8
-    http://jira.codehaus.org/browse/MRPM-68
 
