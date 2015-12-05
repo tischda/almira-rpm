@@ -85,7 +85,6 @@
                 <source>
                   <location>${appSrcLocation}</location>
                   <excludes>
-                    <exclude>bin/jsw-license/</exclude>
                     <exclude>bin/linux-ppc-64/</exclude>
                     <exclude>bin/linux-x86-32/</exclude>
                     <exclude>bin/macosx-universal-64/</exclude>
