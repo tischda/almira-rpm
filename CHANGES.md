@@ -2,6 +2,21 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.175 (01 January 2016)
+-------------------------------
+apache-tomcat-7.0.67.tar.gz
+atlassian-jira-software-7.0.5-jira-7.0.5.tar.gz
+git-2.6.4.tar.gz
+git-manpages-2.6.4.tar.gz
+httpd-2.4.18.tar.bz2
+MySQL-5.6.28
+nexus-2.12.0-01-bundle.tar.gz
+quickbuild-6.0.36.tar.gz
+quickbuild-6.1.0.tar.gz
+rsync-3.1.2.tar.gz
+tomcat-native-1.2.3-src.tar.gz
+
+
 Version 0.174 (05 December 2015)
 --------------------------------
 * apache-activemq-5.13.0-bin.tar.gz

@@ -2,6 +2,12 @@
 almira.rpm.quickbuild - change history
 ===============================================================================
 
+Version 6.1.0-1 (04 January 2016)
+---------------------------------
+* Updated to version 6.1.0
+* mysql-connector-java-5.1.38.tar.gz
+
+
 Version 6.0.35-1 (01 December 2015)
 -----------------------------------
 * Updated to version 6.0.35
