@@ -14,7 +14,6 @@ nexus-2.12.0-01-bundle.tar.gz
 quickbuild-6.0.36.tar.gz
 quickbuild-6.1.0.tar.gz
 rsync-3.1.2.tar.gz
-tomcat-native-1.2.3-src.tar.gz
 
 
 Version 0.174 (05 December 2015)
