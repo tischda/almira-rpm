@@ -1,7 +1,7 @@
 %define rpm_macros_dir %{_sysconfdir}/rpm
 
 Name:           cmake
-Version:        3.4.1
+Version:        3.4.2
 Release:        1%{?dist}
 Summary:        Cross-platform make system
 

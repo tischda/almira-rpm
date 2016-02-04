@@ -2,18 +2,29 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.176 (04 February 2016)
+--------------------------------
+* atlassian-jira-software-7.0.10-jira-7.0.10.tar.gz
+* git-2.7.0.tar.gz
+* git-manpages-2.7.0.tar.gz
+* jdk-8u72-linux-x64.rpm
+* quickbuild-6.1.3.tar.gz
+* sonar-plugins-5.3.0-1.zip
+* sonarqube-5.3.zip
+* tomcat-native-1.2.4-src.tar.gz
+
+
 Version 0.175 (01 January 2016)
 -------------------------------
-apache-tomcat-7.0.67.tar.gz
-atlassian-jira-software-7.0.5-jira-7.0.5.tar.gz
-git-2.6.4.tar.gz
-git-manpages-2.6.4.tar.gz
-httpd-2.4.18.tar.bz2
-MySQL-5.6.28
-nexus-2.12.0-01-bundle.tar.gz
-quickbuild-6.0.36.tar.gz
-quickbuild-6.1.0.tar.gz
-rsync-3.1.2.tar.gz
+* apache-tomcat-7.0.67.tar.gz
+* atlassian-jira-software-7.0.5-jira-7.0.5.tar.gz
+* git-2.6.4.tar.gz
+* git-manpages-2.6.4.tar.gz
+* httpd-2.4.18.tar.bz2
+* MySQL-5.6.28
+* nexus-2.12.0-01-bundle.tar.gz
+* quickbuild-6.1.0.tar.gz
+* rsync-3.1.2.tar.gz
 
 
 Version 0.174 (05 December 2015)
