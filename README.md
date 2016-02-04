@@ -77,7 +77,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       sonarqube-5.3.zip
 |
 \---tomcat-native
-        tomcat-native-1.2.4-src.tar.gz
+        tomcat-native-1.2.2-src.tar.gz
 ~~~
 
 

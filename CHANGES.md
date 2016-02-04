@@ -11,7 +11,6 @@ Version 0.176 (04 February 2016)
 * quickbuild-6.1.3.tar.gz
 * sonar-plugins-5.3.0-1.zip
 * sonarqube-5.3.zip
-* tomcat-native-1.2.4-src.tar.gz
 
 
 Version 0.175 (01 January 2016)

@@ -1,5 +1,5 @@
 Name: tomcat-native
-Version: 1.2.4
+Version: 1.2.2
 Release: 1%{?dist}
 Summary: Tomcat native library
 
