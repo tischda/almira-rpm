@@ -5,6 +5,7 @@ almira.rpm.atlassian-jira - change history
 Version 7.0.10-1 (04 February 2016)
 -----------------------------------
 * Updated to version 7.0.10
+* Clearing @{appWorkFolder}/plugins/installed-plugins/*
 
 
 Version 7.0.5-1 (04 January 2016)

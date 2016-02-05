@@ -12,4 +12,7 @@ if [ "$1" = "2" ]; then
   rm -rf @{destBase}/temp/*
   rm -rf @{destBase}/work/*
   rm -rf @{destBase}/webapps/*
+
+  echo Clearing @{appWorkFolder}/plugins/installed-plugins
+  rm -f @{appWorkFolder}/plugins/installed-plugins/*
 fi
