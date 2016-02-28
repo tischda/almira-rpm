@@ -18,7 +18,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 
 ~~~
 +---apache-activemq
-|       apache-activemq-5.13.0-bin.tar.gz
+|       apache-activemq-5.13.1-bin.tar.gz
 |
 +---apache-httpd
 |   |   apr-1.5.2.tar.bz2
@@ -33,7 +33,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       apache-maven-3.3.9-bin.tar.gz
 |
 +---apache-tomcat
-|   |   apache-tomcat-7.0.67.tar.gz
+|   |   apache-tomcat-7.0.68.tar.gz
 |   |
 |   \---extra
 |           catalina-jmx-remote.jar
@@ -42,18 +42,18 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           tomcat-juli.jar
 |
 +---atlassian-jira-software
-|       atlassian-jira-software-7.0.10-jira-7.0.10.tar.gz
+|       atlassian-jira-software-7.1.0-jira-7.1.0.tar.gz
 |       mysql-connector-java-5.1.38.tar.gz
 |
 +---cmake
 |       cmake-3.4.2.tar.gz
 |
 +---git
-|       git-2.7.0.tar.gz
-|       git-manpages-2.7.0.tar.gz
+|       git-2.7.2.tar.gz
+|       git-manpages-2.7.2.tar.gz
 |
 +---java
-|       jdk-8u72-linux-x64.rpm
+|       jdk-8u74-linux-x64.rpm
 |
 +---nexus
 |       nexus-2.12.0-01-bundle.tar.gz
@@ -67,7 +67,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |
 +---quickbuild
 |       mysql-connector-java-5.1.38.tar.gz
-|       quickbuild-6.1.3.tar.gz
+|       quickbuild-6.1.5.tar.gz
 |
 +---rsync
 |       rsync-3.1.2.tar.gz

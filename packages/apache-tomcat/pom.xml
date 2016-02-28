@@ -12,7 +12,7 @@
   </parent>
 
   <artifactId>apache-tomcat</artifactId>
-  <version>7.0.67.1</version>
+  <version>7.0.68.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.apache-tomcat</name>
 
@@ -23,7 +23,7 @@ Pages specifications are developed under the Java Community Process.</descriptio
   <url>http://tomcat.apache.org</url>
 
   <properties>
-    <appVersion>7.0.67</appVersion>
+    <appVersion>7.0.68</appVersion>
     <rpmRelease>1</rpmRelease>
 
     <appServiceName>tomcat</appServiceName>
