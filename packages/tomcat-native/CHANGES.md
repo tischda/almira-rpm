@@ -2,6 +2,11 @@
 almira.rpm.tomcat-native - change history
 ===============================================================================
 
+Version 1.2.5-1 (12 March 2016)
+-------------------------------
+* Updated to 1.2.5
+
+
 Version 1.2.2-1 (04 January 2016)
 --------------------------------
 * Updated to 1.2.2 (note that 1.2.3 and 1.2.4 compilation fails)

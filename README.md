@@ -18,7 +18,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 
 ~~~
 +---apache-activemq
-|       apache-activemq-5.13.1-bin.tar.gz
+|       apache-activemq-5.13.2-bin.tar.gz
 |
 +---apache-httpd
 |   |   apr-1.5.2.tar.bz2
@@ -42,15 +42,15 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           tomcat-juli.jar
 |
 +---atlassian-jira-software
-|       atlassian-jira-software-7.1.0-jira-7.1.0.tar.gz
+|       atlassian-jira-software-7.1.1-jira-7.1.1.tar.gz
 |       mysql-connector-java-5.1.38.tar.gz
 |
 +---cmake
-|       cmake-3.4.2.tar.gz
+|       cmake-3.5.0.tar.gz
 |
 +---git
-|       git-2.7.2.tar.gz
-|       git-manpages-2.7.2.tar.gz
+|       git-2.7.3.tar.gz
+|       git-manpages-2.7.3.tar.gz
 |
 +---java
 |       jdk-8u74-linux-x64.rpm
@@ -59,25 +59,26 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       nexus-2.12.0-01-bundle.tar.gz
 |
 +---oracle-mysql
-|       MySQL-client-5.6.28-1.el6.x86_64.rpm
-|       MySQL-devel-5.6.28-1.el6.x86_64.rpm
-|       MySQL-server-5.6.28-1.el6.x86_64.rpm
-|       MySQL-shared-5.6.28-1.el6.x86_64.rpm
-|       MySQL-shared-compat-5.6.28-1.el6.x86_64.rpm
+|       MySQL-client-5.6.29-1.el6.x86_64.rpm
+|       MySQL-devel-5.6.29-1.el6.x86_64.rpm
+|       MySQL-server-5.6.29-1.el6.x86_64.rpm
+|       MySQL-shared-5.6.29-1.el6.x86_64.rpm
+|       MySQL-shared-compat-5.6.29-1.el6.x86_64.rpm
 |
 +---quickbuild
 |       mysql-connector-java-5.1.38.tar.gz
-|       quickbuild-6.1.5.tar.gz
+|       quickbuild-6.1.7.tar.gz
 |
 +---rsync
 |       rsync-3.1.2.tar.gz
 |
 +---sonar
-|       sonar-plugins-5.3.0-1.zip
-|       sonarqube-5.3.zip
+|       sonar-plugins-5.4.0-1.zip
+|       sonarqube-5.4.zip
 |
 \---tomcat-native
         tomcat-native-1.2.2-src.tar.gz
+        tomcat-native-1.2.5-src.tar.gz
 ~~~
 
 
