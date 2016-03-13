@@ -16,8 +16,6 @@ Source2:        macros.cmake
 Source3:        cmake.attr
 Source4:        cmake.prov
 
-# Patch to find DCMTK in Fedora (bug #720140)
-Patch0:         cmake-dcmtk.patch
 # Patch to fix FindRuby vendor settings
 # http://public.kitware.com/Bug/view.php?id=12965
 # https://bugzilla.redhat.com/show_bug.cgi?id=822796
