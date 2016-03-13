@@ -4,7 +4,7 @@ almira.rpm.tomcat-native - change history
 
 Version 1.2.5-1 (12 March 2016)
 -------------------------------
-* Updated to 1.2.5
+* Updated to 1.2.5. Had to upgrade OpenSSL version manually (cf. README)
 
 
 Version 1.2.2-1 (04 January 2016)
