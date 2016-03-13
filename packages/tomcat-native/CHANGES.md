@@ -10,6 +10,7 @@ Version 1.2.5-1 (12 March 2016)
 Version 1.2.2-1 (04 January 2016)
 --------------------------------
 * Updated to 1.2.2 (note that 1.2.3, 1.2.4 and 1.2.5 compilation fails)
+  See: http://mail-archives.apache.org/mod_mbox/tomcat-dev/201602.mbox/%3C56B269E8.3000106@christopherschultz.net%3E
 
 
 Version 1.1.33-1 (01 April 2014)

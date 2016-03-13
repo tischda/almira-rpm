@@ -8,7 +8,10 @@ URL: http://tomcat.apache.org/tomcat-7.0-doc/apr.html
 Source0: http://www.apache.org/dist/tomcat/tomcat-connectors/native/%{version}/source/%{name}-%{version}-src.tar.gz
 
 BuildRequires: apr-devel >= 1.5.2
-BuildRequires: openssl-devel >= 1.0.1e
+
+#Recent package not available, for now we need to compile this manually...
+#See: http://www.ehowstuff.com/how-to-install-and-update-openssl-on-centos-6-centos-7/
+#BuildRequires: openssl-devel >= 1.0.2g
 
 Provides: tcnative = %{version}-%{release}
 
