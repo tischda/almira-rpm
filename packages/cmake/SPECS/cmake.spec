@@ -9,7 +9,7 @@ Group:          Development/Tools
 
 License:        BSD and MIT and zlib
 URL:            http://www.cmake.org
-Source0:        http://www.cmake.org/files/v3.4/cmake-%{version}.tar.gz
+Source0:        http://www.cmake.org/files/v3.5/cmake-%{version}.tar.gz
 Source1:        cmake-init.el
 Source2:        macros.cmake
 # See https://bugzilla.redhat.com/show_bug.cgi?id=1202899
@@ -52,7 +52,6 @@ This package contains documentation for CMake.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p1
 %patch2 -p1
 
 %build
@@ -142,6 +141,10 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Feb 17 2016 Orion Poplawski <orion@cora.nwra.com> - 3.5.0-0.1.rc2
+- Update to 3.5.0-rc2
+- Drop dcmtk patch
+
 * Wed Dec 2 2015 Orion Poplawski <orion@cora.nwra.com> - 3.4.1-1
 - Update to 3.4.1
 
