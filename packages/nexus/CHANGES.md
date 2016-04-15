@@ -2,6 +2,11 @@
 almira.rpm.nexus - change history
 ===============================================================================
 
+Version 2.12.1.1 (15 April 2016)
+--------------------------------
+* Updated Nexus to 2.12.1-01
+
+
 Version 2.12.0.1 (04 January 2016)
 ----------------------------------
 * Nexus tar.gz bundle (instead of .zip)

@@ -2,11 +2,24 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.179 ( 2016)
+--------------------------------
+* atlassian-jira-software-7.1.4-jira-7.1.4.tar.gz
+* cmake-3.5.2.tar.gz
+* git-2.8.1.tar.gz
+* httpd-2.4.20.tar.bz2
+* jdk-8u77-linux-x64.rpm
+* MySQL-5.6.30-1.el6.x86_64
+* nexus-2.12.1-01-bundle.tar.gz
+* quickbuild-6.1.12.tar.gz
+
+
+Version 0.178 (13 March 2016)
+-----------------------------
 * apache-activemq-5.13.2-bin.tar.gz
 * atlassian-jira-software-7.1.1-jira-7.1.1.tar.gz
 * cmake-3.5.0.tar.gz
 * git-2.7.3.tar.gz
-* git-manpages-2.7.3.tar.gz
 * quickbuild-6.1.7.tar.gz
 * sonar-java-plugin-3.11.jar
 * sonarqube-5.4.zip
@@ -19,7 +32,6 @@ Version 0.177 (28 February 2016)
 * apache-tomcat-7.0.68.tar.gz
 * atlassian-jira-software-7.1.0-jira-7.1.0.tar.gz
 * git-2.7.2.tar.gz
-* git-manpages-2.7.2.tar.gz
 * jdk-8u74-linux-x64.rpm
 * quickbuild-6.1.5.tar.gz
 
@@ -28,7 +40,6 @@ Version 0.176 (04 February 2016)
 --------------------------------
 * atlassian-jira-software-7.0.10-jira-7.0.10.tar.gz
 * git-2.7.0.tar.gz
-* git-manpages-2.7.0.tar.gz
 * jdk-8u72-linux-x64.rpm
 * quickbuild-6.1.3.tar.gz
 * sonar-plugins-5.3.0-1.zip
@@ -40,7 +51,6 @@ Version 0.175 (01 January 2016)
 * apache-tomcat-7.0.67.tar.gz
 * atlassian-jira-software-7.0.5-jira-7.0.5.tar.gz
 * git-2.6.4.tar.gz
-* git-manpages-2.6.4.tar.gz
 * httpd-2.4.18.tar.bz2
 * MySQL-5.6.28
 * nexus-2.12.0-01-bundle.tar.gz
@@ -71,7 +81,6 @@ Version 0.172 (15 November 2015)
 * mysql-connector-java-5.1.36.tar.gz
 * cmake-3.4.0.tar.gz
 * git-2.6.3.tar.gz
-* git-manpages-2.6.3.tar.gz
 * jdk-8u66-linux-x64.rpm
 * quickbuild-6.0.34.tar.gz
 * sonar-plugins-5.2.0-1.zip
@@ -87,7 +96,6 @@ Version 0.171 (04 October 2015)
 * mysql-connector-java-5.1.36.tar.gz
 * cmake-3.3.2.tar.gz
 * git-2.6.0.tar.gz
-* git-manpages-2.6.0.tar.gz
 * MySQL-5.6.27
 * quickbuild-6.0.28.tar.gz
 * sonar-plugins-5.1.2-1.zip
@@ -105,7 +113,6 @@ Version 0.169 (19 July 2015)
 * apache-tomcat-7.0.63.tar.gz
 * atlassian-jira-6.4.8.tar.gz
 * git-2.4.6.tar.gz
-* git-manpages-2.4.6.tar.gz
 * httpd-2.4.16.tar.bz2
 * jdk-8u51-linux-x64.rpm
 * nexus-2.11.4-01.war
@@ -118,7 +125,6 @@ Version 0.168 (29 June 2015)
 ----------------------------
 * atlassian-jira-6.4.7.tar.gz
 * git-2.4.5.tar.gz
-* git-manpages-2.4.5.tar.gz
 * quickbuild-6.0.21.tar.gz
 
 
@@ -126,7 +132,6 @@ Version 0.167 (22 June 2015)
 ----------------------------
 * atlassian-jira-6.4.6.tar.gz
 * git-2.4.4.tar.gz
-* git-manpages-2.4.4.tar.gz
 * quickbuild-6.0.20.tar.gz
 * sonar-plugins-5.1.1-1.zip
 * sonarqube-5.1.1.zip
@@ -138,7 +143,6 @@ Version 0.166 (04 June 2015)
 * atlassian-jira-6.4.5.tar.gz
 * cmake-3.2.3.tar.gz
 * git-2.4.2.tar.gz
-* git-manpages-2.4.2.tar.gz
 * nexus-2.11.3-01.war
 * MySQL-5.6.25
 * mysql-connector-java-5.1.35.tar.gz
@@ -150,7 +154,6 @@ Version 0.165 (11 May 2015)
 * apache-maven-3.3.3-bin.tar.gz
 * atlassian-jira-6.4.3.tar.gz
 * git-2.4.0.tar.gz
-* git-manpages-2.4.0.tar.gz
 * quickbuild-6.0.15.tar.gz
 
 
@@ -169,7 +172,6 @@ Version 0.163 (10 April 2015)
 -----------------------------
 * atlassian-jira-6.4.1.tar.gz
 * git-2.3.5.tar.gz
-* git-manpages-2.3.5.tar.gz
 * gradle-2.3-bin.zip (manual install)
 * jdk-8u40-linux-x64.rpm (manual copy dist->rpm)
 * sonar-plugins-5.0-4.zip
@@ -181,7 +183,6 @@ Version 0.162 (21 March 2015)
 * apache-maven-3.3.1-bin.tar.gz
 * atlassian-jira-6.4.tar.gz
 * git-2.3.3.tar.gz
-* git-manpages-2.3.3.tar.gz
 * nexus-2.11.2-06.war
 * quickbuild-6.0.10.tar.gz
 
@@ -190,7 +191,6 @@ Version 0.161 (12 March 2015)
 -----------------------------
 * cmake-3.2.1.tar.gz
 * git-2.3.2.tar.gz
-* git-manpages-2.3.2.tar.gz
 * nexus-2.11.2-04.war
 * quickbuild-6.0.9.tar.gz
 * sonar-java-plugin-3.0.jar
@@ -204,7 +204,6 @@ Version 0.160 (22 February 2015)
 * atlassian-jira-6.3.15.tar.gz
 * cmake-3.1.3.tar.gz
 * git-2.3.0.tar.gz
-* git-manpages-2.3.0.tar.gz
 * httpd-2.4.12.tar.bz2
 * jdk-8u31-linux-x64.rpm
 * MySQL-5.6.23
@@ -216,7 +215,6 @@ Version 0.159 (18 January 2015)
 -------------------------------
 * atlassian-jira-6.3.13.tar.gz
 * git-2.2.2.tar.gz
-* git-manpages-2.2.2.tar.gz
 * quickbuild-6.0.4.tar.gz
 * sonarqube-5.0.zip
 
@@ -233,7 +231,6 @@ Version 0.157 (24 December 2014)
 * atlassian-jira-6.3.12.tar.gz
 * cmake-3.1.0.tar.gz
 * git-2.2.1.tar.gz
-* git-manpages-2.2.1.tar.gz
 * MySQL-5.6.22
 * nexus-2.11.1-01.war
 * quickbuild-5.1.40.tar.gz
@@ -244,7 +241,6 @@ Version 0.156 (28 November 2014)
 * apache-tomcat-7.0.57.tar.gz
 * atlassian-jira-6.3.11.tar.gz
 * git-2.2.0.tar.gz
-* git-manpages-2.2.0.tar.gz
 * mysql-connector-java-5.1.34.tar.gz
 * quickbuild-5.1.39.tar.gz
 
@@ -253,7 +249,6 @@ Version 0.155 (03 November 2014)
 --------------------------------
 * atlassian-jira-6.3.9.tar.gz
 * git-2.1.3.tar.gz
-* git-manpages-2.1.3.tar.gz
 * quickbuild-5.1.37.tar.gz
 * sonarqube-4.5.1.zip
 * tomcat-native-1.1.32-src.tar.gz
@@ -352,7 +347,6 @@ Version 0.146 (28 February 2014)
 Version 0.145 (18 February 2014)
 --------------------------------
 * git-1.9.0.tar.gz
-* git-manpages-1.9.0.tar.gz
 * quickbuild-5.1.12.tar.gz
 
 
@@ -373,7 +367,6 @@ Version 0.143 (17 January 2014)
 * apache-tomcat-7.0.50.tar.gz
 * atlassian-jira-6.1.6.tar.gz
 * git-1.8.5.3.tar.gz
-* git-manpages-1.8.5.3.tar.gz
 * mysql-connector-java-5.1.28.tar.gz
 * nexus-2.7.1-01.war
 * quickbuild-5.1.7.tar.gz
@@ -383,7 +376,6 @@ Version 0.142 (20 December 2013)
 --------------------------------
 * atlassian-jira-6.1.5.tar.gz
 * git-1.8.5.2.tar.gz
-* git-manpages-1.8.5.2.tar.gz
 * httpd-2.4.7.tar.bz2
 * MySQL-client-5.6.15-1.el6.x86_64.rpm
 * MySQL-devel-5.6.15-1.el6.x86_64.rpm
@@ -399,7 +391,6 @@ Version 0.141 (29 November 2013)
 --------------------------------
 atlassian-jira-6.1.4.tar.gz
 git-1.8.5.tar.gz
-git-manpages-1.8.5.tar.gz
 nexus-2.7.0-04.war
 quickbuild-5.1.0.tar.gz
 
@@ -418,7 +409,6 @@ Version 0.139 (09 November 2013)
 * apache-tomcat-7.0.47.tar.gz
 * atlassian-jira-6.1.2.tar.gz
 * git-1.8.4.3.tar.gz
-* git-manpages-1.8.4.3.tar.gz
 * mysql-connector-java-5.1.27.tar.gz
 * perl-YAML-0.84-1.2.noarch.rpm
 - removed jira-dvcs-connector-plugin
@@ -450,7 +440,6 @@ Version 0.135 (03 October 2013)
 -------------------------------
 * atlassian-jira-6.1.tar.gz
 * git-1.8.4.1.tar.gz
-* git-manpages-1.8.4.1.tar.gz
 * MySQL-client-5.6.14-1.el6.x86_64.rpm
 * MySQL-devel-5.6.14-1.el6.x86_64.rpm
 * MySQL-server-5.6.14-1.el6.x86_64.rpm
@@ -471,7 +460,6 @@ Version 0.133 (29 August 2013)
 ------------------------------
 * atlassian-jira-6.0.7.tar.gz
 * git-1.8.4.tar.gz
-* git-manpages-1.8.4.tar.gz
 * nexus-2.6.2-01.war
 * quickbuild-5.0.36.tar.gz
 * sonar-3.7.zip
@@ -488,7 +476,6 @@ Version 0.129 (31 July 2013)
 ----------------------------
 * atlassian-jira-6.0.5.tar.gz
 * git-1.8.3.4.tar.gz
-* git-manpages-1.8.3.4.tar.gz
 * MySQL-5.6.13
 * nexus-2.6.0-05.war
 * quickbuild-5.0.32.tar.gz
@@ -527,7 +514,6 @@ Version 0.122 (02 July 2013)
 * jira-dvcs-connector-plugin-1.4.0.1.jar
 * atlassian-jira-6.0.3.tar.gz
 * git-1.8.3.2.tar.gz
-* git-manpages-1.8.3.2.tar.gz
 * quickbuild-5.0.28.tar.gz
 * sonar-plugins-3.6-bundle.zip
 * sonar-3.6.zip
@@ -539,7 +525,6 @@ Version 0.121 (14 June 2013)
 * atlassian-jira-6.0.2.tar.gz
 * cmake-2.8.11.1.tar.gz
 * git-1.8.3.1.tar.gz
-* git-manpages-1.8.3.1.tar.gz
 * quickbuild-5.0.24.tar.gz
 
 
