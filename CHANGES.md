@@ -2,8 +2,21 @@
 almira.rpm - change history
 ===============================================================================
 
-Version 0.179 ( 2016)
---------------------------------
+Version 0.180 (15 May 2016)
+---------------------------
+* apache-activemq-5.13.3-bin.tar.gz
+* apache-tomcat-7.0.69.tar.gz
+* atlassian-jira-software-7.1.6-jira-7.1.6.tar.gz
+* git-2.8.2.tar.gz
+* git-manpages-2.8.2.tar.gz
+* nexus-2.13.0-01-bundle.tar.gz
+* quickbuild-6.1.15.tar.gz
+* sonarqube-5.5.zip
+* tomcat-native-1.2.7-src.tar.gz
+
+
+Version 0.179 (15 March 2016)
+-----------------------------
 * atlassian-jira-software-7.1.4-jira-7.1.4.tar.gz
 * cmake-3.5.2.tar.gz
 * git-2.8.1.tar.gz
