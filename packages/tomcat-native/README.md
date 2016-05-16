@@ -34,6 +34,11 @@ openssl version
 cat /usr/include/openssl/opensslv.h | grep OPENSSL_VERSION_TEXT
 ~~~
 
+THIS NEEDS TO BE DONE MANUALLY EVERY TIME on ALL MACHINES!
+because the SSL package is updated by the system to older versions
+
+--> I tried to disable openssl updates in /etc/yum.conf by adding `exclude=openssl`
+
 
 Update
 ------
