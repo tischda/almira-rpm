@@ -2,6 +2,12 @@
 almira.rpm.sonar - change history
 ===============================================================================
 
+Version 5.6.0-1 (01 July 2016)
+------------------------------
+* Updated Sonar to 5.6
+* Integrated plugins into main distribution file under `lib/bundled-plugins`
+
+
 Version 5.5.0-1 (15 May 2016)
 -----------------------------
 * Updated Sonar to 5.5

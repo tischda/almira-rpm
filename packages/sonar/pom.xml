@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>sonar</artifactId>
-  <version>5.5.0.1</version>
+  <version>5.6.0.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.sonar</name>
 
@@ -64,16 +64,6 @@
               <sources>
                 <source>
                   <location>target/classes/logrotate.d/${appServiceName}</location>
-                </source>
-              </sources>
-            </mapping>
-
-            <!-- plugins -->
-            <mapping>
-              <directory>${destBase}/extensions/plugins</directory>
-              <sources>
-                <source>
-                  <location>target/unpack/plugins/</location>
                 </source>
               </sources>
             </mapping>

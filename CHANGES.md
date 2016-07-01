@@ -2,6 +2,16 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.181 (01 July 2016)
+---------------------------
+* apache-tomcat-7.0.70.tar.gz
+* atlassian-jira-software-7.1.8-jira-7.1.8.tar.gz
+* git-2.9.0.tar.gz
+* MySQL-5.6.31-1.el6.x86_64
+* mysql-connector-java-5.1.39.tar.gz
+* quickbuild-6.1.18.tar.gz
+
+
 Version 0.180 (15 May 2016)
 ---------------------------
 * apache-activemq-5.13.3-bin.tar.gz
