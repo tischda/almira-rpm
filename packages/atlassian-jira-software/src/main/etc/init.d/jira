@@ -9,7 +9,7 @@ export JIRA_HOME=/home/jira/jira-data
 export CATALINA_PID=/var/run/jira.pid
 
 export JAVA_HOME="/usr/java/default"
-export JAVA_OPTS="-Xms1024m -Xmx2048m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -XX:+UseG1GC -server ${JAVA_OPTS}"
+export JAVA_OPTS="-Djava.awt.headless=true -Dfile.encoding=UTF-8 -XX:+UseG1GC -server ${JAVA_OPTS}"
 
 # Location of application's bin directory
 BASE=/home/jira/jira
