@@ -49,8 +49,10 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       cmake-3.5.2.tar.gz
 |
 +---git
+|       add-spec-to-archive.cmd
 |       git-2.9.0.tar.gz
 |       git-manpages-2.9.0.tar.gz
+|       git.spec
 |
 +---java
 |       jdk-8u92-linux-x64.rpm
@@ -75,10 +77,13 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 +---sonar
 |   |   sonarqube-5.6.zip
 |   |
-|   \---plugins (added to zip)
+|   \---plugins (add to zip_extensions_plugins)
 |           sonar-cxx-plugin-0.9.3.jar
 |           sonar-java-plugin-3.14.jar
+|           sonar-javascript-plugin-2.11.jar
+|           sonar-scm-git-plugin-1.2.jar
 |           sonar-scm-mercurial-plugin-1.1.1.jar
+|           sonar-scm-svn-plugin-1.3.jar
 |           sonar-timeline-plugin-1.5.jar
 |
 \---tomcat-native

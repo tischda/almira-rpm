@@ -11,4 +11,4 @@ Customization
 -------------
 Minor changes to sonar.sh service script.
 
-Excluding lib/bundled-plugins from original sonar distribution zip (cf. pom.xml).
+Adding plugins to lib/bundled-plugins in original sonar distribution zip 

@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>sonar</artifactId>
-  <version>5.6.0.4</version>
+  <version>6.0.0.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.sonar</name>
 
@@ -19,8 +19,8 @@
   <url>http://www.sonarsource.org</url>
 
   <properties>
-    <appVersion>5.6</appVersion>
-    <rpmRelease>4</rpmRelease>
+    <appVersion>6.0</appVersion>
+    <rpmRelease>1</rpmRelease>
 
     <appServiceName>sonar</appServiceName>
     <appContextPath>sonar</appContextPath>
@@ -84,7 +84,6 @@
                     <exclude>bin/windows-x86-32/</exclude>
                     <exclude>bin/windows-x86-64/</exclude>
                     <exclude>conf/</exclude>
-                    <exclude>lib/bundled-plugins/</exclude>
                   </excludes>
                 </source>
               </sources>

@@ -2,6 +2,13 @@
 almira.rpm.cmake - change history
 ===============================================================================
 
+Version 3.6.1-1 (17 August 2016)
+--------------------------------
+* Updated to version 3.6.1
+
+TODO: find newer reference spec file 
+
+
 Version 3.5.2-1 (15 April 2016)
 -------------------------------
 * Updated to version 3.5.2

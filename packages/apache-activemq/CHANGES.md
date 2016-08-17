@@ -2,6 +2,11 @@
 almira.rpm.apache-activemq - change history
 ===============================================================================
 
+Version 5.14.0-1 (17 August 2016)
+---------------------------------
+* Updated to version 5.14.0
+
+
 Version 5.13.3-1 (15 May 2016)
 ------------------------------
 * Updated to version 5.13.3
