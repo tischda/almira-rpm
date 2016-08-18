@@ -2,10 +2,10 @@
 almira.rpm.sonar - change history
 ===============================================================================
 
-Version 6.0.0-2 (18 August 2016)
+Version 6.0.0-3 (18 August 2016)
 --------------------------------
 * Updated Sonar to 6.0
-* Updated Plugins
+* Updated Plugins, but CXX plugin not working anymore
 
 
 Version 5.6.0-3 (03 July 2016)
