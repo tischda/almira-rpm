@@ -2,11 +2,24 @@
 almira.rpm.cmake - change history
 ===============================================================================
 
-Version 3.6.1-1 (17 August 2016)
---------------------------------
-* Updated to version 3.6.1
+Version 3.6.1-1
+---------------
 
-TODO: find newer reference spec file 
+3.6.1 does not compile!
+It requires OpenSSL, and there's something wrong with the setup we have:
+
+lib/libcmcurl.a(openssl.c.o): In function `ossl_connect_step2':
+/home/quickbuild/workspace/root/packages/cmake/BUILD/cmake-3.6.1/Utilities/cmcurl/lib/vtls/openssl.c:2219: undefined reference to `SSL_get0_alpn_selected'
+lib/libcmcurl.a(openssl.c.o): In function `ossl_connect_step1':
+/home/quickbuild/workspace/root/packages/cmake/BUILD/cmake-3.6.1/Utilities/cmcurl/lib/vtls/openssl.c:1918: undefined reference to `SSL_CTX_set_alpn_protos'
+collect2: ld returned 1 exit status
+make[2]: *** [Utilities/cmcurl/LIBCURL] Error 1
+make[1]: *** [Utilities/cmcurl/CMakeFiles/LIBCURL.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [all] Error 2
+
+openssl version
+OpenSSL 1.0.2h  3 May 2016
 
 
 Version 3.5.2-1 (15 April 2016)
