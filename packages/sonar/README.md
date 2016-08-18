@@ -11,4 +11,4 @@ Customization
 -------------
 Minor changes to sonar.sh service script.
 
-Adding plugins to lib/bundled-plugins in original sonar distribution zip 
+Adding plugins to extensions/plugins in original sonar distribution zip 

@@ -84,6 +84,8 @@
                     <exclude>bin/windows-x86-32/</exclude>
                     <exclude>bin/windows-x86-64/</exclude>
                     <exclude>conf/</exclude>
+                    <!-- This is not a mistake, plugins need to be in extensions/plugins -->
+                    <exclude>lib/bundled-plugins/</exclude>
                   </excludes>
                 </source>
               </sources>
