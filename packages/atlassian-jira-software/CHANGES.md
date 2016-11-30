@@ -2,9 +2,9 @@
 almira.rpm.atlassian-jira - change history
 ===============================================================================
 
-Version 7.2.5-1 (21 November 2016)
+Version 7.2.4-1 (30 November 2016)
 ----------------------------------
-* Updated to version 7.2.5
+* Updated to version 7.2.4
 * mysql-connector-java-5.1.40.tar.gz
 
 

@@ -6,7 +6,7 @@ Version 0.183 (30 November 2016)
 --------------------------------
 * apache-activemq-5.14.1-bin.tar.gz
 * apache-tomcat-7.0.73.tar.gz
-* atlassian-jira-software-7.2.5.tar.gz
+* atlassian-jira-software-7.2.4.tar.gz
 * cmake-3.7.0.tar.gz
 * git-2.10.2.tar.gz
 * httpd-2.4.23.tar.bz2 --> build fails, reverting to 2.4.20 (see: http://www.gossamer-threads.com/lists/apache/users/460486)
