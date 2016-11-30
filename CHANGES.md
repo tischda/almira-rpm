@@ -2,21 +2,20 @@
 almira.rpm - change history
 ===============================================================================
 
-Version 0.182 (21 November 2016)
+Version 0.183 (30 November 2016)
 --------------------------------
 * apache-activemq-5.14.1-bin.tar.gz
 * apache-tomcat-7.0.73.tar.gz
 * atlassian-jira-software-7.2.5.tar.gz
 * cmake-3.7.0.tar.gz
 * git-2.10.2.tar.gz
-* httpd-2.4.23.tar.bz2
+* httpd-2.4.23.tar.bz2 --> build fails --> reverting to 2.4.20
 * jdk-8u112-linux-x64.rpm
 * MySQL-client-5.6.34
 * mysql-connector-java-5.1.40.tar.gz
 * nexus-2.14.1-01-bundle.tar.gz
 * quickbuild-6.1.33.tar.gz
 * sonarqube-6.1.zip
-* tomcat-native-1.2.10-src.tar.gz
 
 
 Version 0.182 (17 August 2016)
