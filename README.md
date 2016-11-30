@@ -18,7 +18,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 
 ~~~
 +---apache-activemq
-|       apache-activemq-5.13.3-bin.tar.gz
+|       apache-activemq-5.14.1-bin.tar.gz
 |
 +---apache-httpd
 |   |   apr-1.5.2.tar.bz2
@@ -33,7 +33,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       apache-maven-3.3.9-bin.tar.gz
 |
 +---apache-tomcat
-|   |   apache-tomcat-7.0.70.tar.gz
+|   |   apache-tomcat-7.0.73.tar.gz
 |   |
 |   \---extras
 |           catalina-jmx-remote.jar
@@ -42,52 +42,52 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           tomcat-juli.jar
 |
 +---atlassian-jira-software
-|       atlassian-jira-software-7.1.8-jira-7.1.8.tar.gz
-|       mysql-connector-java-5.1.39.tar.gz
+|       atlassian-jira-software-7.2.4.tar.gz
+|       mysql-connector-java-5.1.40.tar.gz
 |
 +---cmake
-|       cmake-3.5.2.tar.gz
+|       cmake-3.7.1.tar.gz
 |
 +---git
 |       add-spec-to-archive.cmd
-|       git-2.9.0.tar.gz
-|       git-manpages-2.9.0.tar.gz
+|       git-2.11.0.tar.gz
+|       git-manpages-2.11.0.tar.gz
 |       git.spec
 |
 +---java
-|       jdk-8u92-linux-x64.rpm
+|       jdk-8u112-linux-x64.rpm
 |
 +---nexus
-|       nexus-2.13.0-01-bundle.tar.gz
+|       nexus-2.14.1-01-bundle.tar.gz
 |
 +---oracle-mysql
-|       MySQL-client-5.6.31-1.el6.x86_64.rpm
-|       MySQL-devel-5.6.31-1.el6.x86_64.rpm
-|       MySQL-server-5.6.31-1.el6.x86_64.rpm
-|       MySQL-shared-5.6.31-1.el6.x86_64.rpm
-|       MySQL-shared-compat-5.6.31-1.el6.x86_64.rpm
+|       MySQL-client-5.6.34-1.el6.x86_64.rpm
+|       MySQL-devel-5.6.34-1.el6.x86_64.rpm
+|       MySQL-server-5.6.34-1.el6.x86_64.rpm
+|       MySQL-shared-5.6.34-1.el6.x86_64.rpm
+|       MySQL-shared-compat-5.6.34-1.el6.x86_64.rpm
 |
 +---quickbuild
-|       mysql-connector-java-5.1.39.tar.gz
-|       quickbuild-6.1.18.tar.gz
+|       mysql-connector-java-5.1.40.tar.gz
+|       quickbuild-6.1.33.tar.gz
 |
 +---rsync
 |       rsync-3.1.2.tar.gz
 |
 +---sonar
-|   |   sonarqube-5.6.zip
+|   |   sonarqube-6.1.zip
 |   |
-|   \---plugins (add to zip_extensions_plugins)
-|           sonar-cxx-plugin-0.9.3.jar
-|           sonar-java-plugin-3.14.jar
-|           sonar-javascript-plugin-2.11.jar
+|   \---plugins (add to zip in extensions_plugins)
+|           sonar-csharp-plugin-5.5.0.479.jar
+|           sonar-java-plugin-4.2.1.6971.jar
+|           sonar-javascript-plugin-2.18.0.3454.jar
 |           sonar-scm-git-plugin-1.2.jar
 |           sonar-scm-mercurial-plugin-1.1.1.jar
 |           sonar-scm-svn-plugin-1.3.jar
 |           sonar-timeline-plugin-1.5.jar
 |
 \---tomcat-native
-        tomcat-native-1.2.7-src.tar.gz
+        tomcat-native-1.2.10-src.tar.gz
 ~~~
 
 

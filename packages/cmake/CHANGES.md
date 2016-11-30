@@ -2,9 +2,9 @@
 almira.rpm.cmake - change history
 ===============================================================================
 
-Version 3.7.0-1 (21 November 2016)
+Version 3.7.1-1 (30 November 2016)
 ----------------------------------
-* Updated to version 3.7.0
+* Updated to version 3.7.1
 
 	Compiles with stock 1.0.1e, but not with 1.0.2, but then tomcat-native requires
 	1.0.2 and fails with 1.0.1. Let's just sick with stock openssl for the moment.
