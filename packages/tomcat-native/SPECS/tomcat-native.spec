@@ -13,7 +13,10 @@ BuildRequires: apr-devel >= 1.5.2, openssl
 Provides: tcnative = %{version}-%{release}
 
 %description
-Apache Tomcat native libaries (APR).
+The Apache Tomcat Native Library provides portable API for features
+not found in contemporary JDK's. It uses Apache Portable Runtime as
+operating system abstraction layer and OpenSSL for SSL networking and
+allows optimal performance in production environments.
 
 
 %prep
@@ -21,6 +24,10 @@ Apache Tomcat native libaries (APR).
 
 %build
 cd native
+
+# Yes we're running old CentOS with old - but patched - openssl, so we disable the check.
+# Alternative: http://svn.apache.org/repos/asf/tomcat/native/trunk/download_deps.sh
+
 %configure \
     --disable-openssl-version-check \
     --with-apr=%{_bindir}/apr-1-config

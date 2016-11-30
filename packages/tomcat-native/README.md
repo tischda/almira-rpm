@@ -16,28 +16,10 @@ that we can build with java 7.
 
 http://rpm.pbone.net/index.php3/stat/3/srodzaj/2/search/tomcat-native-1.1.27-1.el6.src.rpm
 
-On CentOS 6 you now need a recent version of OpenSSL. Since this is not available,
-you must compile and install it manually:
+CentOS 6 comes with an old version of OpenSSL. Since no update is available, we just
+disable the check with --disable-openssl-version-check.
 
-~~~
-cd /usr/src
-wget https://www.openssl.org/source/openssl-1.0.2-latest.tar.gz
-tar -zxf openssl-1.0.2*.tar.gz
-cd openssl-1.0.2*
-./config --prefix=/usr
-make
-make test
-make install
-
-# check
-openssl version
-cat /usr/include/openssl/opensslv.h | grep OPENSSL_VERSION_TEXT
-~~~
-
-THIS NEEDS TO BE DONE MANUALLY EVERY TIME on ALL MACHINES!
-because the SSL package is updated by the system to older versions
-
---> I tried to disable openssl updates in /etc/yum.conf by adding `exclude=openssl`
+Alternatively we could download the missing dependencies and build tomcat-native from there.
 
 
 Update

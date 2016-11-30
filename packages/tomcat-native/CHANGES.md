@@ -2,7 +2,10 @@
 almira.rpm.tomcat-native - change history
 ===============================================================================
 
-* Update to 1.2.10  -->  fails: it requires openssl 1.0.2+
+Version 1.2.10-1 (30 November 2016)
+-----------------------------------
+
+* Update to 1.2.10  -->  fails (it requires openssl 1.0.2+). Check disabled in the .spec file.
 
 19:17:38,627 INFO  - Found OPENSSL_VERSION_NUMBER 0x1000105f (OpenSSL 1.0.1e 11 Feb 2013)
 19:17:38,627 INFO  - Require OPENSSL_VERSION_NUMBER 0x1000200f or greater (1.0.2)

@@ -9,13 +9,15 @@ Version 0.183 (30 November 2016)
 * atlassian-jira-software-7.2.5.tar.gz
 * cmake-3.7.0.tar.gz
 * git-2.10.2.tar.gz
-* httpd-2.4.23.tar.bz2 --> build fails --> reverting to 2.4.20
+* httpd-2.4.23.tar.bz2 --> build fails, reverting to 2.4.20 (see: http://www.gossamer-threads.com/lists/apache/users/460486)
 * jdk-8u112-linux-x64.rpm
 * MySQL-client-5.6.34
 * mysql-connector-java-5.1.40.tar.gz
 * nexus-2.14.1-01-bundle.tar.gz
 * quickbuild-6.1.33.tar.gz
 * sonarqube-6.1.zip
+
+Path for httpd would be:  http://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/modules/proxy/config.m4?r1=1755078&r2=1755077&pathrev=1755078&view=patch
 
 
 Version 0.182 (17 August 2016)
