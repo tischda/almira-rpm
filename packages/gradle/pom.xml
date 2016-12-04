@@ -13,7 +13,7 @@
   <artifactId>gradle</artifactId>
   <version>3.2.1.1</version>
   <packaging>rpm</packaging>
-  <name>almira.rpm.apache-maven</name>
+  <name>almira.rpm.gradle</name>
 
   <description>Gradle is an open-source build automation tool for the Age of Continuous Delivery (CD).</description>
 
