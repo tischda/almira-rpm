@@ -1,1 +1,1 @@
-# Needs to be there, otherwise rpm-maven-plugin fails
+chmod -R 755 @{destBase}/bin
