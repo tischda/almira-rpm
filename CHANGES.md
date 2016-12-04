@@ -2,6 +2,9 @@
 almira.rpm - change history
 ===============================================================================
 
+* uprade master-rpm to 14
+* add gradle 3.2.1
+
 Version 0.183 (30 November 2016)
 --------------------------------
 * apache-activemq-5.14.1-bin.tar.gz

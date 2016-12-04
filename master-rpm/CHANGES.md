@@ -2,7 +2,12 @@
 almira.rpm.master-rpm - change history
 ===============================================================================
 
-Version 12 (15 November 2015)
+Version 14 (04 December 2016)
+-----------------------------
+* Updated versions of plugins
+
+
+Version 13 (15 November 2015)
 -----------------------------
 * Updated version of Maven RPM Plugin
 * Adapted RPM plugin configuration

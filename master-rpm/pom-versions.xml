@@ -16,22 +16,22 @@
     <description>Almira Versions</description>
 
     <prerequisites>
-        <maven>3.0.5</maven>
+        <maven>3.3.9</maven>
     </prerequisites>
 
     <!-- == [ Properties ] ================================================ -->
     <properties>
         <jdkVersion>                1.7          </jdkVersion>
         <antPluginVersion>          1.7          </antPluginVersion>
-        <cleanPluginVersion>        2.5          </cleanPluginVersion>
-        <compilerPluginVersion>     3.0          </compilerPluginVersion>
-        <dependencyPluginVersion>   2.6          </dependencyPluginVersion>
-        <deployPluginVersion>       2.7          </deployPluginVersion>
-        <installPluginVersion>      2.4          </installPluginVersion>
-        <projectinfoPluginVersion>  2.6          </projectinfoPluginVersion>
-        <resourcesPluginVersion>    2.6          </resourcesPluginVersion>
-        <rpmPluginVersion>          2.1.4        </rpmPluginVersion>
-        <sitePluginVersion>         3.2          </sitePluginVersion>
+        <cleanPluginVersion>        3.0.0        </cleanPluginVersion>
+        <compilerPluginVersion>     3.6.0        </compilerPluginVersion>
+        <dependencyPluginVersion>   2.10         </dependencyPluginVersion>
+        <deployPluginVersion>       2.8.2        </deployPluginVersion>
+        <installPluginVersion>      2.5.2        </installPluginVersion>
+        <projectinfoPluginVersion>  2.9          </projectinfoPluginVersion>
+        <resourcesPluginVersion>    3.0.1        </resourcesPluginVersion>
+        <rpmPluginVersion>          2.1.5        </rpmPluginVersion>
+        <sitePluginVersion>         3.6          </sitePluginVersion>
         <versionsPluginVersion>     2.0          </versionsPluginVersion>
 
         <!-- TODO: can we set this as default in a global location? -->

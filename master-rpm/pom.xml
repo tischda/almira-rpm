@@ -11,7 +11,7 @@
 
     <artifactId>master-rpm</artifactId>
     <packaging>pom</packaging>
-    <version>13</version>
+    <version>14</version>
 
     <name>almira.rpm.master-rpm</name>
     <description>Parent POM for Almira custom RPMs</description>
