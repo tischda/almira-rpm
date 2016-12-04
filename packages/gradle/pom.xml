@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>gradle</artifactId>
-  <version>3.2.1.1</version>
+  <version>3.2.1.2</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.gradle</name>
 
@@ -21,7 +21,7 @@
 
   <properties>
     <appVersion>3.2.1</appVersion>
-    <rpmRelease>1</rpmRelease>
+    <rpmRelease>2</rpmRelease>
 
     <appServiceName>gradle</appServiceName>
     <appUserName>root</appUserName>

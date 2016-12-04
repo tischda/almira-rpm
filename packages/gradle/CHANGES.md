@@ -2,6 +2,6 @@
 almira.rpm.gradle - change history
 ===============================================================================
 
-Version 3.2.1-1 (04 December 2016)
+Version 3.2.1-2 (04 December 2016)
 ----------------------------------
 * First Version
