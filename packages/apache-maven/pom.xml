@@ -73,6 +73,7 @@ of information.</description>
                   <location>${appSrcLocation}</location>
                   <excludes>
                     <exclude>bin/*.bat</exclude>
+                    <exclude>bin/*.cmd</exclude>
                   </excludes>
                 </source>
               </sources>
@@ -89,6 +90,7 @@ of information.</description>
                   </includes>
                   <excludes>
                     <exclude>*.bat</exclude>
+                    <exclude>*.cmd</exclude>
                   </excludes>
                 </softlinkSource>
               </sources>

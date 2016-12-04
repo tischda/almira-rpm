@@ -63,7 +63,7 @@
                 <softlinkSource>
                   <location>${destBase}/bin</location>
                   <includes>
-                    <include>gradle</include>
+                    <include>gradle*</include>
                   </includes>
                   <excludes>
                     <exclude>*.bat</exclude>
