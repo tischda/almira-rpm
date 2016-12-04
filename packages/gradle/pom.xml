@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>almira.rpm</groupId>
+    <artifactId>master-rpm</artifactId>
+    <version>13</version>
+    <relativePath>../../master-rpm/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>gradle</artifactId>
+  <version>3.2.1.1</version>
+  <packaging>rpm</packaging>
+  <name>almira.rpm.apache-maven</name>
+
+  <description>Gradle is an open-source build automation tool for the Age of Continuous Delivery (CD).</description>
+
+  <url>https://gradle.org/</url>
+
+  <properties>
+    <appVersion>3.2.1</appVersion>
+    <rpmRelease>1</rpmRelease>
+
+    <appServiceName>gradle</appServiceName>
+    <appUserName>root</appUserName>
+    <appGroupName>root</appGroupName>
+  </properties>
+
+  <build>
+    <finalName>${project.artifactId}-${project.version}.el6.noarch</finalName>
+    <defaultGoal>package</defaultGoal>
+    <plugins>
+
+      <!-- http://mojo.codehaus.org/rpm-maven-plugin/index.html -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>rpm-maven-plugin</artifactId>
+        <configuration>
+          <vendor>Apache</vendor>
+          <copyright>ASL 2.0</copyright>
+          <summary>Java project management and project comprehension tool</summary>
+          <mappings>
+
+            <!-- all files -->
+            <mapping>
+              <directory>${destBase}</directory>
+              <sources>
+                <source>
+                  <location>${appSrcLocation}</location>
+                  <excludes>
+                    <exclude>bin/*.bat</exclude>
+                  </excludes>
+                </source>
+              </sources>
+            </mapping>
+
+            <!-- symlinks -->
+            <mapping>
+              <directory>/usr/bin</directory>
+              <sources>
+                <softlinkSource>
+                  <location>${destBase}/bin</location>
+                  <includes>
+                    <include>gradle</include>
+                  </includes>
+                  <excludes>
+                    <exclude>*.bat</exclude>
+                  </excludes>
+                </softlinkSource>
+              </sources>
+            </mapping>
+          </mappings>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
