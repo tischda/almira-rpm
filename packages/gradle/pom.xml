@@ -61,13 +61,7 @@
               <directory>/usr/bin</directory>
               <sources>
                 <softlinkSource>
-                  <location>${destBase}/bin</location>
-                  <includes>
-                    <include>gradl*</include>
-                  </includes>
-                  <excludes>
-                    <exclude>*.bat</exclude>
-                  </excludes>
+                  <location>${destBase}/bin/gradle</location>
                 </softlinkSource>
               </sources>
             </mapping>
