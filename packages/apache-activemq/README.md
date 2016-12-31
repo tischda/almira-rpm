@@ -14,16 +14,17 @@ yum install rpm-build
 rpmbuild/
 ├── SOURCES
 │   ├── activemq.patch
-│   ├── apache-activemq-5.13.0-bin.tar.gz
+│   ├── apache-activemq-5.14.3-bin.tar.gz
 │   └── wrapper.conf.patch
 └── SPECS
     └── activemq.spec
 
 ~~~
-wget http://mir2.ovh.net/ftp.apache.org/dist/activemq/5.13.0/apache-activemq-5.13.0-bin.tar.gz
-tar xf apache-activemq-5.13.0-bin.tar.gz
-mv apache-activemq-5.13.0 apache-activemq-5.13.0.orig
-tar xf apache-activemq-5.13.0-bin.tar.gz
+NEW_VERSION=5.14.3
+wget http://mir2.ovh.net/ftp.apache.org/dist/activemq/${NEW_VERSION}/apache-activemq-${NEW_VERSION}-bin.tar.gz
+tar xf apache-activemq-${NEW_VERSION}-bin.tar.gz
+mv apache-activemq-${NEW_VERSION} apache-activemq-${NEW_VERSION}.orig
+tar xf apache-activemq-${NEW_VERSION}-bin.tar.gz
 ~~~
 
 Update
@@ -32,8 +33,9 @@ Update
 What has changed ?
 
 ~~~
-diff apache-activemq-5.12.1.orig/bin/linux-x86-64/activemq apache-activemq-5.13.0/bin/linux-x86-64/activemq
-diff apache-activemq-5.12.1.orig/bin/linux-x86-64/wrapper.conf apache-activemq-5.13.0/bin/linux-x86-64/wrapper.conf
+OLD_VERSION=5.13.0
+diff apache-activemq-${OLD_VERSION}.orig/bin/linux-x86-64/activemq apache-activemq-${NEW_VERSION}/bin/linux-x86-64/activemq
+diff apache-activemq-${OLD_VERSION}.orig/bin/linux-x86-64/wrapper.conf apache-activemq-${NEW_VERSION}/bin/linux-x86-64/wrapper.conf
 ~~~
 
 --> ok, nothing has changed.
@@ -46,11 +48,11 @@ edit files that need patching in {package}, or if installed, copy from:
     /etc/activemq/wrapper.conf
 
 ~~~
-cp /etc/rc.d/init.d/activemq  apache-activemq-5.13.0/bin/linux-x86-64/activemq
-cp /etc/activemq/wrapper.conf apache-activemq-5.13.0/bin/linux-x86-64/wrapper.conf
+cp /etc/rc.d/init.d/activemq  apache-activemq-${NEW_VERSION}/bin/linux-x86-64/activemq
+cp /etc/activemq/wrapper.conf apache-activemq-${NEW_VERSION}/bin/linux-x86-64/wrapper.conf
 
-diff -Nur apache-activemq-5.13.0.orig/bin/linux-x86-64/activemq apache-activemq-5.13.0/bin/linux-x86-64/activemq > activemq.patch
-diff -Nur apache-activemq-5.13.0.orig/bin/linux-x86-64/wrapper.conf apache-activemq-5.13.0/bin/linux-x86-64/wrapper.conf > wrapper.conf.patch
+diff -Nur apache-activemq-${NEW_VERSION}.orig/bin/linux-x86-64/activemq apache-activemq-${NEW_VERSION}/bin/linux-x86-64/activemq > activemq.patch
+diff -Nur apache-activemq-${NEW_VERSION}.orig/bin/linux-x86-64/wrapper.conf apache-activemq-${NEW_VERSION}/bin/linux-x86-64/wrapper.conf > wrapper.conf.patch
 ~~~
 
 Rebuild

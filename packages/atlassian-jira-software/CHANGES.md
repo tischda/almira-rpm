@@ -2,6 +2,11 @@
 almira.rpm.atlassian-jira - change history
 ===============================================================================
 
+Version 7.2.7-1 (31 December 2016)
+----------------------------------
+* Updated to version 7.2.7
+
+
 Version 7.2.4-1 (30 November 2016)
 ----------------------------------
 * Updated to version 7.2.4

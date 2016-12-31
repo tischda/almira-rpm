@@ -5,7 +5,7 @@
     <groupId>almira</groupId>
     <artifactId>rpm</artifactId>
     <packaging>pom</packaging>
-    <version>0.183</version>
+    <version>0.184</version>
     <name>almira.rpm.dist</name>
 
     <build>
@@ -14,7 +14,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4</version>
+                <version>3.0.0</version>
                 <inherited>false</inherited>
                 <configuration>
                     <skipAssembly>false</skipAssembly>

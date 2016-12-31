@@ -1,26 +1,26 @@
---- apache-activemq-5.12.1.orig/bin/linux-x86-64/activemq	2015-10-12 19:56:16.000000000 +0200
-+++ apache-activemq-5.12.1/bin/linux-x86-64/activemq	2015-11-14 16:16:07.915569063 +0100
+--- apache-activemq-5.14.3.orig/bin/linux-x86-64/activemq 2016-12-19 16:41:14.000000000 +0100
++++ apache-activemq-5.14.3/bin/linux-x86-64/activemq  2016-12-31 18:40:41.436995157 +0100
 @@ -30,18 +30,18 @@
  # Application
  APP_NAME="ActiveMQ"
  APP_LONG_NAME="ActiveMQ Broker"
 -ACTIVEMQ_HOME="../.."
 +ACTIVEMQ_HOME="/usr/share/activemq"
- 
+
  # Wrapper
 -WRAPPER_CMD="wrapper"
 -WRAPPER_CONF="wrapper.conf"
 +WRAPPER_CMD="/usr/share/activemq/bin/wrapper"
 +WRAPPER_CONF="/etc/activemq/wrapper.conf"
- 
+
  # Priority at which to run the wrapper.  See "man nice" for valid priorities.
  #  nice is only used if a priority is specified.
  PRIORITY=
- 
+
  # Location of the pid file.
 -PIDDIR="."
 +PIDDIR="/var/run/activemq"
- 
+
  # If uncommented, causes the Wrapper to be shutdown using an anchor file.
  #  When launched with the 'start' command, it will also ignore all INT and
 @@ -56,7 +56,7 @@
@@ -29,13 +29,13 @@
  #  port needs to be allocated prior to the user being changed.
 -#RUN_AS_USER=
 +RUN_AS_USER=activemq
- 
+
  # The following two lines are used by the chkconfig command. Change as is
  #  appropriate for your application.  They should remain commented.
 @@ -551,4 +551,4 @@
          ;;
  esac
- 
+
 -exit 0
 \ No newline at end of file
 +exit 0

@@ -2,8 +2,21 @@
 almira.rpm - change history
 ===============================================================================
 
+
+Version 0.184 (31/12/2016)
+--------------------------
+* apache-activemq-5.14.3-bin.tar.gz
+* atlassian-jira-software-7.2.7.tar.gz
+* httpd-2.4.25.tar.bz2
+* MySQL-5.6.35-1.el6.x86_64.rpm
+* nexus-2.14.2-01-bundle.tar.gz
+* quickbuild-6.1.36.tar.gz
+* sonarqube-6.2.zip
+
+And also:
 * uprade master-rpm to 14
 * add gradle 3.2.1
+
 
 Version 0.183 (30 November 2016)
 --------------------------------
