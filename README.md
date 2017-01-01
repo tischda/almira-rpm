@@ -18,16 +18,14 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 
 ~~~
 +---apache-activemq
-|       apache-activemq-5.14.1-bin.tar.gz
+|       apache-activemq-5.14.3-bin.tar.gz
 |
 +---apache-httpd
-|   |   apr-1.5.2.tar.bz2
-|   |   apr-util-1.5.4.tar.bz2
-|   |   distcache-1.4.5-23.src.rpm
-|   |   httpd-2.4.20.tar.bz2
-|   |
-|   \---deps
-|           httpd-2.4.20-deps.tar.bz2
+|       apr-1.5.2.tar.bz2
+|       apr-util-1.5.4.tar.bz2
+|       distcache-1.4.5-23.src.rpm
+|       httpd-2.4.25.tar.bz2
+|       httpd.spec.patch
 |
 +---apache-maven
 |       apache-maven-3.3.9-bin.tar.gz
@@ -42,7 +40,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           tomcat-juli.jar
 |
 +---atlassian-jira-software
-|       atlassian-jira-software-7.2.4.tar.gz
+|       atlassian-jira-software-7.2.7.tar.gz
 |       mysql-connector-java-5.1.40.tar.gz
 |
 +---cmake
@@ -54,32 +52,35 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       git-manpages-2.11.0.tar.gz
 |       git.spec
 |
++---gradle
+|       gradle-3.2.1-bin.zip
+|
 +---java
 |       jdk-8u112-linux-x64.rpm
 |
 +---nexus
-|       nexus-2.14.1-01-bundle.tar.gz
+|       nexus-2.14.2-01-bundle.tar.gz
 |
 +---oracle-mysql
-|       MySQL-client-5.6.34-1.el6.x86_64.rpm
-|       MySQL-devel-5.6.34-1.el6.x86_64.rpm
-|       MySQL-server-5.6.34-1.el6.x86_64.rpm
-|       MySQL-shared-5.6.34-1.el6.x86_64.rpm
-|       MySQL-shared-compat-5.6.34-1.el6.x86_64.rpm
+|       MySQL-client-5.6.35-1.el6.x86_64.rpm
+|       MySQL-devel-5.6.35-1.el6.x86_64.rpm
+|       MySQL-server-5.6.35-1.el6.x86_64.rpm
+|       MySQL-shared-5.6.35-1.el6.x86_64.rpm
+|       MySQL-shared-compat-5.6.35-1.el6.x86_64.rpm
 |
 +---quickbuild
 |       mysql-connector-java-5.1.40.tar.gz
-|       quickbuild-6.1.33.tar.gz
+|       quickbuild-6.1.36.tar.gz
 |
 +---rsync
 |       rsync-3.1.2.tar.gz
 |
 +---sonar
-|   |   sonarqube-6.1.zip
+|   |   sonarqube-6.2.zip
 |   |
 |   \---plugins (add to zip in extensions_plugins)
-|           sonar-csharp-plugin-5.5.0.479.jar
-|           sonar-java-plugin-4.2.1.6971.jar
+|           sonar-csharp-plugin-5.5.1.522.jar
+|           sonar-java-plugin-4.3.0.7717.jar
 |           sonar-javascript-plugin-2.18.0.3454.jar
 |           sonar-scm-git-plugin-1.2.jar
 |           sonar-scm-mercurial-plugin-1.1.1.jar
