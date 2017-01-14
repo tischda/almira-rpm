@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>quickbuild</artifactId>
-  <version>6.1.36.1</version>
+  <version>7.0.0.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.quickbuild</name>
 
@@ -20,7 +20,7 @@
   <url>http://www.pmease.com/</url>
 
   <properties>
-    <appVersion>6.1.36</appVersion>
+    <appVersion>7.0.0</appVersion>
     <rpmRelease>1</rpmRelease>
 
     <appServiceName>quickbuild</appServiceName>
@@ -80,6 +80,7 @@
               <directory>/var/run/${appServiceName}/</directory>
             </mapping>
           </mappings>
+          <group/>
         </configuration>
       </plugin>
     </plugins>

@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>atlassian-jira-software</artifactId>
-  <version>7.2.7.1</version>
+  <version>7.3.0.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.atlassian-jira-software</name>
 
@@ -22,7 +22,7 @@
   <url>http://www.atlassian.com/software/jira/overview</url>
 
   <properties>
-    <appVersion>7.2.7</appVersion>
+    <appVersion>7.3.0</appVersion>
     <rpmRelease>1</rpmRelease>
 
     <appServiceName>jira</appServiceName>
@@ -114,6 +114,7 @@
               </sources>
             </mapping>
           </mappings>
+          <group/>
         </configuration>
       </plugin>
     </plugins>

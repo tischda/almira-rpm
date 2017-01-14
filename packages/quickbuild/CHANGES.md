@@ -2,6 +2,11 @@
 almira.rpm.quickbuild - change history
 ===============================================================================
 
+Version 7.0.0-1 (14 January 2017)
+---------------------------------
+* Updated to version 7.0.0
+
+
 Version 6.1.36-1 (31 December 2016)
 -----------------------------------
 * Updated to version 6.1.36

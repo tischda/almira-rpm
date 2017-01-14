@@ -2,6 +2,13 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.185 (14/01/2017)
+--------------------------
+* atlassian-jira-software-7.3.0.tar.gz
+* cmake-3.7.2.tar.gz
+* gradle-3.3-bin.zip
+* quickbuild-7.0.0.tar.gz
+
 
 Version 0.184 (31/12/2016)
 --------------------------
