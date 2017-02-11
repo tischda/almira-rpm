@@ -1,5 +1,6 @@
 # Make scripts executable
 chmod -R 755 @{destBase}.new/bin/*.sh
+chown -R @{appUserName}:@{appGroupName} @{destBase}.new
 
 # Install MySQL connector (do this before installation or upgrade)
 mv @{destBase}.new/mysql-connector-java-*.jar @{destBase}.new/plugins/com.pmease.quickbuild.libs
@@ -13,7 +14,7 @@ if [ "$1" = "1" ]; then
   sed -i 's|PIDDIR="."|PIDDIR="/var/run/@{appServiceName}"|g' @{destBase}/bin/server.sh
   sed -i 's|#RUN_AS_USER=|RUN_AS_USER=@{appUserName}|g' @{destBase}/bin/server.sh
 
-  # Perform installation
+  # Perform installation (as root ?)
   @{destBase}/bin/server.sh install
 
   # Link back from /etc
@@ -25,5 +26,5 @@ fi
 if [ "$1" = "2" ]; then
   echo Starting inplace upgrade...
   #su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase} && rm -rf @{destBase}.new"
-  @{destBase}.new/bin/upgrade.sh @{destBase}
+  su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase}"
 fi

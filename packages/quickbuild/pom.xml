@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>quickbuild</artifactId>
-  <version>7.0.4.5</version>
+  <version>7.0.4.6</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.quickbuild</name>
 
@@ -21,7 +21,7 @@
 
   <properties>
     <appVersion>7.0.4</appVersion>
-    <rpmRelease>5</rpmRelease>
+    <rpmRelease>6</rpmRelease>
 
     <appServiceName>quickbuild</appServiceName>
 
