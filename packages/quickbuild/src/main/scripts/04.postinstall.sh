@@ -1,13 +1,11 @@
 # Make scripts executable
-chmod -R 755 @{destBase}.new/bin/*.sh
+chmod -R 755 @{destBase}/bin/*.sh
 
 # Install MySQL connector (do this before installation or upgrade)
-mv @{destBase}.new/mysql-connector-java-*.jar @{destBase}.new/plugins/com.pmease.quickbuild.libs
+mv @{destBase}/mysql-connector-java-*.jar @{destBase}/plugins/com.pmease.quickbuild.libs
 
 # Initial installation => install service
 if [ "$1" = "1" ]; then
-  mv @{destBase}.new @{destBase}
-
   # Configure startup script
   sed -i 's|chkconfig: 2345 20 80|chkconfig: 2345 70 20|g' @{destBase}/bin/server.sh
   sed -i 's|PIDDIR="."|PIDDIR="/var/run/@{appServiceName}"|g' @{destBase}/bin/server.sh
@@ -24,14 +22,5 @@ fi
 # Upgrade
 if [ "$1" = "2" ]; then
   echo Starting inplace upgrade...
-  tar czf @{destBase}.tar.gz quickbuild -C /home/quickbuild
-
-  ls -alR @{destBase}.new | grep root
-  chown -R @{appUserName}:@{appGroupName} @{destBase}.new
-
-  su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase}"
-
-  sleep 10
-  mv @{destBase}.new @{destBase}.done
-  #rm -rf @{destBase}.new
+  su - @{appUserName} -c "@{destBase}/bin/upgrade.sh @{destBase}.old && rm -rf @{destBase} && mv @{destBase}.old @{destBase}"
 fi
