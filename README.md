@@ -31,7 +31,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       apache-maven-3.3.9-bin.tar.gz
 |
 +---apache-tomcat
-|   |   apache-tomcat-7.0.73.tar.gz
+|   |   apache-tomcat-7.0.75.tar.gz
 |   |
 |   \---extras
 |           catalina-jmx-remote.jar
@@ -40,23 +40,23 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           tomcat-juli.jar
 |
 +---atlassian-jira-software
-|       atlassian-jira-software-7.2.7.tar.gz
+|       atlassian-jira-software-7.3.1.tar.gz
 |       mysql-connector-java-5.1.40.tar.gz
 |
 +---cmake
-|       cmake-3.7.1.tar.gz
+|       cmake-3.7.2.tar.gz
 |
 +---git
 |       add-spec-to-archive.cmd
-|       git-2.11.0.tar.gz
-|       git-manpages-2.11.0.tar.gz
+|       git-2.11.1.tar.gz
+|       git-manpages-2.11.1.tar.gz
 |       git.spec
 |
 +---gradle
-|       gradle-3.2.1-bin.zip
+|       gradle-3.3-bin.zip
 |
 +---java
-|       jdk-8u112-linux-x64.rpm
+|       jdk-8u121-linux-x64.rpm
 |
 +---nexus
 |       nexus-2.14.2-01-bundle.tar.gz
@@ -70,7 +70,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |
 +---quickbuild
 |       mysql-connector-java-5.1.40.tar.gz
-|       quickbuild-6.1.36.tar.gz
+|       quickbuild-7.0.4.tar.gz
 |
 +---rsync
 |       rsync-3.1.2.tar.gz
