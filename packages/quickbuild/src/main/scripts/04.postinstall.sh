@@ -1,6 +1,5 @@
 # Make scripts executable
 chmod -R 755 @{destBase}.new/bin/*.sh
-chown -R @{appUserName}:@{appGroupName} @{destBase}.new
 
 # Install MySQL connector (do this before installation or upgrade)
 mv @{destBase}.new/mysql-connector-java-*.jar @{destBase}.new/plugins/com.pmease.quickbuild.libs
@@ -25,5 +24,14 @@ fi
 # Upgrade
 if [ "$1" = "2" ]; then
   echo Starting inplace upgrade...
-  su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase} && rm -rf @{destBase}.new"
+  tar czvf @{destBase}.tar.gz @{destBase}
+
+  ls -alR | grep root @{destBase}.new
+  chown -R @{appUserName}:@{appGroupName} @{destBase}.new
+
+  su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase}"
+
+  sleep 10
+  mv @{destBase}.new @{destBase}.done
+  #rm -rf @{destBase}.new
 fi
