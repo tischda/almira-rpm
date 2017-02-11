@@ -24,9 +24,9 @@ fi
 # Upgrade
 if [ "$1" = "2" ]; then
   echo Starting inplace upgrade...
-  tar czvf @{destBase}.tar.gz @{destBase}
+  tar czf @{destBase}.tar.gz quickbuild -C /home/quickbuild
 
-  ls -alR | grep root @{destBase}.new
+  ls -alR @{destBase}.new | grep root
   chown -R @{appUserName}:@{appGroupName} @{destBase}.new
 
   su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase}"
