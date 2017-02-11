@@ -29,4 +29,8 @@ if [ "$1" = "2" ]; then
 
   echo Starting inplace upgrade...
   su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase} && rm -rf @{destBase}.new"
+
+  echo Restoring configuration
+  rm -rf @{destBase}/conf
+  ln -s @{destConf} @{destBase}/conf
 fi

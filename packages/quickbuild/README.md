@@ -18,21 +18,30 @@ customize server.sh:
  sed -i 's|PIDDIR="."|PIDDIR="/var/run/quickbuild"|g' server.sh
  sed -i 's|#RUN_AS_USER=|RUN_AS_USER=quickbuild|g' server.sh
 
-Since version 7, run upgrade.sh instead of migrate.sh. This requires a temporary installation with the new files,
-you then run `upgrade.sh <absolute_path_to_old_directory>` to upgrade in place. It's a bit tricky because maven-rpm
-is not setting owner and permissions correctly. 
 
+Upgrade
+-------
 
-TODO with Puppet:
+Since version 7, run `upgrade.sh` instead of `migrate.sh`. This requires a temporary new installation,
+you then run `upgrade.sh <absolute_path_to_old_directory>` to upgrade the old installation in place.
 
-* prepare a template for hibernate.properties so that the settings below
-  MySQL comments are modified and not the ones below H2.
+It's a bit tricky because the upgrade tool (started by `upgrade.sh`, but actually written in java) does
+a lot of stuff (copying files, etc) and breaks if you symlink the conf directory (source and target would
+be the same). You'll also get these errors in the RPM cleanup process, because the files have already been
+removed by the upgrade, so there's nothing left to remove for RPM: 
 
-    hibernate.dialect=org.hibernate.dialect.MySQLDialect
-    hibernate.connection.driver_class=com.mysql.jdbc.Driver
-    hibernate.connection.url=jdbc:mysql://localhost:3306/quickbuild
-    hibernate.connection.username=root
-    hibernate.connection.password=mysql
+~~~
+warning:    erase unlink of /home/quickbuild/quickbuild/plugins/com.pmease.quickbuild_7.0.11.jar failed: No such file or directory
+warning:    erase unlink of /home/quickbuild/quickbuild/plugins/com.pmease.quickbuild.plugin.versionupdater_7.0.11.jar failed: No such file or directory
+warning:    erase unlink of /home/quickbuild/quickbuild/plugins/com.pmease.quickbuild.plugin.versionbumper_7.0.11.jar failed: No such file or directory
+warning:    erase unlink of /home/quickbuild/quickbuild/plugins/com.pmease.quickbuild.plugin.tracker.trac_7.0.11.jar failed: No such file or directory
+~~~
+
+The solution would be to rewrite the SPEC file by hand and exclude this files from monitoring by RPM. 
+
+The `VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0` is a problem inside `upgrade.sh`
+so we don't care here.
+
 
 
 Configuration
@@ -66,6 +75,19 @@ ${groovy:
 }
 
     Save
+
+
+### TODO with Puppet:
+
+* prepare a template for hibernate.properties so that the settings below
+  MySQL comments are modified and not the ones below H2.
+
+    hibernate.dialect=org.hibernate.dialect.MySQLDialect
+    hibernate.connection.driver_class=com.mysql.jdbc.Driver
+    hibernate.connection.url=jdbc:mysql://localhost:3306/quickbuild
+    hibernate.connection.username=root
+    hibernate.connection.password=mysql
+
 
 
 References
