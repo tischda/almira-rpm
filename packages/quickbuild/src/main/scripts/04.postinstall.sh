@@ -15,10 +15,10 @@ fi
 rm -rf @{destBase}/conf
 ln -sf @{destConf} @{destBase}/conf
 
-# Migrate data and remove old
+# Upgrade
 if [ "$1" = "2" ]; then
-  echo Starting migration...
-  su - @{appUserName} -c "@{destBase}/bin/migrate.sh @{destBase}.old && rm -rf @{destBase}.old"
+  echo Starting inplace upgrade...
+  su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase} && rm -rf @{destBase}.new"
 fi
 
 # Install MySQL connector (do this after the migration which copies old libs)

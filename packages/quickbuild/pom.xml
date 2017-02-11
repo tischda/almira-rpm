@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>quickbuild</artifactId>
-  <version>7.0.4.1</version>
+  <version>7.0.4.2</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.quickbuild</name>
 
@@ -21,7 +21,7 @@
 
   <properties>
     <appVersion>7.0.4</appVersion>
-    <rpmRelease>1</rpmRelease>
+    <rpmRelease>2</rpmRelease>
 
     <appServiceName>quickbuild</appServiceName>
 
@@ -59,9 +59,9 @@
               </sources>
             </mapping>
 
-            <!-- bin files -->
+            <!-- bin files (the .new it to manage upgrades correctly) -->
             <mapping>
-              <directory>${destBase}</directory>
+              <directory>${destBase}.new</directory>
               <sources>
                 <source>
                   <location>${appSrcLocation}</location>
