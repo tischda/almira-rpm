@@ -4,7 +4,7 @@ almira.rpm.apache-tomcat
 
 Overview
 --------
-Apache Tomcat RPM.
+Apache Tomcat RPM. This is not used by anymore by any almira project. 
 
 
 TODO

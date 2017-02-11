@@ -2,18 +2,21 @@
 almira.rpm.git - change history
 ===============================================================================
 
+Version 2.11.1-1 (11 February 2017)
+-----------------------------------
+* Updated to version 2.11.1
+
+
 Version 2.11.0-1 (30 November 2016)
 -----------------------------------
 * Updated to version 2.11.0
-
-Note: spec file still missing in official distrib.
 
 
 Version 2.9.3-1 (17 August 2016)
 --------------------------------
 * Updated to version 2.9.3
 
-Note: spec file still missing in official distrib.
+Note: spec file missing in official distribution
 
 
 Version 2.9.0-1 (01 July 2016)
