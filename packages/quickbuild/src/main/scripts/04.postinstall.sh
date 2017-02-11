@@ -21,6 +21,12 @@ fi
 
 # Upgrade
 if [ "$1" = "2" ]; then
+
+  # Changing the @{destBase} in the RPM would mess up everything
+  echo Moving things around...
+  mv @{destBase} @{destBase}.new
+  mv @{destBase}.old @{destBase}
+
   echo Starting inplace upgrade...
-  su - @{appUserName} -c "@{destBase}/bin/upgrade.sh @{destBase}.old && rm -rf @{destBase} && mv @{destBase}.old @{destBase}"
+  su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase} && rm -rf @{destBase}.new"
 fi
