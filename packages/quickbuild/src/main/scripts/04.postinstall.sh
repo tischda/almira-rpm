@@ -1,6 +1,9 @@
 # Make scripts executable
 chmod -R 755 @{destBase}.new/bin/*.sh
 
+# Install MySQL connector (do this before installation or upgrade)
+mv @{destBase}.new/mysql-connector-java-*.jar @{destBase}.new/plugins/com.pmease.quickbuild.libs
+
 # Initial installation => install service
 if [ "$1" = "1" ]; then
   mv @{destBase}.new @{destBase}
@@ -21,9 +24,6 @@ fi
 # Upgrade
 if [ "$1" = "2" ]; then
   echo Starting inplace upgrade...
-  su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase} && rm -rf @{destBase}.new"
+  #su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase} && rm -rf @{destBase}.new"
+  su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase}"
 fi
-
-# Install MySQL connector (do this after the uprade which copies old libs)
-rm -f @{destBase}/plugins/com.pmease.quickbuild.libs/mysql-connector-java-*.jar 2>/dev/null
-mv @{destBase}/mysql-connector-java-*.jar @{destBase}/plugins/com.pmease.quickbuild.libs
