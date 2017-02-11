@@ -18,9 +18,9 @@ customize server.sh:
  sed -i 's|PIDDIR="."|PIDDIR="/var/run/quickbuild"|g' server.sh
  sed -i 's|#RUN_AS_USER=|RUN_AS_USER=quickbuild|g' server.sh
 
-run migrate.sh --> does not work with symlinks in quickbuild/conf !
-
-    doc: http://wiki.pmease.com/display/QB50/Upgrade+Data
+Since version 7, run upgrade.sh instead of migrate.sh. This requires a temporary installation with the new files,
+you then run `upgrade.sh <absolute_path_to_old_directory>` to upgrade in place. It's a bit tricky because maven-rpm
+is not setting owner and permissions correctly. 
 
 
 TODO with Puppet:

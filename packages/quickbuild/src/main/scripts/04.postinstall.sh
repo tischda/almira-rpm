@@ -25,6 +25,5 @@ fi
 # Upgrade
 if [ "$1" = "2" ]; then
   echo Starting inplace upgrade...
-  #su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase} && rm -rf @{destBase}.new"
-  su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase}"
+  su - @{appUserName} -c "@{destBase}.new/bin/upgrade.sh @{destBase} && rm -rf @{destBase}.new"
 fi
