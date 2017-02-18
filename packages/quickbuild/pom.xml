@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>quickbuild</artifactId>
-  <version>7.0.4.12</version>
+  <version>7.0.6.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.quickbuild</name>
 
@@ -20,8 +20,8 @@
   <url>http://www.pmease.com/</url>
 
   <properties>
-    <appVersion>7.0.4</appVersion>
-    <rpmRelease>12</rpmRelease>
+    <appVersion>7.0.6</appVersion>
+    <rpmRelease>1</rpmRelease>
 
     <appServiceName>quickbuild</appServiceName>
 

@@ -2,6 +2,9 @@
 almira.rpm - change history
 ===============================================================================
 
+* nexus-2.14.3-02-bundle.tar.gz
+* quickbuild-7.0.6.tar.gz
+
 Version 0.186 (11/02/2017)
 --------------------------
 * apache-tomcat-7.0.75.tar.gz
