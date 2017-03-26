@@ -18,7 +18,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 
 ~~~
 +---apache-activemq
-|       apache-activemq-5.14.3-bin.tar.gz
+|       apache-activemq-5.14.4-bin.tar.gz
 |
 +---apache-httpd
 |       apr-1.5.2.tar.bz2
@@ -31,7 +31,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       apache-maven-3.3.9-bin.tar.gz
 |
 +---apache-tomcat
-|   |   apache-tomcat-7.0.75.tar.gz
+|   |   apache-tomcat-7.0.76.tar.gz
 |   |
 |   \---extras
 |           catalina-jmx-remote.jar
@@ -40,7 +40,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           tomcat-juli.jar
 |
 +---atlassian-jira-software
-|       atlassian-jira-software-7.3.1.tar.gz
+|       atlassian-jira-software-7.3.3.tar.gz
 |       mysql-connector-java-5.1.40.tar.gz
 |
 +---cmake
@@ -48,18 +48,18 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |
 +---git
 |       add-spec-to-archive.cmd
-|       git-2.11.1.tar.gz
-|       git-manpages-2.11.1.tar.gz
+|       git-2.12.2.tar.gz
+|       git-manpages-2.12.2.tar.gz
 |       git.spec
 |
 +---gradle
-|       gradle-3.3-bin.zip
+|       gradle-3.4.1-bin.zip
 |
 +---java
 |       jdk-8u121-linux-x64.rpm
 |
 +---nexus
-|       nexus-2.14.2-01-bundle.tar.gz
+|       nexus-2.14.3-02-bundle.tar.gz
 |
 +---oracle-mysql
 |       MySQL-client-5.6.35-1.el6.x86_64.rpm
@@ -70,16 +70,15 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |
 +---quickbuild
 |       mysql-connector-java-5.1.40.tar.gz
-|       quickbuild-7.0.4.tar.gz
+|       quickbuild-7.0.6.tar.gz
 |
 +---rsync
 |       rsync-3.1.2.tar.gz
 |
 +---sonar
-|   |   sonarqube-6.2.zip
+|   |   sonarqube-6.3.zip
 |   |
 |   \---plugins (add to zip in extensions_plugins)
-|           sonar-csharp-plugin-5.5.1.522.jar
 |           sonar-java-plugin-4.3.0.7717.jar
 |           sonar-javascript-plugin-2.18.0.3454.jar
 |           sonar-scm-git-plugin-1.2.jar
@@ -88,7 +87,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           sonar-timeline-plugin-1.5.jar
 |
 \---tomcat-native
-        tomcat-native-1.2.10-src.tar.gz
+        tomcat-native-1.2.12-src.tar.gz
 ~~~
 
 
