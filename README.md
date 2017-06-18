@@ -18,20 +18,20 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 
 ~~~
 +---apache-activemq
-|       apache-activemq-5.14.4-bin.tar.gz
+|       apache-activemq-5.14.5-bin.tar.gz
 |
 +---apache-httpd
-|       apr-1.5.2.tar.bz2
-|       apr-util-1.5.4.tar.bz2
+|       apr-1.6.2.tar.bz2
+|       apr-util-1.6.0.tar.bz2
 |       distcache-1.4.5-23.src.rpm
 |       httpd-2.4.25.tar.bz2
 |       httpd.spec.patch
 |
 +---apache-maven
-|       apache-maven-3.3.9-bin.tar.gz
+|       apache-maven-3.5.0-bin.tar.gz
 |
 +---apache-tomcat
-|   |   apache-tomcat-7.0.76.tar.gz
+|   |   apache-tomcat-7.0.78.tar.gz
 |   |
 |   \---extras
 |           catalina-jmx-remote.jar
@@ -40,50 +40,53 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           tomcat-juli.jar
 |
 +---atlassian-jira-software
-|       atlassian-jira-software-7.3.3.tar.gz
-|       mysql-connector-java-5.1.40.tar.gz
+|       atlassian-jira-software-7.3.7.tar.gz
+|       mysql-connector-java-5.1.42.tar.gz
 |
 +---cmake
-|       cmake-3.7.2.tar.gz
+|       cmake-3.8.2.tar.gz
 |
 +---git
 |       add-spec-to-archive.cmd
-|       git-2.12.2.tar.gz
-|       git-manpages-2.12.2.tar.gz
+|       git-2.13.1.tar.gz
+|       git-manpages-2.13.1.tar.gz
 |       git.spec
 |
 +---gradle
-|       gradle-3.4.1-bin.zip
+|       gradle-4.0-bin.zip
 |
 +---java
-|       jdk-8u121-linux-x64.rpm
+|       jdk-8u131-linux-x64.rpm
 |
 +---nexus
-|       nexus-2.14.3-02-bundle.tar.gz
+|       nexus-2.14.4-03-bundle.tar.gz
 |
 +---oracle-mysql
-|       MySQL-client-5.6.35-1.el6.x86_64.rpm
-|       MySQL-devel-5.6.35-1.el6.x86_64.rpm
-|       MySQL-server-5.6.35-1.el6.x86_64.rpm
-|       MySQL-shared-5.6.35-1.el6.x86_64.rpm
-|       MySQL-shared-compat-5.6.35-1.el6.x86_64.rpm
+|       MySQL-client-5.6.36-1.el6.x86_64.rpm
+|       MySQL-devel-5.6.36-1.el6.x86_64.rpm
+|       MySQL-server-5.6.36-1.el6.x86_64.rpm
+|       MySQL-shared-5.6.36-1.el6.x86_64.rpm
+|       MySQL-shared-compat-5.6.36-1.el6.x86_64.rpm
 |
 +---quickbuild
-|       mysql-connector-java-5.1.40.tar.gz
-|       quickbuild-7.0.6.tar.gz
+|       mysql-connector-java-5.1.42.tar.gz
+|       quickbuild-7.0.17.tar.gz
 |
 +---rsync
 |       rsync-3.1.2.tar.gz
 |
 +---sonar
-|   |   sonarqube-6.3.zip
+|   |   sonarqube-6.4.zip
 |   |
 |   \---plugins (add to zip in extensions_plugins)
-|           sonar-java-plugin-4.3.0.7717.jar
-|           sonar-javascript-plugin-2.18.0.3454.jar
+|           sonar-cxx-plugin-0.9.7.jar
+|           sonar-golang-plugin-1.2.8.jar
+|           sonar-java-plugin-4.10.0.10260.jar
+|           sonar-javascript-plugin-3.0.0.4962.jar
+|           sonar-php-plugin-2.10.0.2087.jar
 |           sonar-scm-git-plugin-1.2.jar
 |           sonar-scm-mercurial-plugin-1.1.1.jar
-|           sonar-scm-svn-plugin-1.3.jar
+|           sonar-scm-svn-plugin-1.4.0.522.jar
 |           sonar-timeline-plugin-1.5.jar
 |
 \---tomcat-native

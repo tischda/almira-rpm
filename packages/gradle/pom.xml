@@ -20,7 +20,7 @@
   <url>https://gradle.org/</url>
 
   <properties>
-    <appVersion>4.0.0</appVersion>
+    <appVersion>4.0</appVersion>
     <rpmRelease>1</rpmRelease>
 
     <appServiceName>gradle</appServiceName>
