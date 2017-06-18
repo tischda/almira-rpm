@@ -2,6 +2,25 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.188 (?/06/2017)
+--------------------------
+* apache-activemq-5.14.5-bin.tar.gz
+* apache-maven-3.5.0-bin.tar.gz
+* apache-tomcat-7.0.78.tar.gz
+* apr-1.6.2.tar.bz2
+* apr-util-1.6.0.tar.bz2
+* atlassian-jira-software-7.3.7.tar.gz
+* cmake-3.8.2.tar.gz
+* git-2.13.1.tar.gz
+* gradle-4.0-bin.zip
+* jdk-8u131-linux-x64.rpm
+* MySQL-5.6.36-1.el6.x86_64.rpm-bundle.tar
+* mysql-connector-java-5.1.42.tar.gz
+* nexus-2.14.4-03-bundle.tar.gz
+* quickbuild-7.0.17.tar.gz
+* sonarqube-6.4.zip
+
+
 Version 0.187 (26/03/2017)
 --------------------------
 * apache-activemq-5.14.4-bin.tar.gz
