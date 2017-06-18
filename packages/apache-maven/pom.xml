@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>apache-maven</artifactId>
-  <version>3.3.9.1</version>
+  <version>3.5.0.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.apache-maven</name>
 
@@ -23,7 +23,7 @@ of information.</description>
   <url>http://maven.apache.org</url>
 
   <properties>
-    <appVersion>3.3.9</appVersion>
+    <appVersion>3.5.0</appVersion>
     <rpmRelease>1</rpmRelease>
 
     <appServiceName>maven</appServiceName>
