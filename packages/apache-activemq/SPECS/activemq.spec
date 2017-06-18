@@ -2,7 +2,7 @@
 %undefine _missing_build_ids_terminate_build
 
 Name: apache-activemq
-Version: 5.14.4
+Version: 5.14.5
 Release: 1%{?dist}
 Summary: ActiveMQ Messaging Broker
 Group: System Environment/Daemons
