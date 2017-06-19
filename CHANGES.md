@@ -9,7 +9,7 @@ Version 0.188 (?/06/2017)
 * apache-tomcat-7.0.78.tar.gz
 * apr-1.6.2.tar.bz2
 * apr-util-1.6.0.tar.bz2
-* atlassian-jira-software-7.3.7.tar.gz
+* atlassian-jira-software-7.3.8.tar.gz
 * cmake-3.8.2.tar.gz
 * git-2.13.1.tar.gz
 * gradle-4.0-bin.zip
