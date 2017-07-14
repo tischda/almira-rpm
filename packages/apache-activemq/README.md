@@ -14,13 +14,13 @@ yum install rpm-build
 rpmbuild/
 ├── SOURCES
 │   ├── activemq.patch
-│   ├── apache-activemq-5.14.5-bin.tar.gz
+│   ├── apache-activemq-5.15.0-bin.tar.gz
 │   └── wrapper.conf.patch
 └── SPECS
     └── activemq.spec
 
 ~~~
-NEW_VERSION=5.14.3
+NEW_VERSION=5.15.0
 wget http://mir2.ovh.net/ftp.apache.org/dist/activemq/${NEW_VERSION}/apache-activemq-${NEW_VERSION}-bin.tar.gz
 tar xf apache-activemq-${NEW_VERSION}-bin.tar.gz
 mv apache-activemq-${NEW_VERSION} apache-activemq-${NEW_VERSION}.orig
@@ -33,7 +33,7 @@ Update
 What has changed ?
 
 ~~~
-OLD_VERSION=5.13.0
+OLD_VERSION=5.14.3
 diff apache-activemq-${OLD_VERSION}.orig/bin/linux-x86-64/activemq apache-activemq-${NEW_VERSION}/bin/linux-x86-64/activemq
 diff apache-activemq-${OLD_VERSION}.orig/bin/linux-x86-64/wrapper.conf apache-activemq-${NEW_VERSION}/bin/linux-x86-64/wrapper.conf
 ~~~

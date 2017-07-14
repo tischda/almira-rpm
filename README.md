@@ -25,7 +25,6 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       apr-util-1.6.0.tar.bz2
 |       distcache-1.4.5-23.src.rpm
 |       httpd-2.4.27.tar.bz2
-|       httpd.spec.patch
 |
 +---apache-maven
 |       apache-maven-3.5.0-bin.tar.gz
@@ -47,9 +46,8 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       cmake-3.8.2.tar.gz
 |
 +---git
-|       add-spec-to-archive.cmd
 |       git-2.13.3.tar.gz
-|       git-manpages-2.13.2.tar.gz
+|       git-manpages-2.13.3.tar.gz
 |       git.spec
 |
 +---gradle
