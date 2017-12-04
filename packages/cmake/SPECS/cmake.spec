@@ -58,7 +58,7 @@
 
 Name:           %{orig_name}%{?name_suffix}
 Version:        3.10.0
-Release:        1%{?relsuf}%{?dist}
+Release:        1%{?dist}
 Summary:        Cross-platform make system
 
 # most sources are BSD
@@ -90,9 +90,7 @@ Patch101:         %{name}-fedora-flag_release.patch
 # Patch for renaming on EPEL
 %if 0%{?name_suffix:1}
 Patch1:      %{name}-rename.patch
-%if 0%{?rhel} && 0%{?rhel} <= 6
 Patch2:      %{name}-libarchive3.patch
-%endif
 %endif
 
 BuildRequires:  coreutils
@@ -375,9 +373,7 @@ find %{buildroot}%{_bindir} -type f -or -type l -or -xtype l | \
 
 %if %{with cmake_enables_test}
 %check
-%if 0%{?rhel} && 0%{?rhel} <= 6
 mv -f Modules/FindLibArchive.cmake Modules/FindLibArchive.disabled
-%endif
 pushd build
 #CMake.FileDownload, CTestTestUpload, and curl require internet access
 # RunCMake.CPack_RPM is broken if disttag contains "+", bug #1499151
@@ -389,9 +385,7 @@ NO_TEST="$NO_TEST|RunCMake.File_Generate"
 export NO_TEST
 bin/ctest%{?name_suffix} -V -E "$NO_TEST" %{?_smp_mflags}
 popd
-%if 0%{?rhel} && 0%{?rhel} <= 6
 mv -f Modules/FindLibArchive.disabled Modules/FindLibArchive.cmake
-%endif
 %endif
 
 
