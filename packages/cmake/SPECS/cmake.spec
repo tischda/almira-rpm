@@ -99,7 +99,6 @@ BuildRequires:  coreutils
 BuildRequires:  findutils
 BuildRequires:  gcc-c++
 BuildRequires:  sed
-%if %{with cmake_enables_git_test}
 %if %{with cmake_enables_X11_test}
 BuildRequires:  libX11-devel
 %endif
