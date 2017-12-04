@@ -7,41 +7,37 @@
 
 # Set to bcond_without or use --with bootstrap if bootstrapping a new release
 # or architecture
-%bcond_without bootstrap
+%bcond_with bootstrap
 
 # Build with Emacs support
-%bcond_without cmake_enables_emacs
+%bcond_with cmake_enables_emacs
 
 # Use foreign cmake-filesystem package instead of building it here
 %bcond_with cmake_enables_foreign_filesystem
 
 # Run git tests
-%bcond_without cmake_enables_git_test
+%bcond_with cmake_enables_git_test
 
 # Set to bcond_with or use --without gui to disable qt4 gui build
-%bcond_without cmake_enables_gui
+%bcond_with cmake_enables_gui
 
 # Use ncurses for colorful output
 %bcond_without cmake_enables_ncurses
 
 # Setting the Python-version used by default
-%if 0%{?rhel} && 0%{?rhel} < 8
 %bcond_with cmake_enables_python3
-%else
-%bcond_without cmake_enables_python3
-%endif
 
 # Enable RPM dependency generators for cmake files written in Python
 %bcond_without cmake_enables_rpm
 
 # Sphinx-build cannot import CMakeLexer on EPEL <= 6
-%bcond_without cmake_enables_sphinx
+%bcond_with cmake_enables_sphinx
 
 # Run tests
 %bcond_without cmake_enables_test
 
 # Enable X11 tests
-%bcond_without cmake_enables_X11_test
+%bcond_with cmake_enables_X11_test
 
 # Place rpm-macros into proper location
 %global rpm_macros_dir %(d=%{_rpmconfigdir}/macros.d; [ -d $d ] || d=%{_sysconfdir}/rpm; echo $d)
@@ -102,7 +98,6 @@ Patch2:      %{name}-libarchive3.patch
 BuildRequires:  coreutils
 BuildRequires:  findutils
 BuildRequires:  gcc-c++
-BuildRequires:  gcc-gfortran
 BuildRequires:  sed
 %if %{with cmake_enables_git_test}
 # Tests fail if only git-core is installed, bug #1488830
