@@ -57,7 +57,7 @@
 %global orig_name cmake
 
 Name:           %{orig_name}%{?name_suffix}
-Version:        %{major_version}.%{minor_version}.0
+Version:        3.10.0
 Release:        1%{?relsuf}%{?dist}
 Summary:        Cross-platform make system
 
