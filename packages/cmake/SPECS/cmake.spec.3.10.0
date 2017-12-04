@@ -7,7 +7,7 @@
 
 # Set to bcond_without or use --with bootstrap if bootstrapping a new release
 # or architecture
-%bcond_without bootstrap
+%bcond_with bootstrap
 
 # Build with Emacs support
 %bcond_without cmake_enables_emacs
@@ -35,7 +35,11 @@
 %bcond_without cmake_enables_rpm
 
 # Sphinx-build cannot import CMakeLexer on EPEL <= 6
+%if 0%{?fedora} || 0%{?rhel} >= 7
 %bcond_without cmake_enables_sphinx
+%else
+%bcond_with cmake_enables_sphinx
+%endif
 
 # Run tests
 %bcond_without cmake_enables_test
@@ -271,7 +275,6 @@ pushd build
 
 
 %install
-rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_pkgdocdir}
 %make_install -C build CMAKE_DOC_DIR=%{buildroot}%{_pkgdocdir}
 find %{buildroot}%{_datadir}/%{name}/Modules -type f | xargs chmod -x
