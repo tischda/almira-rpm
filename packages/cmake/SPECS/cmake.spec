@@ -237,6 +237,8 @@ tail -n +2 %{SOURCE5} >> %{name}.req
 
 
 %build
+export LibArchive_LIBRARY=/usr/lib64
+export LibArchive_INCLUDE_DIR=/usr/include
 export CFLAGS="%{optflags}"
 export CXXFLAGS="%{optflags}"
 export LDFLAGS="%{?__global_ldflags}"
