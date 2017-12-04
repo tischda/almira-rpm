@@ -100,11 +100,6 @@ BuildRequires:  findutils
 BuildRequires:  gcc-c++
 BuildRequires:  sed
 %if %{with cmake_enables_git_test}
-# Tests fail if only git-core is installed, bug #1488830
-BuildRequires:  git
-%else
-BuildConflicts: git-core
-%endif
 %if %{with cmake_enables_X11_test}
 BuildRequires:  libX11-devel
 %endif
@@ -114,7 +109,6 @@ BuildRequires:  ncurses-devel
 %if %{without bootstrap}
 BuildRequires:  bzip2-devel
 # for generating cmake() Provides, bug #1498894
-BuildRequires:  cmake-data
 BuildRequires:  curl-devel
 BuildRequires:  expat-devel
 BuildRequires:  jsoncpp-devel
