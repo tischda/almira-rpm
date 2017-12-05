@@ -2,7 +2,6 @@
 # -*- coding:utf-8 -*-
 #
 # Copyright (C) 2015 Daniel Vrátil <dvratil@redhat.com>
-# Copyright (C) 2017 Daniel Vrátil <dvratil@fedoraproject.org>
 #
 #
 # This program is free software; you can redistribute it and/or modify
@@ -46,13 +45,21 @@ class CMakeParser:
         paths = configFile.rsplit("/", 3)
 
         modulePath = "%s/cmake/%s" % (paths[0], paths[2])
-        cfgFile = paths[3]
-        if cfgFile.endswith("Config.cmake"):
-           return (modulePath, cfgFile[0:-len("Config.cmake")], False)
-        elif cfgFile.endswith("-config.cmake"):
-           return (modulePath, cfgFile[0:-len("-config.cmake")], True)
+
+        lowercase = False
+        configFile = glob.glob("%s/*Config.cmake" % modulePath)
+        if not configFile:
+            configFile = glob.glob("%s/*-config.cmake" % modulePath)
+            lowercase = True
+        if not configFile:
+            return (None, None)
+
+        if lowercase:
+            moduleName = configFile[0][len(modulePath) + 1:-len("-config.cmake")]
         else:
-            return (None, None, False)
+            moduleName = configFile[0][len(modulePath) + 1:-len("Config.cmake")]
+
+        return (modulePath, moduleName, lowercase)
 
     def resolveCMakeModuleVersion(self, modulePath, cmakeModule, lowercase):
         versionFile = ("%s/%s-config-version.cmake" if lowercase else "%s/%sConfigVersion.cmake") % (modulePath, cmakeModule)

@@ -32,5 +32,3 @@
         %{?_cmake_lib_suffix64} \\\
 %endif \
         -DBUILD_SHARED_LIBS:BOOL=ON
-
-%cmake@@CMAKE_MAJOR_VERSION@@ %cmake
