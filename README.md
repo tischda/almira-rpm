@@ -39,7 +39,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           tomcat-juli.jar
 |
 +---atlassian-jira-software
-|       atlassian-jira-software-7.6.0.tar.gz
+|       atlassian-jira-software-7.6.1.tar.gz
 |       mysql-connector-java-5.1.45.tar.gz
 |
 +---cmake

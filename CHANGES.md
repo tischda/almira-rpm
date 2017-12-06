@@ -8,7 +8,7 @@ Version 0.189 (03/12/2017)
 * apache-maven-3.5.2-bin.tar.gz
 * apache-tomcat-7.0.82.tar.gz
 * apr-1.6.3.tar.bz2
-* atlassian-jira-software-7.6.0.tar.gz
+* atlassian-jira-software-7.6.1.tar.gz
 * cmake-3.9.6.tar.gz
 * git-2.15.1.tar.gz
 * gradle-4.3.1-bin.zip
