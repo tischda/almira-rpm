@@ -54,7 +54,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       gradle-4.3.1-bin.zip
 |
 +---java
-|       jdk-9.0.1_linux-x64_bin.rpm
+|       jdk-8u152-linux-x64.rpm
 |
 +---nexus
 |       nexus-2.14.5-02-bundle.tar.gz

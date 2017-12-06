@@ -1,6 +1,10 @@
+# Remove Windows scripts and executables
+rm -f @{destBase}/elasticsearch/bin/*.{exe,bat}
+
 # Make scripts executable
 chmod 755 @{destBase}/bin/linux-x86-64/*.sh
 chmod 755 @{destBase}/bin/linux-x86-64/wrapper
+chmod 755 @{destBase}/elasticsearch/bin/*
 
 # Configure startup script
 sed -i 's|chkconfig: 2345 20 80|chkconfig: 2345 70 20|g' @{destBase}/bin/linux-x86-64/sonar.sh

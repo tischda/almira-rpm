@@ -9,11 +9,11 @@ Version 0.189 (03/12/2017)
 * apache-tomcat-7.0.82.tar.gz
 * apr-1.6.3.tar.bz2
 * atlassian-jira-software-7.6.0.tar.gz
-* cmake-3.10.0.tar.gz
+* cmake-3.9.6.tar.gz
 * git-2.15.1.tar.gz
 * gradle-4.3.1-bin.zip
 * httpd-2.4.29.tar.bz2
-* jdk-9.0.1_linux-x64_bin.rpm
+* jdk-8u152-linux-x64.rpm
 * MySQL-5.6.38-1
 * mysql-connector-java-5.1.45.tar.gz
 * nexus-2.14.5-02-bundle.tar.gz
