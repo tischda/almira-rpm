@@ -2,7 +2,7 @@
 almira.rpm - change history
 ===============================================================================
 
-Version 0.189 (03/12/2017)
+Version 0.189 (06/12/2017)
 --------------------------
 * apache-activemq-5.15.2-bin.tar.gz
 * apache-maven-3.5.2-bin.tar.gz
