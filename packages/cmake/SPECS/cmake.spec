@@ -106,8 +106,9 @@ unset DISPLAY
 pushd build
 
 
-#CMake.FileDownload, and CTestTestUpload require internet access
-bin/ctest -V -E 'CMake.FileDownload|CTestTestUpload' %{?_smp_mflags}
+# CMake.FileDownload, and CTestTestUpload require internet access
+# Timeout fails when running concurrently with other jobs in QuickBuild
+bin/ctest -V -E 'CMake.FileDownload|CTestTestUpload|CTestTimeoutAfterMatch' %{?_smp_mflags}
 popd
 
 

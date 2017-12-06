@@ -43,7 +43,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       mysql-connector-java-5.1.45.tar.gz
 |
 +---cmake
-|       cmake-3.10.0.tar.gz
+|       cmake-3.9.6.tar.gz
 |
 +---git
 |       git-2.15.1.tar.gz

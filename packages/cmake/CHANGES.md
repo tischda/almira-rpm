@@ -2,9 +2,15 @@
 almira.rpm.cmake - change history
 ===============================================================================
 
-Version 3.10.0-1 (03 December 2017)
+Version 3.9.6-1 (05 December 2017)
 -----------------------------------
-* Updated to version 3.10.0
+* Updated to version 3.9.6
+
+	Note that CMake 3.10.0 requires a newer compiler that supports C++11, which
+	you need to install from source, but then other projects fail.
+	CMake itself fails on not finding libarchive3, although it is installed in
+	/usr/lib64 and /usr/include. I could not figure out how to work around this
+	and decided that v3.9.6 would be the last one supported by almira.
 
 
 Version 3.8.2-1 (18 June 2017)
