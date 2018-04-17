@@ -2,9 +2,9 @@
 almira.rpm.sonar - change history
 ===============================================================================
 
-Version 6.7.0-1 (06 December 2017)
-----------------------------------
-* Updated Sonar to 6.7
+Version 7.0-1 (17 April 2017)
+-----------------------------
+* Updated Sonar to 7.0
 
 
 Version 6.4.0-3 (14 July 2017)

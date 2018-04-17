@@ -2,9 +2,9 @@
 almira.rpm.gradle - change history
 ===============================================================================
 
-Version 4.3.1-1 (03 December 2017)
-----------------------------------
-* Updated to version 4.3.1
+Version 4.6-1 (17 April 2017)
+-------------------------------
+* Updated to version 4.6
 
 
 Version 4.0.1-1 (14 July 2017)
