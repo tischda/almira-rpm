@@ -1,5 +1,5 @@
 Name: git-manpages
-Version: 2.17.0
+Version: 2.21.0
 Release: 1%{?dist}
 Summary: GIT man pages
 
