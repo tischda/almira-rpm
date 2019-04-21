@@ -108,7 +108,7 @@ pushd build
 
 # CMake.FileDownload, and CTestTestUpload require internet access
 # Timeout fails when running concurrently with other jobs in QuickBuild
-bin/ctest -V -E 'CMake.FileDownload|CTestTestUpload|CTestTimeoutAfterMatch' %{?_smp_mflags}
+bin/ctest -V -E 'CMake.FileDownload|CTestTestUpload|CTestTimeoutAfterMatch|CPackRPM' %{?_smp_mflags}
 popd
 
 
