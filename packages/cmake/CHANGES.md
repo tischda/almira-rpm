@@ -11,6 +11,9 @@ Version 3.9.6-1 (05 December 2017)
 	CMake itself fails on not finding libarchive3, although it is installed in
 	/usr/lib64 and /usr/include. I could not figure out how to work around this
 	and decided that v3.9.6 would be the last one supported by almira.
+	
+	On 21/04/2019 I had to disable RunCMake.CPack_RPM test because otherwise it
+	wouldn't build. I suppose as system update broke something.	
 
 
 Version 3.8.2-1 (18 June 2017)
