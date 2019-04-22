@@ -24,7 +24,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       apr-1.7.0.tar.bz2
 |       apr-util-1.6.1.tar.bz2
 |       distcache-1.4.5-23.src.rpm
-|       httpd-2.4.39.tar.bz2
+|       httpd-2.4.38.tar.bz2
 |
 +---apache-maven
 |       apache-maven-3.6.1-bin.tar.gz
@@ -52,7 +52,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       git.spec.template
 |
 +---gradle
-|       gradle-5.4-bin.zip
+|       gradle-4.6-bin.zip
 |
 +---java
 |       jdk-8u212-linux-x64.rpm

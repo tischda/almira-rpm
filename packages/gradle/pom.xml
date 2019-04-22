@@ -11,7 +11,7 @@
   </parent>
 
   <artifactId>gradle</artifactId>
-  <version>5.4.0.1</version>
+  <version>4.6.0.1</version>
   <packaging>rpm</packaging>
   <name>almira.rpm.gradle</name>
 
@@ -20,7 +20,7 @@
   <url>https://gradle.org/</url>
 
   <properties>
-    <appVersion>5.4</appVersion>
+    <appVersion>4.6</appVersion>
     <rpmRelease>1</rpmRelease>
 
     <appServiceName>gradle</appServiceName>
