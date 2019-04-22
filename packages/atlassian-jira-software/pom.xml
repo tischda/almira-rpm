@@ -29,7 +29,7 @@
     <appContextPath>jira</appContextPath>
 
     <jdbcDriverName>mysql-connector-java</jdbcDriverName>
-    <jdbcDriverVersion>5.1.46</jdbcDriverVersion>
+    <jdbcDriverVersion>8.0.15</jdbcDriverVersion>
 
     <!-- overrides -->
     <appSrcLocation>target/unpack/${project.artifactId}-${appVersion}-standalone</appSrcLocation>

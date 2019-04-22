@@ -18,7 +18,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 
 ~~~
 +---apache-activemq
-|       apache-activemq-5.15.3-bin.tar.gz
+|       apache-activemq-5.15.9-bin.tar.gz
 |
 +---apache-httpd
 |       apr-1.6.3.tar.bz2
@@ -27,10 +27,10 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       httpd-2.4.33.tar.bz2
 |
 +---apache-maven
-|       apache-maven-3.5.3-bin.tar.gz
+|       apache-maven-3.6.1-bin.tar.gz
 |
 +---apache-tomcat
-|   |   apache-tomcat-7.0.86.tar.gz
+|   |   apache-tomcat-7.0.94.tar.gz
 |   |
 |   \---extras
 |           catalina-jmx-remote.jar
@@ -39,25 +39,26 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           tomcat-juli.jar
 |
 +---atlassian-jira-software
-|       atlassian-jira-software-7.9.0.tar.gz
-|       mysql-connector-java-5.1.46.tar.gz
+|       atlassian-jira-software-8.1.0.tar.gz
+|       mysql-connector-java-8.0.15.tar.gz
 |
 +---cmake
 |       cmake-3.9.6.tar.gz
 |
 +---git
-|       git-2.17.0.tar.gz
-|       git-manpages-2.17.0.tar.gz
+|       git-2.21.0.tar.gz
+|       git-manpages-2.21.0.tar.gz
+|       git.spec.2.21.0-1.fcs31
 |       git.spec.template
 |
 +---gradle
-|       gradle-4.6-bin.zip
+|       gradle-5.4-bin.zip
 |
 +---java
-|       jdk-8u162-linux-x64.rpm
+|       jdk-8u212-linux-x64.rpm
 |
 +---nexus
-|       nexus-2.14.8-01-bundle.tar.gz
+|       nexus-2.14.12-02-bundle.tar.gz
 |
 +---oracle-mysql
 |       MySQL-client-5.6.38-1.el6.x86_64.rpm
@@ -67,24 +68,14 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       MySQL-shared-compat-5.6.38-1.el6.x86_64.rpm
 |
 +---quickbuild
-|       mysql-connector-java-5.1.46.tar.gz
-|       quickbuild-8.0.2.tar.gz
+|       mysql-connector-java-8.0.15.tar.gz
+|       quickbuild-9.0.7.tar.gz
 |
 +---rsync
 |       rsync-3.1.3.tar.gz
 |
 +---sonar
-|   |   sonarqube-7.0.zip
-|   |
-|   +---plugins (add to zip in extensions_plugins)
-|   |       sonar-csharp-plugin-7.0.1.4822.jar
-|   |       sonar-go-plugin-0.2.0.875.jar
-|   |       sonar-java-plugin-5.3.0.13828.jar
-|   |       sonar-javascript-plugin-4.1.0.6085.jar
-|   |       sonar-php-plugin-2.13.0.3107.jar
-|   |       sonar-python-plugin-1.9.1.2080.jar
-|   |       sonar-scm-git-plugin-1.4.0.1037.jar
-|   |       sonar-xml-plugin-1.5.0.1373.jar
+|   |   sonarqube-7.7.zip
 |   |
 |   \---plugins-legacy
 |           sonar-cxx-plugin-0.9.8.jar
