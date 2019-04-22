@@ -2,6 +2,26 @@
 almira.rpm - change history
 ===============================================================================
 
+Version 0.191 (22/04/2019)
+--------------------------
+* apache-activemq-5.15.9-bin.tar.gz
+* apr-1.7.0.tar.bz2
+* httpd-2.4.38.tar.bz2                  --> 2.4.39 fails
+* apache-maven-3.6.1-bin.tar.gz
+* apache-tomcat-7.0.94.tar.gz           --> not used anymore
+* atlassian-jira-software-8.1.0.tar.gz
+* cmake-3.9.6.tar.gz                    --> last working version
+* git-2.21.0.tar.gz                     --> quick port, some stuff might be broken
+* gradle-4.6-bin.zip                    --> upgrade to 4.10 and 5.x failed because of API change
+* jdk-8u212-linux-x64.rpm
+* MySQL-5.6.39                          --> newer version not compatible with Oracle Linux 6.10
+* mysql-connector-java-8.0.15.tar.gz
+* nexus-2.14.12-02-bundle.tar.gz
+* quickbuild-9.0.7.tar.gz
+* sonarqube-7.7.zip                     --> latest plugins now included
+* tomcat-native-1.2.21-src.tar.gz
+
+
 Version 0.190 (17/04/2018)
 --------------------------
 * apache-activemq-5.15.3-bin.tar.gz
