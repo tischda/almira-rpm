@@ -45,7 +45,7 @@ rm -rf $RPM_BUILD_ROOT%{_libdir}/pkgconfig
 %files
 %doc CHANGELOG.txt LICENSE NOTICE TODO.txt
 %{_libdir}/libtcnative*.so*
-
+/usr/include
 
 %post -p /sbin/ldconfig
 

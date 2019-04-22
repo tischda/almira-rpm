@@ -21,10 +21,10 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       apache-activemq-5.15.9-bin.tar.gz
 |
 +---apache-httpd
-|       apr-1.6.3.tar.bz2
+|       apr-1.7.0.tar.bz2
 |       apr-util-1.6.1.tar.bz2
 |       distcache-1.4.5-23.src.rpm
-|       httpd-2.4.33.tar.bz2
+|       httpd-2.4.39.tar.bz2
 |
 +---apache-maven
 |       apache-maven-3.6.1-bin.tar.gz
