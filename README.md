@@ -84,7 +84,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           sonar-typescript-plugin-1.1.0.1079.jar
 |
 \---tomcat-native
-        tomcat-native-1.2.16-src.tar.gz
+        tomcat-native-1.2.21-src.tar.gz
 ~~~
 
 

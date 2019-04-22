@@ -1,5 +1,5 @@
 Name: tomcat-native
-Version: 1.2.16
+Version: 1.2.21
 Release: 1%{?dist}
 Summary: Tomcat native library
 License: Apache Software License
