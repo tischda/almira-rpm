@@ -39,8 +39,8 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |           tomcat-juli.jar
 |
 +---atlassian-jira-software
-|       atlassian-jira-software-8.1.0.tar.gz
-|       mysql-connector-java-8.0.15.tar.gz
+|       atlassian-jira-software-8.1.3.tar.gz
+|       mysql-connector-java-5.1.48.tar.gz
 |
 +---cmake
 |       cmake-3.9.6.tar.gz
