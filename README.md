@@ -27,7 +27,7 @@ Binaries are not checked into VCS. This is what you need in your `dist` director
 |       httpd-2.4.38.tar.bz2
 |
 +---apache-maven
-|       apache-maven-3.6.1-bin.tar.gz
+|       apache-maven-3.6.3-bin.tar.gz
 |
 +---apache-tomcat
 |   |   apache-tomcat-7.0.94.tar.gz
